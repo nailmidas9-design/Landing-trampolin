@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oportunidad Única | Trampolín 8 Pies Caja Seca</title>
+    
+    <!-- SEO Básico -->
+    <meta name="description" content="Trampolín de 8 pies en perfecto estado en Caja Seca. Diversión segura para tus hijos. $200.">
+    
+    <!-- Google Fonts: Varela Round & Arimo (Exact match from Elementor Theme Kit) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@600;700&family=Varela+Round&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Varela Round"', 'sans-serif'],
+                        display: ['"Varela Round"', 'sans-serif'],
+                        button: ['Arimo', 'sans-serif']
+                    },
+                    colors: {
+                        // Global Kit Styles Exact Colors
+                        primaryCyan: '#2AD5FF',
+                        secondaryPurple: '#563DE4',
+                        textLight: '#E9E9E9',
+                        accentGold: '#FFD200',
+                        bgDarkPurple: '#240A2B',
+                        cardDarkPurple: '#400D48',
+                        translucentPurple: '#D600FF12',
+                        whatsapp: '#25D366',
+                        whatsappHover: '#1DA851'
+                    },
+                    backgroundImage: {
+                        'btn-gradient': 'radial-gradient(circle at top left, #2AD5FF 15%, #563DE4 95%)',
+                        'btn-gradient-hover': 'radial-gradient(circle at top left, #563DE4 15%, #2AD5FF 95%)',
+                        'card-gradient': 'linear-gradient(180deg, #400D48 0%, #240A2B 100%)',
+                        'hero-glow': 'radial-gradient(circle, rgba(214,0,255,0.18) 0%, rgba(36,10,43,0) 70%)',
+                        'cyan-purple-grad': 'linear-gradient(135deg, #2AD5FF 0%, #563DE4 100%)'
+                    },
+                    animation: {
+                        'marquee': 'marquee 22s linear infinite',
+                        'pulse-glow': 'pulse-glow 2.5s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(42, 213, 255, 0.4)' },
+                            '50%': { boxShadow: '0 0 45px rgba(86, 61, 228, 0.8)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth Scroll Lenis overrides */
+        html.lenis, html.lenis body {
+            height: auto;
+        }
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        body {
+            background-color: #240A2B;
+            color: #E9E9E9;
+            font-family: 'Varela Round', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Film Grain Overlay for Cinematic Atmosphere */
+        .film-grain {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Gradient Text Helper */
+        .text-gradient-cyan {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(135deg, #2AD5FF 0%, #563DE4 100%);
+        }
+
+        .text-gradient-gold {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(135deg, #FFD200 0%, #2AD5FF 100%);
+        }
+
+        .perspective-container {
+            perspective: 1000px;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primaryCyan selection:text-black">
+
+    <!-- Film Grain Overlay -->
+    <div class="film-grain"></div>
+
+    <!-- Header Navigation -->
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-white/10 py-4 backdrop-blur-md bg-bgDarkPurple/80">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
+            <div class="font-display font-bold text-lg md:text-xl tracking-tight flex items-center gap-2 text-white">
+                <span class="p-2 rounded-full bg-secondaryPurple/30 border border-primaryCyan/40 text-primaryCyan">
+                    <i data-lucide="gamepad-2" class="w-5 h-5"></i>
+                </span>
+                <span>OFERTA <span class="text-primaryCyan">CAJA SECA</span></span>
+            </div>
+            <a href="https://wa.me/numerodetelefono?text=Hola,%20quiero%20ir%20a%20ver%20el%20trampolín" target="_blank" rel="noopener noreferrer" 
+               class="flex items-center gap-2 bg-btn-gradient hover:bg-btn-gradient-hover text-white px-5 py-2.5 rounded-full text-sm font-button font-semibold shadow-lg hover:scale-105 transition-all duration-300 border border-primaryCyan/30">
+                <span>Precio: $200</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- SECCIÓN 1: HERO SECTION -->
+        <section id="hero" class="relative min-h-[95vh] flex items-center pt-32 pb-20 overflow-hidden bg-hero-glow">
+            <!-- Background Glow Orbs -->
+            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[650px] md:w-[950px] h-[650px] bg-secondaryPurple/20 rounded-full blur-[150px] pointer-events-none"></div>
+            <div class="absolute -bottom-20 right-10 w-[400px] h-[400px] bg-primaryCyan/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10 w-full grid lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Hero Text -->
+                <div class="lg:col-span-7 flex flex-col items-start text-left">
+                    <!-- Location Badge -->
+                    <div class="gsap-reveal flex items-center gap-2 px-4 py-1.5 rounded-full border-2 border-secondaryPurple bg-bgDarkPurple/90 text-primaryCyan text-xs md:text-sm font-button mb-6 shadow-md">
+                        <i data-lucide="map-pin" class="w-4 h-4 text-accentGold"></i>
+                        <span>Ubicación: Caja Seca, Zulia (Disponible para buscarlo hoy)</span>
+                    </div>
+                    
+                    <!-- H1 Main Heading -->
+                    <h1 class="gsap-reveal font-display font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.1] mb-6 text-white tracking-tight">
+                        ¿QUIERES VER A TUS HIJOS <br class="hidden sm:block"/>
+                        <span class="text-gradient-cyan">BRINCAR DE EMOCIÓN</span><br/> 
+                        EN TU PROPIO PATIO?
+                    </h1>
+                    
+                    <!-- Subtitle -->
+                    <p class="gsap-reveal text-textLight text-base md:text-xl max-w-2xl mb-8 leading-relaxed font-sans">
+                        Para padres en Caja Seca que quieren sacar a sus hijos de los teléfonos y tener diversión segura en casa de por vida. <span class="text-accentGold font-bold underline decoration-primaryCyan decoration-2">Precio único: $200.</span>
+                    </p>
+
+                    <!-- Direct Guarantee Box -->
+                    <div class="gsap-reveal bg-cardDarkPurple border border-secondaryPurple/50 p-6 rounded-2xl mb-8 max-w-2xl relative overflow-hidden group shadow-2xl backdrop-blur-sm">
+                        <div class="absolute inset-0 bg-gradient-to-r from-primaryCyan/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        <div class="flex items-start gap-4 relative z-10">
+                            <div class="bg-secondaryPurple/40 p-3 rounded-xl border border-primaryCyan/40 text-primaryCyan shrink-0">
+                                <i data-lucide="shield-check" class="w-7 h-7 text-accentGold"></i>
+                            </div>
+                            <p class="text-sm md:text-base text-textLight leading-relaxed">
+                                <strong class="text-white block mb-1 font-display text-lg">🖐️ Mi compromiso directo contigo:</strong> 
+                                No me pagas ni un solo dólar por adelantado. Te vienes a mi dirección en Caja Seca, revisas la lona, resorte por resorte, la red, la estructura, y solo si te convence al 100%, me pagas y te lo llevas.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Main CTA Button -->
+                    <a href="https://wa.me/numerodetelefono?text=Hola,%20quiero%20ir%20a%20ver%20el%20trampolín" target="_blank" rel="noopener noreferrer" 
+                       class="gsap-reveal inline-flex items-center gap-3 bg-whatsapp hover:bg-whatsappHover text-white font-button font-bold text-lg px-9 py-4.5 rounded-full animate-pulse-glow hover:scale-105 active:scale-95 transition-all shadow-xl border border-whatsapp/40 justify-center w-full sm:w-auto">
+                        <i data-lucide="message-circle" class="w-6 h-6"></i>
+                        <span>Quiero ver a mis hijos saltar de emoción</span>
+                    </a>
+                </div>
+
+                <!-- Gallery 3D Cards Concept -->
+                <div class="lg:col-span-5 relative h-[440px] md:h-[500px] w-full perspective-container hidden lg:block">
+                    <!-- Outer Neon Ring -->
+                    <div class="absolute inset-0 border border-primaryCyan/20 rounded-full animate-[spin_50s_linear_infinite] scale-110"></div>
+                    
+                    <!-- Card 1: Lona -->
+                    <div class="gallery-card absolute top-0 right-2 w-3/4 h-3/5 bg-cardDarkPurple border-2 border-secondaryPurple/80 rounded-3xl overflow-hidden shadow-2xl z-20 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1596485023930-b997972ba717?auto=format&fit=crop&q=80&w=800" alt="Lona tensa de trampolín" class="w-full h-full object-cover opacity-90">
+                        <div class="absolute bottom-3 left-3 bg-bgDarkPurple/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-primaryCyan/40 text-xs text-primaryCyan font-button font-semibold">
+                            Lona Tensa de Alta Densidad
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2: Resortes -->
+                    <div class="gallery-card absolute bottom-2 left-0 w-3/5 h-1/2 bg-cardDarkPurple border-2 border-primaryCyan/60 rounded-3xl overflow-hidden shadow-2xl z-30 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1582236166162-d2780e5cb1fb?auto=format&fit=crop&q=80&w=500" alt="Resortes de acero" class="w-full h-full object-cover opacity-90">
+                        <div class="absolute bottom-3 left-3 bg-bgDarkPurple/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-accentGold/40 text-xs text-accentGold font-button font-semibold">
+                            48 Resortes Reforzados Sin Óxido
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3: Red -->
+                    <div class="gallery-card absolute bottom-10 right-0 w-1/2 h-2/5 bg-cardDarkPurple border-2 border-accentGold/50 rounded-3xl overflow-hidden shadow-xl z-10 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1605333036640-3a31c50bf351?auto=format&fit=crop&q=80&w=500" alt="Red de protección" class="w-full h-full object-cover opacity-80">
+                        <div class="absolute bottom-3 left-3 bg-bgDarkPurple/90 backdrop-blur-md px-3 py-1 rounded-full border border-white/20 text-xs text-white font-button font-semibold">
+                            Red Protectora Intacta
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- MARQUEE INFINITO -->
+        <div class="w-full border-y border-white/10 bg-translucentPurple py-4 overflow-hidden relative flex items-center">
+            <div class="absolute left-0 w-24 h-full bg-gradient-to-r from-bgDarkPurple to-transparent z-10"></div>
+            <div class="absolute right-0 w-24 h-full bg-gradient-to-l from-bgDarkPurple to-transparent z-10"></div>
+            
+            <div class="flex whitespace-nowrap animate-marquee w-[200%]">
+                <div class="flex items-center justify-around w-1/2 text-xs md:text-sm font-button font-semibold text-textLight tracking-wider uppercase">
+                    <span class="flex items-center gap-2"><i data-lucide="check-circle-2" class="text-primaryCyan w-4 h-4"></i> DISPONIBLE HOY EN CAJA SECA</span>
+                    <span class="flex items-center gap-2"><i data-lucide="star" class="text-accentGold w-4 h-4"></i> CASI NUEVO (SOLO 3 USOS)</span>
+                    <span class="flex items-center gap-2"><i data-lucide="shield-check" class="text-primaryCyan w-4 h-4"></i> RED PROTECTORA 360°</span>
+                    <span class="flex items-center gap-2"><i data-lucide="zap" class="text-accentGold w-4 h-4"></i> OPORTUNIDAD $200</span>
+                </div>
+                <div class="flex items-center justify-around w-1/2 text-xs md:text-sm font-button font-semibold text-textLight tracking-wider uppercase">
+                    <span class="flex items-center gap-2"><i data-lucide="check-circle-2" class="text-primaryCyan w-4 h-4"></i> DISPONIBLE HOY EN CAJA SECA</span>
+                    <span class="flex items-center gap-2"><i data-lucide="star" class="text-accentGold w-4 h-4"></i> CASI NUEVO (SOLO 3 USOS)</span>
+                    <span class="flex items-center gap-2"><i data-lucide="shield-check" class="text-primaryCyan w-4 h-4"></i> RED PROTECTORA 360°</span>
+                    <span class="flex items-center gap-2"><i data-lucide="zap" class="text-accentGold w-4 h-4"></i> OPORTUNIDAD $200</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 2: HONESTIDAD BRUTAL -->
+        <section id="story" class="py-20 md:py-28 relative">
+            <div class="max-w-4xl mx-auto px-6 text-center mb-16">
+                <!-- Pill Badge Header -->
+                <div class="gsap-reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-secondaryPurple bg-cardDarkPurple text-primaryCyan text-xs md:text-sm font-button mb-4">
+                    <i data-lucide="help-circle" class="w-4 h-4 text-accentGold"></i>
+                    <span>Cuentas Claras</span>
+                </div>
+                <h2 class="gsap-reveal font-display text-3xl md:text-5xl font-bold mb-6 text-white">
+                    Te voy a decir la verdad de por qué lo vendo tan barato <span class="text-primaryCyan">($200)</span>
+                </h2>
+                <p class="gsap-reveal text-textLight text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+                    Probablemente estarás pensando en este momento: <br/>
+                    <i class="text-primaryCyan font-semibold">«Si este trampolín está tan bueno, ¿por qué este pana lo remata en $200?»</i> <br/>
+                    Te cuento exactamente lo que pasó:
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="gsap-reveal bg-cardDarkPurple border border-secondaryPurple/40 p-8 rounded-3xl hover:border-primaryCyan/60 transition-all shadow-xl group">
+                    <div class="w-14 h-14 bg-bgDarkPurple rounded-2xl flex items-center justify-center mb-6 border border-primaryCyan/40 text-primaryCyan group-hover:scale-110 transition-transform">
+                        <i data-lucide="lightbulb" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold mb-3 text-white">La Idea</h3>
+                    <p class="text-textLight text-sm leading-relaxed">Compré este trampolín porque quería armar un negocio de alquiler para fiestas infantiles aquí en Caja Seca.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="gsap-reveal bg-cardDarkPurple border border-secondaryPurple/40 p-8 rounded-3xl hover:border-primaryCyan/60 transition-all shadow-xl group">
+                    <div class="w-14 h-14 bg-bgDarkPurple rounded-2xl flex items-center justify-center mb-6 border border-accentGold/40 text-accentGold group-hover:scale-110 transition-transform">
+                        <i data-lucide="clock" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold mb-3 text-white">La Realidad</h3>
+                    <p class="text-textLight text-sm leading-relaxed">El negocio no caminó por falta de tiempo. El trampolín se armó, se probó como en 3 ocasiones con los chamos y se guardó.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="gsap-reveal bg-card-gradient border-2 border-secondaryPurple p-8 rounded-3xl relative overflow-hidden shadow-2xl group">
+                    <div class="w-14 h-14 bg-secondaryPurple/40 border border-primaryCyan/50 rounded-2xl flex items-center justify-center mb-6 text-primaryCyan group-hover:scale-110 transition-transform">
+                        <i data-lucide="package-open" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold mb-3 text-white">Mi Problema Actual</h3>
+                    <p class="text-textLight text-sm leading-relaxed">Me está ocupando un espacio en la casa que necesito despejar ya. No me interesa tenerlo guardado para que agarre polvo. Prefiero que te lo lleves tú, se lo pongas a tus hijos en el patio y le saquen el jugo que yo no le pude sacar.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: LO QUE NO SOY Y LO QUE SÍ SOY -->
+        <section class="py-20 md:py-28 bg-translucentPurple border-y border-white/10 relative">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="gsap-reveal font-display text-3xl md:text-5xl font-bold mb-4 text-white">
+                        Para que no haya malos entendidos entre tú y yo
+                    </h2>
+                    <p class="gsap-reveal text-textLight text-base md:text-lg">Cuentas claras conservan la confianza.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- LO QUE NO SOY -->
+                    <div class="gsap-reveal bg-cardDarkPurple/80 border border-red-500/30 p-8 md:p-10 rounded-3xl backdrop-blur-md shadow-xl">
+                        <h3 class="font-display text-2xl font-bold text-red-400 mb-6 flex items-center gap-3">
+                            <i data-lucide="x-circle" class="w-8 h-8 shrink-0"></i>
+                            Lo que NO soy
+                        </h3>
+                        <ul class="space-y-6">
+                            <li class="flex items-start gap-4">
+                                <i data-lucide="store" class="w-5 h-5 text-red-400 shrink-0 mt-1"></i>
+                                <div>
+                                    <strong class="block text-white mb-1 font-display">NO soy una tienda comercial</strong>
+                                    <span class="text-textLight text-sm">No te voy a dar una caja con cinta ni factura fiscal.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <i data-lucide="shield-alert" class="w-5 h-5 text-red-400 shrink-0 mt-1"></i>
+                                <div>
+                                    <strong class="block text-white mb-1 font-display">NO soy un estafador de internet</strong>
+                                    <span class="text-textLight text-sm">De esos que te piden un adelanto por Pago Móvil "para reservártelo" y después no responden más.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <i data-lucide="alert-triangle" class="w-5 h-5 text-red-400 shrink-0 mt-1"></i>
+                                <div>
+                                    <strong class="block text-white mb-1 font-display">NO te estoy vendiendo un problema</strong>
+                                    <span class="text-textLight text-sm">No hay resortes cedidos, no hay lona rota, no hay tubos doblados ni piezas faltantes.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- LO QUE SÍ SOY -->
+                    <div class="gsap-reveal bg-cardDarkPurple border-2 border-primaryCyan/60 p-8 md:p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+                        <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-primaryCyan/10 rounded-full blur-3xl"></div>
+                        <h3 class="font-display text-2xl font-bold text-primaryCyan mb-6 flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-8 h-8 shrink-0"></i>
+                            Lo que SÍ soy
+                        </h3>
+                        <ul class="space-y-6 relative z-10">
+                            <li class="flex items-start gap-4">
+                                <i data-lucide="sparkles" class="w-5 h-5 text-accentGold shrink-0 mt-1"></i>
+                                <div>
+                                    <strong class="block text-white mb-1 font-display">SÍ te vendo una oportunidad real</strong>
+                                    <span class="text-textLight text-sm">Un trampolín fuerte, grande y seguro por la mitad de lo que te costaría pedirlo por encomienda desde Caracas o Maracaibo.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-4">
+                                <i data-lucide="eye" class="w-5 h-5 text-primaryCyan shrink-0 mt-1"></i>
+                                <div>
+                                    <strong class="block text-white mb-1 font-display">SÍ te garantizo transparencia</strong>
+                                    <span class="text-textLight text-sm">Lo ves en mi casa en Caja Seca, revisas pieza por pieza con tus propios ojos y si te gusta, te lo llevas. Te apuesto a que esa noche esos niños ni van a querer dormir de la emoción.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: ESPECIFICACIONES Y NÚMEROS REALES -->
+        <section class="py-20 md:py-28 relative">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="gsap-reveal font-display text-3xl md:text-5xl font-bold mb-4 text-white">
+                        Todo lo que necesitas saber <br class="hidden md:block"/>
+                        <span class="text-gradient-cyan">(Medidas, Peso y Capacidad)</span>
+                    </h2>
+                    <p class="gsap-reveal text-textLight text-base md:text-lg max-w-2xl mx-auto">
+                        Para que no estés adivinando si te cabe en el patio o si tu carro lo aguanta, aquí tienes los datos exactos:
+                    </p>
+                </div>
+
+                <!-- Fun Fact Stats Style Grid -->
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                    <!-- Stat 1 -->
+                    <div class="gsap-reveal bg-cardDarkPurple border border-secondaryPurple/50 p-6 rounded-2xl text-center hover:border-primaryCyan transition-all shadow-xl">
+                        <i data-lucide="ruler" class="text-primaryCyan w-8 h-8 mx-auto mb-3"></i>
+                        <h4 class="font-display font-bold text-3xl text-primaryCyan mb-1">8 Pies</h4>
+                        <p class="text-textLight text-xs leading-relaxed mt-2">
+                            <strong>Diámetro (2.44 m):</strong> El tamaño perfecto: entra cómodo en cualquier patio o garaje amplio sin comerte todo el espacio.
+                        </p>
+                    </div>
+
+                    <!-- Stat 2 -->
+                    <div class="gsap-reveal bg-cardDarkPurple border border-secondaryPurple/50 p-6 rounded-2xl text-center hover:border-primaryCyan transition-all shadow-xl">
+                        <i data-lucide="arrow-up-down" class="text-primaryCyan w-8 h-8 mx-auto mb-3"></i>
+                        <h4 class="font-display font-bold text-3xl text-primaryCyan mb-1">2.20 m</h4>
+                        <p class="text-textLight text-xs leading-relaxed mt-2">
+                            <strong>Altura Total:</strong> Medida exacta desde el piso hasta la punta más alta de la red de seguridad.
+                        </p>
+                    </div>
+
+                    <!-- Stat 3 -->
+                    <div class="gsap-reveal bg-cardDarkPurple border border-secondaryPurple/50 p-6 rounded-2xl text-center hover:border-primaryCyan transition-all shadow-xl">
+                        <i data-lucide="weight" class="text-accentGold w-8 h-8 mx-auto mb-3"></i>
+                        <h4 class="font-display font-bold text-3xl text-accentGold mb-1">180 kg</h4>
+                        <p class="text-textLight text-xs leading-relaxed mt-2">
+                            <strong>Soporte (400 lbs):</strong> Saltan 3 o 4 chamos juntos, o incluso un adulto brincando con ellos sin problema.
+                        </p>
+                    </div>
+
+                    <!-- Stat 4 -->
+                    <div class="gsap-reveal bg-cardDarkPurple border border-secondaryPurple/50 p-6 rounded-2xl text-center hover:border-primaryCyan transition-all shadow-xl">
+                        <i data-lucide="box" class="text-primaryCyan w-8 h-8 mx-auto mb-3"></i>
+                        <h4 class="font-display font-bold text-3xl text-primaryCyan mb-1">38 kg</h4>
+                        <p class="text-textLight text-xs leading-relaxed mt-2">
+                            <strong>Peso Total:</strong> Estructura de tubo galvanizado resistente al agua y al sol, no se dobla, bien macizos.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Safety System Box -->
+                <div class="gsap-reveal bg-card-gradient border-2 border-secondaryPurple p-6 md:p-8 rounded-3xl flex flex-col md:flex-row items-center gap-6 shadow-2xl">
+                    <div class="bg-bgDarkPurple p-4 rounded-2xl border border-primaryCyan/40 shrink-0 text-primaryCyan">
+                        <i data-lucide="shield" class="w-10 h-10 text-accentGold"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-display font-bold text-xl text-white mb-2">🛡️ Sistema de Seguridad Completo</h4>
+                        <p class="text-textLight text-sm leading-relaxed">
+                            Incluye <strong class="text-primaryCyan">48 resortes de acero reforzado</strong>, lona de salto en polipropileno de alta densidad y <strong class="text-primaryCyan">red de protección de 360°</strong> con cierre de seguridad para que ningún chamo se salga por un lado.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: BENEFICIOS REALES -->
+        <section id="benefits" class="py-20 md:py-28 bg-translucentPurple border-y border-white/10">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="gsap-reveal font-display text-3xl md:text-5xl font-bold mb-4 text-white">
+                        ¿Por qué tus chamos lo van a amar (y tú también)?
+                    </h2>
+                    <p class="gsap-reveal text-textLight text-base md:text-lg">Beneficios reales para la tranquilidad de tu hogar.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Benefit 1 -->
+                    <div class="gsap-reveal bg-cardDarkPurple border border-secondaryPurple/50 p-8 rounded-3xl hover:border-primaryCyan transition-all shadow-xl">
+                        <div class="w-12 h-12 bg-bgDarkPurple border border-primaryCyan/40 rounded-2xl flex items-center justify-center mb-6 text-primaryCyan">
+                            <i data-lucide="lock" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold mb-3 text-white">Red protectora alta y tupida</h3>
+                        <p class="text-textLight text-sm leading-relaxed">
+                            Olvídate de estar con el corazón en la boca pensando que un niño va a salir volando hacia el piso o contra la pared. La red los mantiene adentro 100% seguros.
+                        </p>
+                    </div>
+
+                    <!-- Benefit 2 -->
+                    <div class="gsap-reveal bg-cardDarkPurple border border-secondaryPurple/50 p-8 rounded-3xl hover:border-primaryCyan transition-all shadow-xl">
+                        <div class="w-12 h-12 bg-bgDarkPurple border border-accentGold/40 rounded-2xl flex items-center justify-center mb-6 text-accentGold">
+                            <i data-lucide="shield-alert" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold mb-3 text-white">Tubos Acolchados</h3>
+                        <p class="text-textLight text-sm leading-relaxed">
+                            Si se tropiezan contra la estructura, no se van a dar un golpe seco contra el metal porque los tubos vienen protegidos con goma espuma gruesa.
+                        </p>
+                    </div>
+
+                    <!-- Benefit 3 -->
+                    <div class="gsap-reveal bg-card-gradient border-2 border-primaryCyan p-8 rounded-3xl hover:shadow-[0_0_30px_rgba(42,213,255,0.3)] transition-all shadow-2xl">
+                        <div class="w-12 h-12 bg-bgDarkPurple border border-primaryCyan rounded-2xl flex items-center justify-center mb-6 text-primaryCyan">
+                            <i data-lucide="smartphone-off" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold mb-3 text-white">El mejor remedio contra las pantallas</h3>
+                        <p class="text-textLight text-sm leading-relaxed">
+                            Te quita la pelea diaria del teléfono y la tablet. Los chamos salen al patio, brincan, sudan, botan la energía acumulada y duermen como angelitos toda la noche.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 6: COMPARACIÓN DIRECTA -->
+        <section class="py-20 md:py-28">
+            <div class="max-w-5xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="gsap-reveal font-display text-3xl md:text-5xl font-bold mb-4 text-white">Saca tu cuenta tú mismo</h2>
+                </div>
+
+                <div class="grid md:grid-cols-2 rounded-3xl overflow-hidden border-2 border-secondaryPurple shadow-2xl">
+                    <!-- Option A -->
+                    <div class="gsap-reveal bg-cardDarkPurple p-8 md:p-10 border-b md:border-b-0 md:border-r border-secondaryPurple/50">
+                        <h3 class="font-display text-lg text-red-400 font-bold mb-6 uppercase tracking-wider flex items-center gap-2">
+                            <i data-lucide="x-circle" class="w-5 h-5"></i>
+                            ¿Qué implica traer uno nuevo de afuera?
+                        </h3>
+                        <ul class="space-y-6">
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="minus" class="w-5 h-5 text-red-400 shrink-0 mt-0.5"></i>
+                                <span class="text-textLight text-sm">Pagar <strong>$280 a $350</strong> entre el precio y el flete pesado por encomienda.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="minus" class="w-5 h-5 text-red-400 shrink-0 mt-0.5"></i>
+                                <span class="text-textLight text-sm">Esperar de <strong>3 a 5 días</strong> rezando para que llegue completo.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="minus" class="w-5 h-5 text-red-400 shrink-0 mt-0.5"></i>
+                                <span class="text-textLight text-sm">Arriesgarte a que falte un resorte en la caja sellada y no tener a quién reclamarle.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Option B -->
+                    <div class="gsap-reveal bg-card-gradient p-8 md:p-10 border-t md:border-t-0 border-primaryCyan">
+                        <h3 class="font-display text-lg text-primaryCyan font-bold mb-6 uppercase tracking-wider flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                            ¿Qué pasa si me compras este a mí?
+                        </h3>
+                        <ul class="space-y-6">
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-5 h-5 text-primaryCyan shrink-0 mt-0.5"></i>
+                                <span class="text-white text-sm font-semibold">Me pagas <strong>solo $200 fijos</strong>.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-5 h-5 text-primaryCyan shrink-0 mt-0.5"></i>
+                                <span class="text-white text-sm font-semibold">Te lo llevas <strong>HOY mismo</strong> a tu casa.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-5 h-5 text-primaryCyan shrink-0 mt-0.5"></i>
+                                <span class="text-white text-sm font-semibold"><strong>Cuentas y revisas cada pieza</strong> para que estés seguro de todo.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 7: CÓMO HACEMOS LA NEGOCIACIÓN -->
+        <section class="py-20 md:py-28 bg-translucentPurple border-y border-white/10">
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="gsap-reveal font-display text-3xl md:text-5xl font-bold mb-4 text-white">
+                        ¿Te interesa? Así de fácil lo hacemos:
+                    </h2>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Step 1 -->
+                    <div class="gsap-reveal bg-cardDarkPurple border border-secondaryPurple/50 p-6 rounded-2xl flex items-start gap-5 shadow-lg">
+                        <div class="w-10 h-10 rounded-full bg-btn-gradient text-white font-button font-bold flex items-center justify-center shrink-0">1</div>
+                        <div>
+                            <h4 class="font-display font-bold text-lg text-white mb-1">Me escribes al WhatsApp</h4>
+                            <p class="text-textLight text-sm">Haces clic en el botón de abajo y me dices: <i>«Hola, quiero ir a ver el trampolín»</i>.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="gsap-reveal bg-cardDarkPurple border border-secondaryPurple/50 p-6 rounded-2xl flex items-start gap-5 shadow-lg">
+                        <div class="w-10 h-10 rounded-full bg-btn-gradient text-white font-button font-bold flex items-center justify-center shrink-0">2</div>
+                        <div>
+                            <h4 class="font-display font-bold text-lg text-white mb-1">Te doy la dirección exacta en Caja Seca</h4>
+                            <p class="text-textLight text-sm">Coordinamos la hora que te convenga (mañana o tarde).</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="gsap-reveal bg-cardDarkPurple border border-secondaryPurple/50 p-6 rounded-2xl flex items-start gap-5 shadow-lg">
+                        <div class="w-10 h-10 rounded-full bg-btn-gradient text-white font-button font-bold flex items-center justify-center shrink-0">3</div>
+                        <div>
+                            <h4 class="font-display font-bold text-lg text-white mb-1">Lo revisas sin pena</h4>
+                            <p class="text-textLight text-sm">Miras la red, revisas la lona, cuentas los resortes y chequeas que todo esté impecable.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="gsap-reveal bg-card-gradient border-2 border-primaryCyan p-6 rounded-2xl flex items-start gap-5 shadow-xl">
+                        <div class="w-10 h-10 rounded-full bg-accentGold text-black font-button font-bold flex items-center justify-center shrink-0">4</div>
+                        <div>
+                            <h4 class="font-display font-bold text-lg text-primaryCyan mb-1">Y si te gusta...</h4>
+                            <p class="text-white text-sm font-semibold">A saltar se ha dicho. Me pagas y te lo llevas de una vez.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 8: PREGUNTAS FRECUENTES -->
+        <section class="py-20 md:py-28">
+            <div class="max-w-3xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="gsap-reveal font-display text-3xl font-bold mb-4 text-white">Preguntas Frecuentes</h2>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- FAQ 1 -->
+                    <div class="gsap-reveal bg-cardDarkPurple border border-secondaryPurple/50 p-6 rounded-2xl shadow-lg">
+                        <h4 class="font-display font-bold text-white text-base md:text-lg mb-2 flex items-center gap-2">
+                            <i data-lucide="package" class="w-5 h-5 text-primaryCyan shrink-0"></i>
+                            «¿Viene armado o desarmado?»
+                        </h4>
+                        <p class="text-textLight text-sm leading-relaxed pl-7">
+                            Está desarmado en su caja. Viene con absolutamente todas sus piezas, tubos, resortes, red y tornillos listos para ensamblar.
+                        </p>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="gsap-reveal bg-cardDarkPurple border border-secondaryPurple/50 p-6 rounded-2xl shadow-lg">
+                        <h4 class="font-display font-bold text-white text-base md:text-lg mb-2 flex items-center gap-2">
+                            <i data-lucide="car" class="w-5 h-5 text-primaryCyan shrink-0"></i>
+                            «¿Cómo me lo llevo en mi vehículo?»
+                        </h4>
+                        <p class="text-textLight text-sm leading-relaxed pl-7">
+                            Al estar desarmado, los tubos se curvan y caben perfectamente en el asiento trasero o en la maleta de un carro o camioneta. Si no tienes vehículo, te puedo recomendar un mototaxi o flete de confianza.
+                        </p>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="gsap-reveal bg-cardDarkPurple border border-secondaryPurple/50 p-6 rounded-2xl shadow-lg">
+                        <h4 class="font-display font-bold text-white text-base md:text-lg mb-2 flex items-center gap-2">
+                            <i data-lucide="dollar-sign" class="w-5 h-5 text-accentGold shrink-0"></i>
+                            «¿Aceptas menos de $200?»
+                        </h4>
+                        <p class="text-textLight text-sm leading-relaxed pl-7">
+                            El precio es $200 firmes. Ya le bajé todo lo que podía bajarle considerando que está prácticamente nuevo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 9: CTA FINAL -->
+        <section id="cta-final" class="py-24 md:py-32 relative overflow-hidden bg-bgDarkPurple border-t border-white/10">
+            <!-- Glow Background -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondaryPurple/30 rounded-full blur-[150px] pointer-events-none"></div>
+
+            <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+                <div class="gsap-reveal inline-flex items-center gap-2 bg-red-500/20 border border-red-500/40 text-red-300 px-4 py-1.5 rounded-full text-xs md:text-sm font-button font-semibold mb-8">
+                    <i data-lucide="flame" class="w-4 h-4 text-red-400"></i>
+                    Solo tengo ESTE trampolín. No soy una tienda.
+                </div>
+                
+                <h2 class="gsap-reveal font-display text-4xl sm:text-5xl md:text-6xl font-bold mb-8 text-white leading-tight">
+                    Si de verdad quieres darle una alegría a tus hijos...
+                </h2>
+                
+                <p class="gsap-reveal text-textLight text-base md:text-xl mb-12 max-w-2xl mx-auto leading-relaxed">
+                    Sacarlos del teléfono y tenerlos felices en la casa con algo seguro y de calidad, no lo pienses mucho.
+                </p>
+
+                <a href="https://wa.me/numerodetelefono?text=Hola,%20quiero%20ir%20a%20ver%20el%20trampolín" target="_blank" rel="noopener noreferrer" 
+                   class="gsap-reveal inline-flex items-center justify-center gap-3 bg-whatsapp hover:bg-whatsappHover text-white font-button font-bold text-xl px-10 py-5 rounded-full shadow-[0_0_50px_rgba(37,211,102,0.5)] hover:scale-105 active:scale-95 transition-all border border-whatsapp/40 w-full sm:w-auto">
+                    <i data-lucide="message-circle" class="w-7 h-7"></i>
+                    <span>Quiero ver a mis hijos saltar de emoción</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-white/10 text-center text-textLight/60 text-xs md:text-sm bg-bgDarkPurple">
+        <p>Venta Particular Directa — Caja Seca, Estado Zulia</p>
+    </footer>
+
+    <!-- JS CDN Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Initialize Lucide Icons
+            lucide.createIcons();
+
+            // 2. Register GSAP ScrollTrigger
+            gsap.registerPlugin(ScrollTrigger);
+
+            // 3. Initialize Lenis Smooth Scroll
+            const lenis = new Lenis({
+                duration: 1.2,
+                easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                smoothWheel: true,
+                smoothTouch: false
+            });
+
+            // Connect Lenis to GSAP Ticker
+            gsap.ticker.add((time) => {
+                lenis.raf(time * 1000);
+            });
+            gsap.ticker.lagSmoothing(0);
+
+            // 4. GSAP ScrollTrigger Reveal Animations (using autoAlpha to prevent visibility bugs)
+            const revealElements = gsap.utils.toArray('.gsap-reveal');
+            
+            revealElements.forEach((elem) => {
+                gsap.fromTo(elem,
+                    { 
+                        autoAlpha: 0, 
+                        y: 35 
+                    },
+                    {
+                        autoAlpha: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: "power2.out",
+                        scrollTrigger: {
+                            trigger: elem,
+                            start: "top 88%",
+                            toggleActions: "play none none none"
+                        }
+                    }
+                );
+            });
+
+            // 5. 3D Card Tilt Interaction for Hero Gallery
+            const galleryContainer = document.querySelector('.perspective-container');
+            if (galleryContainer) {
+                galleryContainer.addEventListener('mousemove', (e) => {
+                    const rect = galleryContainer.getBoundingClientRect();
+                    const x = (e.clientX - rect.left) / rect.width - 0.5;
+                    const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+                    const cards = galleryContainer.querySelectorAll('.gallery-card');
+                    if(cards.length >= 3) {
+                        gsap.to(cards[0], { rotationY: x * 15, rotationX: -y * 15, duration: 0.5 });
+                        gsap.to(cards[1], { rotationY: x * -20, rotationX: y * 20, duration: 0.5 });
+                        gsap.to(cards[2], { rotationY: x * 25, duration: 0.5 });
+                    }
+                });
+
+                galleryContainer.addEventListener('mouseleave', () => {
+                    const cards = galleryContainer.querySelectorAll('.gallery-card');
+                    cards.forEach(card => {
+                        gsap.to(card, { rotationY: 0, rotationX: 0, duration: 0.8 });
+                    });
+                });
+            }
+
+            // Refresh ScrollTrigger after DOM load
+            setTimeout(() => {
+                ScrollTrigger.refresh();
+            }, 200);
+        });
+    </script>
+</body>
+</html>
