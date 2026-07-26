@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LinkFlow - Close the rift linking signals and action</title>
+  <title>Trampolín Familiar en Venta - Caja Seca, Zulia ($200 USD)</title>
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link href="https://db.onlinewebfonts.com/c/6e47ef470dd19698c911332a9b4d1cf4?family=Neue+Haas+Grotesk+Text+Pro" rel="stylesheet" />
   <link href="https://db.onlinewebfonts.com/c/dec0d9b4e22ca588dc20e1e2e09a59b5?family=Neue+Haas+Grotesk+Display+Pro+55+Roman" rel="stylesheet" />
 
@@ -22,11 +22,12 @@
 
   <!-- Custom styles and keyframe animations -->
   <style>
-    html, body, #root {
-      height: 100%;
+    html, body {
       margin: 0;
+      padding: 0;
       font-family: 'Neue Haas Grotesk Display Pro 55 Roman', 'Neue Haas Grotesk Text Pro', 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
       -webkit-font-smoothing: antialiased;
+      background-color: #0d120d;
     }
 
     /* Keyframe for continuous boomerang zoom breathing effect */
@@ -43,7 +44,7 @@
     }
 
     .animate-boomerang-zoom {
-      animation: boomerangZoom 20s ease-in-out infinite;
+      animation: boomerangZoom 18s ease-in-out infinite;
       will-change: transform;
     }
 
@@ -53,59 +54,109 @@
 
     /* Custom Glassmorphism effects */
     .glass-card {
-      background: rgba(255, 255, 255, 0.78);
+      background: rgba(255, 255, 255, 0.82);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.7);
     }
 
     .glass-dark {
-      background: rgba(25, 34, 24, 0.92);
+      background: rgba(18, 26, 17, 0.92);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
-    /* Subtle pulse keyframe */
-    @keyframes subtlePulse {
-      0%, 100% { opacity: 0.8; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.05); }
+    /* WhatsApp Shine Effect Keyframe */
+    @keyframes shineSweep {
+      0% { transform: translateX(-100%) rotate(25deg); }
+      30%, 100% { transform: translateX(250%) rotate(25deg); }
     }
 
-    .animate-pulse-subtle {
-      animation: subtlePulse 4s ease-in-out infinite;
+    .animate-shine {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .animate-shine::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 60%;
+      height: 200%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.45) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      animation: shineSweep 3.5s infinite ease-in-out;
+      pointer-events: none;
+    }
+
+    /* Custom scrollbar for mobile container */
+    .custom-scroll::-webkit-scrollbar {
+      width: 4px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: rgba(0,0,0,0.1);
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: rgba(133, 171, 139, 0.5);
+      border-radius: 4px;
     }
   </style>
 </head>
-<body class="bg-[#0f150f] text-[#1f2a1d] overflow-x-hidden flex items-center justify-center min-h-screen p-0 sm:p-4 md:p-6 selection:bg-[#85AB8B] selection:text-white">
+<body class="text-[#1f2a1d] min-h-screen flex items-center justify-center p-0 sm:p-4 md:p-6 selection:bg-[#25D366] selection:text-white">
 
+  <!-- Main Root Container -->
   <div id="root" class="w-full flex items-center justify-center"></div>
 
   <script type="text/babel">
     const { useState, useEffect } = React;
 
-    // SVG Lucide-compatible Icon Components
-    const IconLogIn = ({ className = "w-4 h-4" }) => (
-      <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
-      </svg>
-    );
-
-    const IconUserPlus = ({ className = "w-4 h-4" }) => (
-      <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
-      </svg>
-    );
-
-    const IconPlay = ({ className = "w-4 h-4" }) => (
+    // SVG Icon Components
+    const IconWhatsApp = ({ className = "w-5 h-5" }) => (
       <svg className={className} fill="currentColor" viewBox="0 0 24 24">
-        <path d="M8 5v14l11-7z" />
+        <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+      </svg>
+    );
+
+    const IconCheck = ({ className = "w-4 h-4" }) => (
+      <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
+      </svg>
+    );
+
+    const IconCross = ({ className = "w-4 h-4" }) => (
+      <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    );
+
+    const IconMapPin = ({ className = "w-4 h-4" }) => (
+      <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    );
+
+    const IconShieldCheck = ({ className = "w-4 h-4" }) => (
+      <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
       </svg>
     );
 
     const IconSparkles = ({ className = "w-4 h-4" }) => (
       <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+      </svg>
+    );
+
+    const IconChevronDown = ({ className = "w-4 h-4" }) => (
+      <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
       </svg>
     );
 
@@ -121,32 +172,15 @@
       </svg>
     );
 
-    const IconArrowRight = ({ className = "w-4 h-4" }) => (
-      <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-      </svg>
-    );
-
-    const IconCheckCircle = ({ className = "w-5 h-5" }) => (
-      <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    );
-
-    const IconZap = ({ className = "w-4 h-4" }) => (
-      <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    );
-
     const BACKGROUND_IMAGE_URL = 'https://i.postimg.cc/dV0SYNRV/1785089625833.png';
+    const WHATSAPP_URL = "https://wa.me/?text=Hola%2C%20quiero%20ir%20a%20ver%20el%20trampol%C3%ADn%20en%20Caja%20Seca";
 
     function ZoomingImageBg({ src, isPaused }) {
       const [loaded, setLoaded] = useState(false);
 
       return (
-        <div className="absolute inset-0 w-full h-full overflow-hidden bg-[#1f2a1d]">
-          {/* Main Zooming Background Image - Cover mode within 480px container */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden bg-[#131b12]">
+          {/* Main Zooming Background Image */}
           <div 
             className={`w-full h-full transform-gpu transition-opacity duration-1000 animate-boomerang-zoom ${
               isPaused ? 'animate-paused' : ''
@@ -155,552 +189,447 @@
           >
             <img 
               src={src} 
-              alt="LinkFlow Mobile Hero Canvas" 
+              alt="Trampolín familiar en venta en Caja Seca" 
               className="w-full h-full object-cover object-center scale-105"
               onLoad={() => setLoaded(true)}
             />
           </div>
 
-          {/* Vignette Overlay for maximum contrast and legibility */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1f2a1d]/90 via-transparent to-[#1f2a1d]/50 pointer-events-none" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1f2a1d]/40 via-transparent to-[#1f2a1d]/40 pointer-events-none" />
-          
-          {/* Ambient Glow Effect */}
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[320px] h-[200px] bg-[#85AB8B]/25 rounded-full blur-[90px] pointer-events-none animate-pulse-subtle" />
+          {/* Vignette Overlays for optimum contrast and visual depth */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0d120d] via-[#131b12]/40 to-[#0d120d]/60 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0d120d]/40 via-transparent to-[#0d120d]/40 pointer-events-none" />
         </div>
       );
     }
 
     function App() {
-      const [menuOpen, setMenuOpen] = useState(false);
       const [zoomPaused, setZoomPaused] = useState(false);
-      const [activeModal, setActiveModal] = useState(null); // 'demo', 'knowMore', 'video', 'auth', 'navSection'
-      const [modalSection, setModalSection] = useState('purpose');
-      const [authTab, setAuthTab] = useState('signup');
-      
-      // Demo Workflow state
-      const [selectedSignal, setSelectedSignal] = useState('Slack Channel Event');
-      const [workflowStatus, setWorkflowStatus] = useState('idle');
+      const [menuOpen, setMenuOpen] = useState(false);
+      const [openFaq, setOpenFaq] = useState(null);
 
-      const navLinks = [
-        { href: '#purpose', key: 'purpose', label: 'Propósito' },
-        { href: '#process', key: 'process', label: 'El Proceso' },
-        { href: '#pricing', key: 'pricing', label: 'Tarifas' },
+      const scrollToSection = (id) => {
+        setMenuOpen(false);
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
+
+      const faqs = [
+        {
+          q: "¿Me lo puedes llevar a mi casa?",
+          a: "No tengo camioneta propia para hacer delivery. Tienes que venir a buscarlo a mi dirección en Caja Seca. Si no tienes transporte grande, te puedo recomendar un moto taxi o flete local de confianza."
+        },
+        {
+          q: "¿Viene armado o desarmado?",
+          a: "Está totalmente desarmado bajo techo con todas sus piezas contadas, listo para montarlo fácilmente en la maleta o asiento trasero de un vehículo."
+        },
+        {
+          q: "¿Aceptas menos de $200 USD?",
+          a: "El precio es de $200 firmes. Ya le bajé todo lo posible considerando que costó casi $350 y solo tuvo 3 usos reales. Está prácticamente como nuevo."
+        }
       ];
 
-      const handleNavClick = (key) => {
-        setModalSection(key);
-        setActiveModal('navSection');
-        setMenuOpen(false);
-      };
-
-      const handleRunDemo = () => {
-        setWorkflowStatus('processing');
-        setTimeout(() => {
-          setWorkflowStatus('completed');
-        }, 1500);
-      };
-
       return (
-        /* Mobile Card Wrapper: Centered on screen, max-w-[480px], 4:5 optimized frame */
-        <main className="relative w-full max-w-[480px] h-[100dvh] sm:h-[840px] max-h-[100dvh] sm:max-h-[92vh] sm:rounded-[36px] overflow-hidden shadow-2xl border-0 sm:border border-white/20 flex flex-col justify-between selection:bg-[#85AB8B] selection:text-white bg-[#1f2a1d]">
+        /* Mobile Card Outer Canvas Container (Max-width 480px) */
+        <main className="relative w-full max-w-[480px] h-[100dvh] sm:h-[860px] max-h-[100dvh] sm:max-h-[94vh] sm:rounded-[36px] overflow-hidden shadow-2xl border-0 sm:border border-white/20 flex flex-col bg-[#0d120d] custom-scroll overflow-y-auto">
           
-          {/* Dynamic Boomerang Zoom Background */}
-          <ZoomingImageBg 
-            src={BACKGROUND_IMAGE_URL} 
-            isPaused={zoomPaused} 
-          />
+          {/* =========================================================================
+              SECCIÓN 1: HERO SECTION (Inspirado fielmente en el diseño de referencia)
+             ========================================================================= */}
+          <section className="relative w-full min-h-[100dvh] sm:min-h-[840px] flex flex-col justify-between p-4 sm:p-5 overflow-hidden shrink-0">
+            
+            {/* Dynamic Boomerang Zoom Background */}
+            <ZoomingImageBg src={BACKGROUND_IMAGE_URL} isPaused={zoomPaused} />
 
-          {}
-          <nav className="relative z-30 flex items-center justify-between px-5 pt-5 pb-2">
-            {/* Logo */}
-            <div className="flex items-center gap-1.5 text-[#1f2a1d]">
-              <span className="text-xl font-bold tracking-tight text-[#1f2a1d] drop-shadow-sm flex items-center gap-1.5">
-                <span className="bg-[#1f2a1d] text-white px-2 py-0.5 rounded-lg text-xs font-mono">LF</span>
-                LinkFlow<sup className="text-[9px] font-semibold opacity-80">TM</sup>
-              </span>
-            </div>
-
-            {/* Quick Action Badges & Mobile Menu Toggle */}
-            <div className="flex items-center gap-2">
-              <button 
-                onClick={() => { setAuthTab('login'); setActiveModal('auth'); }}
-                className="flex items-center gap-1.5 text-xs font-semibold text-[#1f2a1d] bg-white/70 hover:bg-white/90 px-3 py-1.5 rounded-full backdrop-blur-md border border-white/60 shadow-sm transition-all active:scale-95"
-              >
-                <IconLogIn className="w-3.5 h-3.5 text-[#336443]" />
-                Ingresar
-              </button>
-
-              <button
-                onClick={() => setMenuOpen((v) => !v)}
-                className="relative flex items-center justify-center w-9 h-9 rounded-full bg-white/80 backdrop-blur-md border border-white/70 text-[#1f2a1d] shadow-sm transition-all duration-300 hover:bg-white active:scale-95"
-                aria-label={menuOpen ? 'Cerrar menú' : 'Abrir menú'}
-              >
-                <IconMenu
-                  className={`w-4 h-4 absolute transition-all duration-300 ${
-                    menuOpen ? 'opacity-0 rotate-90 scale-50' : 'opacity-100 rotate-0 scale-100'
-                  }`}
-                />
-                <IconX
-                  className={`w-4 h-4 absolute transition-all duration-300 ${
-                    menuOpen ? 'opacity-100 rotate-0 scale-100' : 'opacity-0 -rotate-90 scale-50'
-                  }`}
-                />
-              </button>
-            </div>
-          </nav>
-
-          {}
-          <div
-            className={`absolute inset-0 z-40 transition-opacity duration-300 ${
-              menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-            }`}
-            onClick={() => setMenuOpen(false)}
-          >
-            <div className="absolute inset-0 bg-[#1f2a1d]/60 backdrop-blur-md" />
-          </div>
-
-          <div
-            className={`absolute top-0 right-0 bottom-0 z-50 w-[82%] bg-white/95 backdrop-blur-2xl shadow-2xl transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-              menuOpen ? 'translate-x-0' : 'translate-x-full'
-            }`}
-          >
-            <div className="flex flex-col h-full pt-16 px-6 pb-6 justify-between">
-              <div className="flex flex-col gap-2">
-                <span className="text-[10px] uppercase tracking-widest text-[#4b5b47] font-bold mb-1">Menú LinkFlow</span>
-                {navLinks.map((link, i) => (
-                  <button
-                    key={link.key}
-                    onClick={() => handleNavClick(link.key)}
-                    className={`text-left text-xl font-bold text-[#1f2a1d] py-3 border-b border-[#1f2a1d]/10 transition-all duration-500 flex items-center justify-between ${
-                      menuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
-                    }`}
-                    style={{ transitionDelay: menuOpen ? `${150 + i * 70}ms` : '0ms' }}
-                  >
-                    <span>{link.label}</span>
-                    <IconArrowRight className="w-4 h-4 text-[#85AB8B]" />
-                  </button>
-                ))}
+            {/* Header / Navbar top bar */}
+            <nav className="relative z-30 flex items-center justify-between pt-1">
+              {/* Top Left Badge: Location */}
+              <div className="flex items-center gap-1.5">
+                <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md border border-white/20 shadow-md">
+                  <IconMapPin className="w-3 h-3 text-[#25D366]" />
+                  <span className="text-[10px] font-extrabold text-white tracking-wider uppercase">Caja Seca, Zulia</span>
+                </div>
               </div>
 
-              <div
-                className={`flex flex-col gap-2.5 transition-all duration-500 ${
-                  menuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
-                }`}
-                style={{ transitionDelay: menuOpen ? '380ms' : '0ms' }}
-              >
-                <button 
-                  onClick={() => { setAuthTab('signup'); setActiveModal('auth'); setMenuOpen(false); }}
-                  className="flex items-center justify-center gap-2 text-xs font-semibold text-[#1f2a1d] bg-[#1f2a1d]/5 hover:bg-[#1f2a1d]/10 py-2.5 rounded-xl transition-colors"
+              {/* Action Badge & Mobile Menu Toggle */}
+              <div className="flex items-center gap-2">
+                <a 
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-1 text-[11px] font-bold text-white bg-[#25D366] hover:bg-[#20ba5a] px-3 py-1.5 rounded-full shadow-md transition-all active:scale-95 border border-white/30"
                 >
-                  <IconUserPlus className="w-4 h-4 text-[#336443]" />
-                  Crear Cuenta
-                </button>
-                <button 
-                  onClick={() => { setActiveModal('demo'); setMenuOpen(false); }}
-                  className="bg-[#1f2a1d] hover:bg-[#2a3827] text-white text-xs font-semibold px-4 py-3 rounded-full transition-all shadow-md flex items-center justify-center gap-2"
+                  <IconWhatsApp className="w-3.5 h-3.5" />
+                  WhatsApp
+                </a>
+
+                <button
+                  onClick={() => setMenuOpen((v) => !v)}
+                  className="relative flex items-center justify-center w-8 h-8 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-white shadow-sm transition-all duration-300 hover:bg-black/60 active:scale-95"
+                  aria-label="Abrir menú de secciones"
                 >
-                  <IconZap className="w-3.5 h-3.5 text-[#85AB8B]" />
-                  Pruébalo en Vivo
+                  {menuOpen ? <IconX className="w-4 h-4" /> : <IconMenu className="w-4 h-4" />}
                 </button>
               </div>
-            </div>
-          </div>
+            </nav>
 
-          {}
-          <div className="relative z-10 flex flex-col items-center text-center px-5 my-auto pt-2">
-            
-            {/* Tagline Badge */}
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/65 backdrop-blur-md border border-white/75 shadow-sm mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#336443] animate-ping" />
-              <span className="text-[10px] font-bold text-[#1f2a1d] tracking-wide uppercase">AI-Driven Signal Engine</span>
-            </div>
-
-            <h1
-              className="font-normal leading-[1.05] text-[#1f2a1d] text-[2.1rem] xs:text-[2.3rem] tracking-tight drop-shadow-sm max-w-xs"
-              style={{ letterSpacing: '-0.03em' }}
-            >
-              Cierra la brecha{' '}
-              <span className="text-[#336443] font-medium block">
-                conectando
-              </span>{' '}
-              <span className="text-[#85AB8B] italic font-serif">
-                señales y acción
-              </span>
-            </h1>
-
-            <p className="mt-3.5 text-[#2d3a2a] text-xs leading-relaxed max-w-[280px] font-normal drop-shadow-sm">
-              Transforma eventos dispersos en flujos automatizados con inteligencia artificial.
-            </p>
-
-            {/* Boomerang Animation Control Toggle */}
-            <button 
-              onClick={() => setZoomPaused(!zoomPaused)}
-              className="mt-4 inline-flex items-center gap-1.5 text-[10px] font-semibold text-[#1f2a1d] bg-white/45 hover:bg-white/70 backdrop-blur-sm px-2.5 py-1 rounded-full transition-all border border-white/50"
-            >
-              <span className={`w-1.5 h-1.5 rounded-full ${zoomPaused ? 'bg-amber-500' : 'bg-emerald-500 animate-pulse'}`} />
-              EFECTO BOOMERANG: {zoomPaused ? 'PAUSADO' : 'ACTIVO'}
-            </button>
-          </div>
-
-          {}
-          <div className="relative z-10 px-4 pb-4 pt-2 flex flex-col gap-2.5">
-            
-            {/* Bottom Card Block */}
-            <div className="glass-card p-4 rounded-2xl shadow-lg border border-white/80 transition-transform duration-300">
-              <div className="flex items-center gap-1.5 text-[#1f2a1d] mb-1.5">
-                <IconSparkles className="w-3.5 h-3.5 text-[#336443]" />
-                <span className="text-xs font-bold tracking-tight text-[#1f2a1d]">
-                  FluxEngine<sup className="text-[8px]">TM</sup>
-                </span>
-                <span className="ml-auto text-[9px] font-mono bg-[#336443]/10 text-[#336443] px-2 py-0.5 rounded-full font-semibold">
-                  v2.4 Ready
-                </span>
+            {/* Mobile Navigation Dropdown Overlay */}
+            {menuOpen && (
+              <div className="absolute top-16 right-4 z-50 w-[240px] glass-dark text-white p-4 rounded-2xl shadow-2xl border border-white/20 animate-fadeIn">
+                <div className="flex flex-col gap-2.5 text-xs font-semibold">
+                  <button onClick={() => scrollToSection('honestidad')} className="text-left py-1.5 px-2 rounded-lg hover:bg-white/10">1. ¿Por qué $200?</button>
+                  <button onClick={() => scrollToSection('checklist')} className="text-left py-1.5 px-2 rounded-lg hover:bg-white/10">2. Lo que SÍ y NO soy</button>
+                  <button onClick={() => scrollToSection('beneficios')} className="text-left py-1.5 px-2 rounded-lg hover:bg-white/10">3. Características</button>
+                  <button onClick={() => scrollToSection('comparativa')} className="text-left py-1.5 px-2 rounded-lg hover:bg-white/10">4. Comparativa de Precio</button>
+                  <button onClick={() => scrollToSection('pasos')} className="text-left py-1.5 px-2 rounded-lg hover:bg-white/10">5. Paso a Paso</button>
+                  <button onClick={() => scrollToSection('faq')} className="text-left py-1.5 px-2 rounded-lg hover:bg-white/10">6. Preguntas Frecuentes</button>
+                </div>
               </div>
+            )}
+
+            {/* Hero Main Copy Body: Left-aligned and compact on left side to show jumping kids on right */}
+            <div className="relative z-10 flex flex-col items-start text-left my-auto py-2 pl-1 pr-4">
               
-              <p className="text-[#4b5b47] text-[11px] leading-snug mb-3 font-normal">
-                Conecta tus sistemas en tiempo real sin escribir código o scripts complejos.
+              {/* Main Headline (White with soft Grey combinations) */}
+              <h1 className="font-extrabold leading-[1.08] text-white text-[1.8rem] xs:text-[2rem] tracking-tight drop-shadow-[0_2px_10px_rgba(0,0,0,0.8)] max-w-[230px]">
+                ¿Quieres ver a tus hijos{' '}
+                <span className="text-slate-200 block font-black">
+                  brincar de emoción
+                </span>{' '}
+                <span className="text-slate-300 italic font-serif font-bold">
+                  en tu propio patio?
+                </span>
+              </h1>
+
+              {/* Subheading Copy: Shifted lower and left-aligned */}
+              <p className="mt-5 text-slate-100 text-[11px] font-medium leading-relaxed max-w-[220px] drop-shadow-md bg-black/40 backdrop-blur-md p-2.5 rounded-xl border border-white/20">
+                Vendo trampolín familiar con red de seguridad protectora. Estado 10/10: se usó literalmente 3 veces y quedó guardado.
               </p>
-
-              <div className="flex items-center gap-2 justify-between">
-                <button 
-                  onClick={() => setActiveModal('demo')}
-                  className="flex-1 bg-[#1f2a1d] hover:bg-[#2a3827] text-white text-xs font-semibold py-2 px-3 rounded-full transition-all shadow-md active:scale-95 text-center"
-                >
-                  Pruébalo en Vivo
-                </button>
-                <button 
-                  onClick={() => setActiveModal('knowMore')}
-                  className="px-2 text-[#1f2a1d] hover:text-[#336443] text-xs font-semibold transition-colors underline underline-offset-2 decoration-[#85AB8B]"
-                >
-                  Saber Más
-                </button>
-              </div>
             </div>
 
-            {/* Video Link */}
-            <button 
-              onClick={() => setActiveModal('video')}
-              className="w-full flex items-center justify-between bg-white/70 hover:bg-white/90 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-sm border border-white/80 transition-all text-xs text-[#1f2a1d]"
-            >
-              <div className="flex items-center gap-2 font-bold">
-                <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#1f2a1d] text-white">
-                  <IconPlay className="w-3 h-3 ml-0.5" />
-                </span>
-                ¿Cómo lo construimos?
-              </div>
-              <span className="text-[10px] font-semibold text-[#4b5b47]">Ver 1:35</span>
-            </button>
-          </div>
-
-          {}
-
-          {/* Modal: Interactive Live Demo */}
-          {activeModal === 'demo' && (
-            <div className="absolute inset-0 z-50 flex items-center justify-center p-4">
-              <div className="absolute inset-0 bg-black/60 backdrop-blur-md" onClick={() => setActiveModal(null)} />
+            {/* Bottom Floating Glass Card Block */}
+            <div className="relative z-10 flex flex-col gap-2 pb-1">
               
-              <div className="relative w-full glass-dark text-white p-5 rounded-2xl shadow-2xl border border-white/20 z-10 max-h-[90%] overflow-y-auto">
-                <button 
-                  onClick={() => setActiveModal(null)}
-                  className="absolute top-4 right-4 text-white/70 hover:text-white p-1 rounded-full hover:bg-white/10"
-                >
-                  <IconX className="w-4 h-4" />
-                </button>
-
-                <div className="flex items-center gap-1.5 text-[#85AB8B] mb-1">
-                  <IconZap className="w-4 h-4" />
-                  <span className="text-[10px] uppercase font-bold tracking-widest">Demostración en Vivo</span>
+              {/* Primary Glass Card */}
+              <div className="glass-card p-4 rounded-2xl shadow-xl border border-white/90">
+                <div className="flex items-center justify-between mb-1.5">
+                  <div className="flex items-center gap-1.5 text-[#1f2a1d]">
+                    <IconSparkles className="w-3.5 h-3.5 text-[#336443]" />
+                    <span className="text-xs font-extrabold tracking-tight text-[#1f2a1d]">
+                      Garantía Total en Persona
+                    </span>
+                  </div>
+                  <span className="text-[10px] font-black bg-[#214f2f] text-white px-2 py-0.5 rounded-full shadow-xs">
+                    $200 USD
+                  </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-white mb-1">Simulador FluxEngine™</h3>
-                <p className="text-white/70 text-xs mb-4">
-                  Selecciona una señal para procesarla en tiempo real.
+                <p className="text-[#3d4d3a] text-[11px] leading-snug mb-3 font-semibold">
+                  <strong>Sin adelantos:</strong> Vienes a mi dirección en Caja Seca, revisas la lona, red y resortes, y solo si te convence, te lo llevas.
                 </p>
 
-                {/* Signal Selector */}
-                <div className="space-y-2 mb-4">
-                  <label className="text-[10px] font-semibold text-white/80 block uppercase tracking-wider">
-                    1. Señal de entrada:
-                  </label>
-                  {['Slack Channel Event', 'Webhook Stripe', 'Lead Salesforce'].map((signal) => (
-                    <button
-                      key={signal}
-                      onClick={() => { setSelectedSignal(signal); setWorkflowStatus('idle'); }}
-                      className={`w-full text-left p-2.5 rounded-lg border text-xs font-medium transition-all flex items-center justify-between ${
-                        selectedSignal === signal 
-                          ? 'bg-[#85AB8B]/20 border-[#85AB8B] text-white' 
-                          : 'bg-white/5 border-white/10 text-white/70 hover:bg-white/10'
-                      }`}
-                    >
-                      <span>{signal}</span>
-                      {selectedSignal === signal && <IconCheckCircle className="w-3.5 h-3.5 text-[#85AB8B]" />}
-                    </button>
-                  ))}
-                </div>
+                {/* Primary CTA WhatsApp Shiny Button */}
+                <a 
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-full bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-black py-3 px-4 rounded-xl transition-all shadow-lg active:scale-98 flex items-center justify-center gap-2 animate-shine border border-white/30 text-center"
+                >
+                  <IconWhatsApp className="w-4 h-4" />
+                  <span>📲 LO QUIERO EN MI PATIO</span>
+                </a>
+              </div>
 
-                {/* Simulation Output */}
-                <div className="bg-black/50 rounded-xl p-3 border border-white/10 mb-4 font-mono text-[11px]">
-                  <div className="text-white/50 mb-1">// Estado:</div>
-                  {workflowStatus === 'idle' && (
-                    <div className="text-amber-400">Listo para [{selectedSignal}]</div>
+              {/* Secondary Status Bar */}
+              <button 
+                onClick={() => scrollToSection('honestidad')}
+                className="w-full flex items-center justify-between bg-white/80 hover:bg-white backdrop-blur-md px-3.5 py-2 rounded-xl shadow-sm border border-white/90 transition-all text-xs text-[#1f2a1d] font-bold"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[#1f2a1d] text-white text-[10px]">
+                    ↓
+                  </span>
+                  ¿Por qué lo vendo tan barato?
+                </div>
+                <span className="text-[10px] font-bold text-[#336443] underline">Leer Historia</span>
+              </button>
+            </div>
+
+          </section>
+
+          {/* =========================================================================
+              SECCIÓN 2: HONESTIDAD BRUTAL - ¿Por qué te lo vendo en $200?
+             ========================================================================= */}
+          <section id="honestidad" className="relative z-10 bg-[#162115] text-white p-5 border-t border-white/10 shrink-0">
+            <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#85AB8B]/20 text-[#85AB8B] text-[10px] font-bold uppercase tracking-wider mb-2">
+              <IconShieldCheck className="w-3.5 h-3.5" />
+              Transparencia Total
+            </div>
+
+            <h2 className="text-lg font-bold leading-tight mb-2 text-white">
+              Te voy a decir la verdad de por qué lo vendo tan barato
+            </h2>
+
+            <p className="text-xs text-white/80 leading-relaxed mb-3">
+              Probablemente te estarás preguntando: <em>«Si este trampolín está tan bueno y costó casi $350, ¿por qué lo remata en $200?»</em>. Te cuento exactamente lo que pasó:
+            </p>
+
+            <div className="space-y-2.5 text-xs bg-black/30 p-3.5 rounded-2xl border border-white/10">
+              <div className="flex items-start gap-2">
+                <span className="text-amber-400 font-bold text-sm">💡</span>
+                <div>
+                  <strong className="text-amber-300 block">La idea inicial:</strong>
+                  <span className="text-white/70">Compré este trampolín para armar un negocio de alquiler de fiestas infantiles aquí en Caja Seca.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-2 border-t border-white/10 pt-2">
+                <span className="text-emerald-400 font-bold text-sm">🛑</span>
+                <div>
+                  <strong className="text-emerald-300 block">La realidad:</strong>
+                  <span className="text-white/70">El negocio no se dio por falta de tiempo. Se armó, se probó como en 3 ocasiones con los chamos y quedó guardado bajo techo.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-2 border-t border-white/10 pt-2">
+                <span className="text-rose-400 font-bold text-sm">📦</span>
+                <div>
+                  <strong className="text-rose-300 block">Mi necesidad actual:</strong>
+                  <span className="text-white/70">Me está ocupando un espacio que necesito despejar ya. No me interesa guardarlo para que se llene de polvo. Prefiero que te lo lleves tú y tus hijos le saquen el jugo.</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* =========================================================================
+              SECCIÓN 3: LO QUE NO SOY Y LO QUE SÍ SOY
+             ========================================================================= */}
+          <section id="checklist" className="relative z-10 bg-white p-5 shrink-0 text-[#1f2a1d]">
+            <h2 className="text-base font-bold text-center mb-1 text-[#1f2a1d]">
+              Para que no haya malos entendidos entre tú y yo
+            </h2>
+            <p className="text-[11px] text-center text-[#4b5b47] mb-4">
+              Cuentas claras conservan amistades.
+            </p>
+
+            <div className="space-y-2 mb-4">
+              <div className="flex items-start gap-2.5 p-2.5 rounded-xl bg-rose-50 border border-rose-200 text-xs">
+                <span className="p-1 bg-rose-500 text-white rounded-full shrink-0 mt-0.5">
+                  <IconCross className="w-3 h-3" />
+                </span>
+                <div>
+                  <strong className="text-rose-900 block">NO soy una tienda comercial:</strong>
+                  <span className="text-rose-800/80 text-[11px]">No te voy a dar una caja bonita con cinta ni factura fiscal.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-2.5 p-2.5 rounded-xl bg-rose-50 border border-rose-200 text-xs">
+                <span className="p-1 bg-rose-500 text-white rounded-full shrink-0 mt-0.5">
+                  <IconCross className="w-3 h-3" />
+                </span>
+                <div>
+                  <strong className="text-rose-900 block">NO soy un estafador de internet:</strong>
+                  <span className="text-rose-800/80 text-[11px]">De esos que piden Pago Móvil por adelantado para "reservar" y luego desaparecen.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-2.5 p-2.5 rounded-xl bg-rose-50 border border-rose-200 text-xs">
+                <span className="p-1 bg-rose-500 text-white rounded-full shrink-0 mt-0.5">
+                  <IconCross className="w-3 h-3" />
+                </span>
+                <div>
+                  <strong className="text-rose-900 block">NO te vendo una trampa:</strong>
+                  <span className="text-rose-800/80 text-[11px]">No hay resortes cedidos, lona rota ni tubos doblados.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-2.5 p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs mt-3">
+                <span className="p-1 bg-[#25D366] text-white rounded-full shrink-0 mt-0.5">
+                  <IconCheck className="w-3 h-3" />
+                </span>
+                <div>
+                  <strong className="text-emerald-950 block">SÍ te vendo una oportunidad real:</strong>
+                  <span className="text-emerald-900/80 text-[11px]">Un trampolín fuerte, grande y seguro por la mitad de lo que cuesta pedirlo afuera.</span>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-2.5 p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs">
+                <span className="p-1 bg-[#25D366] text-white rounded-full shrink-0 mt-0.5">
+                  <IconCheck className="w-3 h-3" />
+                </span>
+                <div>
+                  <strong className="text-emerald-950 block">SÍ te garantizo transparencia:</strong>
+                  <span className="text-emerald-900/80 text-[11px]">Lo ves en mi casa en Caja Seca, lo cuentas pieza por pieza y si te gusta, cerramos.</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* =========================================================================
+              SECCIÓN 4: BENEFICIOS REALES - Sin palabras raras
+             ========================================================================= */}
+          <section id="beneficios" className="relative z-10 bg-[#f4f7f4] p-5 shrink-0 border-t border-black/5">
+            <h2 className="text-base font-bold text-[#1f2a1d] mb-3 text-center">
+              ¿Qué tiene este trampolín?
+            </h2>
+
+            <div className="grid grid-cols-1 gap-2.5 text-xs">
+              <div className="p-3 bg-white rounded-xl shadow-xs border border-black/5">
+                <strong className="text-[#336443] flex items-center gap-1.5 mb-1 font-bold">
+                  🛡️ Red protectora alta y tupida
+                </strong>
+                <p className="text-[#4b5b47] text-[11px]">
+                  Olvídate de estar con el corazón en la boca pensando que un niño se va a salir volando hacia el piso. La red los mantiene adentro.
+                </p>
+              </div>
+
+              <div className="p-3 bg-white rounded-xl shadow-xs border border-black/5">
+                <strong className="text-[#336443] flex items-center gap-1.5 mb-1 font-bold">
+                  🦺 Tubos acolchados con goma
+                </strong>
+                <p className="text-[#4b5b47] text-[11px]">
+                  Si se tropiezan contra la estructura, no se darán un golpe seco contra el metal porque vienen protegidos.
+                </p>
+              </div>
+
+              <div className="p-3 bg-white rounded-xl shadow-xs border border-black/5">
+                <strong className="text-[#336443] flex items-center gap-1.5 mb-1 font-bold">
+                  ⚡ Resortes de acero duro
+                </strong>
+                <p className="text-[#4b5b47] text-[11px]">
+                  Salta sabroso. Aguanta el peso de varios niños juntos (e incluso un adulto si se quiere montar a brincar con ellos).
+                </p>
+
+              </div>
+
+              <div className="p-3 bg-white rounded-xl shadow-xs border border-black/5">
+                <strong className="text-[#336443] flex items-center gap-1.5 mb-1 font-bold">
+                  📱 El remedio contra las pantallas
+                </strong>
+                <p className="text-[#4b5b47] text-[11px]">
+                  Ideal para que salgan al patio, suden, se cansen y duerman como angelitos en la noche.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* =========================================================================
+              SECCIÓN 5: COMPARACIÓN DIRECTA
+             ========================================================================= */}
+          <section id="comparativa" className="relative z-10 bg-[#162115] text-white p-5 shrink-0">
+            <h2 className="text-base font-bold text-center mb-3">
+              Saca tu cuenta tú mismo
+            </h2>
+
+            <div className="space-y-3 text-xs">
+              <div className="p-3 rounded-xl bg-white/5 border border-white/10">
+                <div className="text-rose-300 font-bold mb-1">❌ Traer uno nuevo por internet:</div>
+                <ul className="space-y-1 text-white/70 text-[11px]">
+                  <li>• Pagar entre $250 a $350 USD.</li>
+                  <li>• Esperar 3 a 5 días rezando para que llegue completo.</li>
+                  <li>• Arriesgarte a que falte un resorte y no tener a quién reclamar.</li>
+                </ul>
+              </div>
+
+              <div className="p-3 rounded-xl bg-[#25D366]/20 border border-[#25D366]/50">
+                <div className="text-[#25D366] font-bold mb-1">✅ Comprarme este a mí en Caja Seca:</div>
+                <ul className="space-y-1 text-white/90 text-[11px]">
+                  <li>• Me pagas solo <strong>$200 USD</strong>.</li>
+                  <li>• Te lo llevas <strong>HOY mismo</strong> en tu carro.</li>
+                  <li>• Lo revisas tú mismo con la mano en la estructura antes de pagar.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* =========================================================================
+              SECCIÓN 6: CÓMO HACEMOS LA NEGOCIACIÓN (Paso a paso)
+             ========================================================================= */}
+          <section id="pasos" className="relative z-10 bg-white p-5 shrink-0">
+            <h2 className="text-base font-bold text-[#1f2a1d] text-center mb-3">
+              ¿Te interesa? Así de fácil lo hacemos:
+            </h2>
+
+            <div className="space-y-2.5 text-xs">
+              <div className="flex items-center gap-3 p-2.5 rounded-xl bg-[#f4f7f4] border border-black/5">
+                <span className="w-6 h-6 rounded-full bg-[#1f2a1d] text-white font-bold flex items-center justify-center shrink-0 text-xs">1</span>
+                <span>Me escribes al WhatsApp diciendo <em>«Hola, quiero ir a ver el trampolín»</em>.</span>
+              </div>
+
+              <div className="flex items-center gap-3 p-2.5 rounded-xl bg-[#f4f7f4] border border-black/5">
+                <span className="w-6 h-6 rounded-full bg-[#1f2a1d] text-white font-bold flex items-center justify-center shrink-0 text-xs">2</span>
+                <span>Te doy la dirección exacta en Caja Seca y coordinamos la hora.</span>
+              </div>
+
+              <div className="flex items-center gap-3 p-2.5 rounded-xl bg-[#f4f7f4] border border-black/5">
+                <span className="w-6 h-6 rounded-full bg-[#1f2a1d] text-white font-bold flex items-center justify-center shrink-0 text-xs">3</span>
+                <span>Lo revisas sin pena: lona, red y cuentas los resortes.</span>
+              </div>
+
+              <div className="flex items-center gap-3 p-2.5 rounded-xl bg-[#f4f7f4] border border-black/5">
+                <span className="w-6 h-6 rounded-full bg-[#25D366] text-white font-bold flex items-center justify-center shrink-0 text-xs">4</span>
+                <span>Si te gusta, me pagas los $200 y te lo llevas. Si no, no pasa nada y nos despedimos como amigos.</span>
+              </div>
+            </div>
+          </section>
+
+          {/* =========================================================================
+              SECCIÓN 7: PREGUNTAS FRECUENTES
+             ========================================================================= */}
+          <section id="faq" className="relative z-10 bg-[#f4f7f4] p-5 shrink-0 border-t border-black/5">
+            <h2 className="text-base font-bold text-[#1f2a1d] text-center mb-3">
+              Preguntas que seguro tienes en la cabeza
+            </h2>
+
+            <div className="space-y-2 text-xs">
+              {faqs.map((faq, idx) => (
+                <div key={idx} className="bg-white rounded-xl border border-black/5 overflow-hidden">
+                  <button
+                    onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
+                    className="w-full text-left p-3 font-bold text-[#1f2a1d] flex items-center justify-between gap-2"
+                  >
+                    <span>«{faq.q}»</span>
+                    <IconChevronDown className={`w-4 h-4 text-[#336443] transition-transform ${openFaq === idx ? 'rotate-180' : ''}`} />
+                  </button>
+                  {openFaq === idx && (
+                    <div className="p-3 pt-0 text-[#4b5b47] text-[11px] leading-relaxed border-t border-black/5">
+                      {faq.a}
+                    </div>
                   )}
-                  {workflowStatus === 'processing' && (
-                    <div className="text-sky-400 animate-pulse flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-sky-400 animate-ping" />
-                      Procesando con AI Agents...
-                    </div>
-                  )}
-                  {workflowStatus === 'completed' && (
-                    <div className="text-emerald-400 flex items-center gap-1">
-                      <IconCheckCircle className="w-3.5 h-3.5" />
-                      Acción ejecutada en 14ms.
-                    </div>
-                  )}
                 </div>
-
-                <div className="flex gap-2">
-                  <button
-                    onClick={handleRunDemo}
-                    disabled={workflowStatus === 'processing'}
-                    className="flex-1 bg-[#85AB8B] hover:bg-[#6e9374] text-[#1f2a1d] font-bold py-2.5 px-3 rounded-xl transition-all text-center text-xs shadow-md"
-                  >
-                    {workflowStatus === 'processing' ? 'Procesando...' : 'Ejecutar'}
-                  </button>
-                  <button
-                    onClick={() => setActiveModal(null)}
-                    className="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white text-xs font-medium"
-                  >
-                    Cerrar
-                  </button>
-                </div>
-              </div>
+              ))}
             </div>
-          )}
+          </section>
 
-          {/* Modal: Video Breakdown */}
-          {activeModal === 'video' && (
-            <div className="absolute inset-0 z-50 flex items-center justify-center p-4">
-              <div className="absolute inset-0 bg-black/80 backdrop-blur-md" onClick={() => setActiveModal(null)} />
-              
-              <div className="relative w-full glass-dark text-white p-5 rounded-2xl shadow-2xl border border-white/20 z-10">
-                <button 
-                  onClick={() => setActiveModal(null)}
-                  className="absolute top-4 right-4 text-white/70 hover:text-white p-1 rounded-full hover:bg-white/10 z-20"
-                >
-                  <IconX className="w-4 h-4" />
-                </button>
+          {/* =========================================================================
+              SECCIÓN 8: CTA FINAL - Solo hay uno
+             ========================================================================= */}
+          <section className="relative z-10 bg-[#131b12] text-white p-5 text-center shrink-0 border-t border-white/10">
+            <span className="text-[10px] font-bold text-[#85AB8B] uppercase tracking-widest block mb-1">
+              Oportunidad Única
+            </span>
+            <h2 className="text-lg font-bold mb-2">
+              No tengo un almacén lleno de trampolines. Es ESTE solo.
+            </h2>
+            <p className="text-xs text-white/70 max-w-xs mx-auto mb-4">
+              Si de verdad quieres darle una alegría a tus hijos y sorprenderlos con este regalazo en tu propio patio, este es tu momento.
+            </p>
 
-                <h3 className="text-base font-bold text-white mb-3 flex items-center gap-1.5">
-                  <IconPlay className="w-4 h-4 text-[#85AB8B]" />
-                  Arquitectura LinkFlow (1:35)
-                </h3>
+            <a 
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="w-full bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-black py-3.5 px-4 rounded-xl transition-all shadow-xl active:scale-98 flex items-center justify-center gap-2 animate-shine border border-white/30"
+            >
+              <IconWhatsApp className="w-4 h-4" />
+              <span>📲 LO QUIERO EN MI PATIO - $200 USD</span>
+            </a>
 
-                <div className="relative aspect-video bg-black rounded-xl overflow-hidden border border-white/10 flex flex-col items-center justify-center p-4 text-center group">
-                  <img 
-                    src={BACKGROUND_IMAGE_URL} 
-                    alt="Video Preview" 
-                    className="absolute inset-0 w-full h-full object-cover opacity-40 blur-sm scale-105"
-                  />
-                  <div className="relative z-10">
-                    <span className="w-12 h-12 rounded-full bg-[#85AB8B] text-[#1f2a1d] flex items-center justify-center mx-auto mb-2 shadow-lg transition-transform group-hover:scale-110 cursor-pointer">
-                      <IconPlay className="w-6 h-6 ml-0.5" />
-                    </span>
-                    <h4 className="text-xs font-bold text-white">Pipelines de Inteligencia Artificial</h4>
-                    <p className="text-[10px] text-white/70 mt-1">
-                      Captura microsegunda de señales de red y orquestación automática.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Modal: Know More */}
-          {activeModal === 'knowMore' && (
-            <div className="absolute inset-0 z-50 flex items-center justify-center p-4">
-              <div className="absolute inset-0 bg-black/60 backdrop-blur-md" onClick={() => setActiveModal(null)} />
-              
-              <div className="relative w-full glass-card text-[#1f2a1d] p-5 rounded-2xl shadow-2xl border border-white/80 z-10">
-                <button 
-                  onClick={() => setActiveModal(null)}
-                  className="absolute top-4 right-4 text-[#1f2a1d]/70 hover:text-[#1f2a1d] p-1 rounded-full hover:bg-black/5"
-                >
-                  <IconX className="w-4 h-4" />
-                </button>
-
-                <div className="flex items-center gap-1.5 text-[#336443] mb-1">
-                  <IconSparkles className="w-4 h-4" />
-                  <span className="text-[10px] font-bold uppercase tracking-wider">Descubre FluxEngine™</span>
-                </div>
-
-                <h3 className="text-lg font-bold text-[#1f2a1d] mb-2">Orquestación Sin Fricción</h3>
-                
-                <div className="space-y-2 text-xs text-[#4b5b47] mb-4">
-                  <p>
-                    <strong>FluxEngine™</strong> analiza eventos en tiempo real, filtra ruido y enruta datos directamente a tus aplicaciones.
-                  </p>
-                  <div className="grid grid-cols-2 gap-2 pt-1">
-                    <div className="p-2 bg-white/80 rounded-lg border border-black/5">
-                      <span className="block text-[10px] font-bold text-[#1f2a1d]">Integración Directa</span>
-                      <span className="text-[10px] text-[#4b5b47]">+200 conectores nativos.</span>
-                    </div>
-                    <div className="p-2 bg-white/80 rounded-lg border border-black/5">
-                      <span className="block text-[10px] font-bold text-[#1f2a1d]">Seguridad SOC2</span>
-                      <span className="text-[10px] text-[#4b5b47]">Cifrado total E2E.</span>
-                    </div>
-                  </div>
-                </div>
-
-                <button
-                  onClick={() => { setActiveModal('demo'); }}
-                  className="w-full bg-[#1f2a1d] hover:bg-[#2a3827] text-white font-semibold py-2.5 px-3 rounded-xl transition-all shadow-md text-xs"
-                >
-                  Probar FluxEngine™
-                </button>
-              </div>
-            </div>
-          )}
-
-          {/* Modal: Nav Section detail */}
-          {activeModal === 'navSection' && (
-            <div className="absolute inset-0 z-50 flex items-center justify-center p-4">
-              <div className="absolute inset-0 bg-black/60 backdrop-blur-md" onClick={() => setActiveModal(null)} />
-              
-              <div className="relative w-full glass-card text-[#1f2a1d] p-5 rounded-2xl shadow-2xl border border-white/80 z-10">
-                <button 
-                  onClick={() => setActiveModal(null)}
-                  className="absolute top-4 right-4 text-[#1f2a1d]/70 hover:text-[#1f2a1d] p-1 rounded-full hover:bg-black/5"
-                >
-                  <IconX className="w-4 h-4" />
-                </button>
-
-                {modalSection === 'purpose' && (
-                  <div>
-                    <span className="text-[10px] uppercase tracking-widest text-[#336443] font-bold">Propósito</span>
-                    <h3 className="text-lg font-bold text-[#1f2a1d] mt-1 mb-2">Conecta Inteligencia y Acción</h3>
-                    <p className="text-xs text-[#4b5b47] leading-relaxed mb-4">
-                      Unifica tus herramientas operativas mediante agentes autónomos de IA sin escribir scripts.
-                    </p>
-                  </div>
-                )}
-
-                {modalSection === 'process' && (
-                  <div>
-                    <span className="text-[10px] uppercase tracking-widest text-[#336443] font-bold">El Proceso</span>
-                    <h3 className="text-lg font-bold text-[#1f2a1d] mt-1 mb-2">3 Pasos de Automatización</h3>
-                    <ul className="space-y-2 text-xs text-[#4b5b47] mb-4">
-                      <li className="flex items-start gap-1.5"><strong className="text-[#336443]">1.</strong> Captura señales vía Webhooks.</li>
-                      <li className="flex items-start gap-1.5"><strong className="text-[#336443]">2.</strong> FluxEngine™ enriquece la data.</li>
-                      <li className="flex items-start gap-1.5"><strong className="text-[#336443]">3.</strong> Ejecución instantánea en destino.</li>
-                    </ul>
-                  </div>
-                )}
-
-                {modalSection === 'pricing' && (
-                  <div>
-                    <span className="text-[10px] uppercase tracking-widest text-[#336443] font-bold">Tarifas</span>
-                    <h3 className="text-lg font-bold text-[#1f2a1d] mt-1 mb-2">Planes Flexibles</h3>
-                    <div className="grid grid-cols-2 gap-2 my-3">
-                      <div className="p-3 bg-white/90 rounded-xl border border-black/5">
-                        <span className="text-[9px] font-bold text-[#4b5b47] uppercase">Starter</span>
-                        <div className="text-xl font-bold text-[#1f2a1d] my-0.5">$0</div>
-                        <span className="text-[10px] text-[#4b5b47]">1,000 eventos/mes</span>
-                      </div>
-                      <div className="p-3 bg-[#1f2a1d] text-white rounded-xl shadow-md">
-                        <span className="text-[9px] font-bold text-[#85AB8B] uppercase">Pro Flux</span>
-                        <div className="text-xl font-bold text-white my-0.5">$49</div>
-                        <span className="text-[10px] text-white/70">Eventos ilimitados</span>
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                <button
-                  onClick={() => setActiveModal(null)}
-                  className="w-full bg-[#1f2a1d] text-white font-semibold py-2 rounded-xl text-xs"
-                >
-                  Entendido
-                </button>
-              </div>
-            </div>
-          )}
-
-          {/* Modal: Auth */}
-          {activeModal === 'auth' && (
-            <div className="absolute inset-0 z-50 flex items-center justify-center p-4">
-              <div className="absolute inset-0 bg-black/60 backdrop-blur-md" onClick={() => setActiveModal(null)} />
-              
-              <div className="relative w-full glass-card text-[#1f2a1d] p-5 rounded-2xl shadow-2xl border border-white/80 z-10">
-                <button 
-                  onClick={() => setActiveModal(null)}
-                  className="absolute top-4 right-4 text-[#1f2a1d]/70 hover:text-[#1f2a1d] p-1 rounded-full hover:bg-black/5"
-                >
-                  <IconX className="w-4 h-4" />
-                </button>
-
-                <div className="flex bg-[#1f2a1d]/10 p-1 rounded-xl mb-4">
-                  <button
-                    onClick={() => setAuthTab('signup')}
-                    className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition-all ${
-                      authTab === 'signup' ? 'bg-white text-[#1f2a1d] shadow-sm' : 'text-[#4b5b47]'
-                    }`}
-                  >
-                    Crear Cuenta
-                  </button>
-                  <button
-                    onClick={() => setAuthTab('login')}
-                    className={`flex-1 py-1.5 text-xs font-bold rounded-lg transition-all ${
-                      authTab === 'login' ? 'bg-white text-[#1f2a1d] shadow-sm' : 'text-[#4b5b47]'
-                    }`}
-                  >
-                    Iniciar Sesión
-                  </button>
-                </div>
-
-                <form onSubmit={(e) => { e.preventDefault(); setActiveModal(null); }} className="space-y-3">
-                  {authTab === 'signup' && (
-                    <div>
-                      <label className="block text-[10px] font-semibold text-[#4b5b47] mb-0.5">Nombre Completo</label>
-                      <input 
-                        type="text" 
-                        placeholder="Alex Morgan" 
-                        required 
-                        className="w-full px-3 py-2 rounded-lg bg-white/80 border border-black/10 text-xs focus:outline-none focus:ring-2 focus:ring-[#336443]"
-                      />
-                    </div>
-                  )}
-
-                  <div>
-                    <label className="block text-[10px] font-semibold text-[#4b5b47] mb-0.5">Correo Electrónico</label>
-                    <input 
-                      type="email" 
-                      placeholder="alex@empresa.com" 
-                      required 
-                      className="w-full px-3 py-2 rounded-lg bg-white/80 border border-black/10 text-xs focus:outline-none focus:ring-2 focus:ring-[#336443]"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-[10px] font-semibold text-[#4b5b47] mb-0.5">Contraseña</label>
-                    <input 
-                      type="password" 
-                      placeholder="••••••••" 
-                      required 
-                      className="w-full px-3 py-2 rounded-lg bg-white/80 border border-black/10 text-xs focus:outline-none focus:ring-2 focus:ring-[#336443]"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full bg-[#1f2a1d] hover:bg-[#2a3827] text-white font-semibold py-2.5 rounded-xl transition-all shadow-md text-xs mt-1"
-                  >
-                    {authTab === 'signup' ? 'Comenzar Prueba Gratuita' : 'Acceder al Dashboard'}
-                  </button>
-                </form>
-              </div>
-            </div>
-          )}
+            <p className="mt-3 text-[10px] text-white/40">
+              📍 Ubicación: Caja Seca, Estado Zulia
+            </p>
+          </section>
 
         </main>
       );
