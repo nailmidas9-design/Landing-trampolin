@@ -13,7 +13,6 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Custom CSS for Animations, Glassmorphism and Effects -->
   <style>
     :root {
       --color-primary: #2AD5FF;
@@ -64,21 +63,66 @@
 
     /* Blue Glassmorphism Styles */
     .liquid-glass {
-      background: rgba(10, 37, 64, 0.75);
+      background: rgba(10, 37, 64, 0.78);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border: 1px solid rgba(42, 213, 255, 0.25);
       box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), 0 20px 40px rgba(0, 0, 0, 0.4);
     }
 
+    /* Interactive Mouse Spotlight Glow Effect for Cards */
+    .glow-card {
+      position: relative;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .glow-card::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      background: radial-gradient(350px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(42, 213, 255, 0.28), transparent 65%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glow-card:hover {
+      border-color: rgba(42, 213, 255, 0.75) !important;
+      box-shadow: 0 14px 35px -5px rgba(0, 0, 0, 0.6), 0 0 25px rgba(42, 213, 255, 0.35), inset 0 0 15px rgba(42, 213, 255, 0.15) !important;
+      transform: translateY(-4px);
+    }
+
+    .glow-card:hover::before {
+      opacity: 1;
+    }
+
+    .glow-card > * {
+      position: relative;
+      z-index: 2;
+    }
+
     .whatsapp-btn-glow {
-      box-shadow: 0 0 25px rgba(37, 211, 102, 0.45);
+      box-shadow: 0 0 25px rgba(37, 211, 102, 0.5);
       transition: all 0.3s ease;
     }
 
     .whatsapp-btn-glow:hover {
-      box-shadow: 0 0 40px rgba(37, 211, 102, 0.8), 0 0 15px rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 40px rgba(37, 211, 102, 0.85), 0 0 15px rgba(255, 255, 255, 0.6);
       transform: translateY(-2px) scale(1.02);
+    }
+
+    /* Boomerang Zoom Animation for Hero Image */
+    @keyframes boomerangZoom {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    .animate-boomerang-zoom {
+      animation: boomerangZoom 18s ease-in-out infinite;
+      will-change: transform;
     }
 
     /* Scroll Reveal Animations */
@@ -126,25 +170,25 @@
   <div id="scroll-progress-bar" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-[#2AD5FF] via-[#0077FF] to-[#FFD200] z-50 transition-all duration-150 w-0"></div>
 
   <!-- Floating Sticky WhatsApp Button -->
-  <div id="sticky-whatsapp-btn" class="fixed bottom-6 right-6 z-40 transition-all duration-500 transform translate-y-16 opacity-0 scale-90 pointer-events-none">
+  <div id="sticky-whatsapp-btn" class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 transition-all duration-500 transform translate-y-16 opacity-0 scale-90 pointer-events-none">
     <a 
       href="https://wa.me/584120000000?text=%C2%A1Hola!%20Vi%20la%20publicaci%C3%B3n%20del%20trampol%C3%ADn%20en%20Caja%20Seca%20por%20%24200.%20Quiero%20ver%20a%20mis%20hijos%20saltar%20de%20emoci%C3%B3n%20y%20coordinar%20para%20ir%20a%20verlo%20hoy%20mismo."
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white p-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl whatsapp-btn-glow font-bold text-xs sm:text-sm animate-shine flex"
+      class="group relative flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white p-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl whatsapp-btn-glow font-bold text-xs sm:text-sm animate-shine active:scale-95 transition-all"
     >
       <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
       </svg>
-      <span class="hidden sm:inline font-extrabold ml-2">Quiero ver a mis hijos saltar de emoción</span>
-      <span class="bg-black/20 text-white text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider font-black ml-2">
+      <span class="hidden sm:inline font-extrabold ml-1">Quiero ver a mis hijos saltar de emoción</span>
+      <span class="bg-black/30 text-white text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider font-black ml-1">
         $200
       </span>
     </a>
   </div>
 
   <!-- =========================================================================
-      SECTION 1: HERO SECTION - Con imagen clara
+      SECTION 1: HERO SECTION - Con imagen clara y fondo animado
      ========================================================================= -->
   <section class="relative min-h-[100dvh] md:min-h-screen flex flex-col justify-between p-4 sm:p-8 md:p-12 overflow-hidden z-10 border-b border-white/10">
     
@@ -153,7 +197,7 @@
       <img
         src="https://i.postimg.cc/dV0SYNRV/1785089625833.png"
         alt="Trampolín familiar en Caja Seca"
-        class="w-full h-full object-cover object-center scale-100 opacity-100"
+        class="w-full h-full object-cover object-center animate-boomerang-zoom"
       />
       <!-- Soft Gradient Overlays for optimal contrast -->
       <div class="absolute inset-0 bg-gradient-to-t from-[#031728] via-[#031728]/30 to-black/20 pointer-events-none"></div>
@@ -164,7 +208,7 @@
     <nav class="relative z-30 flex items-center justify-between max-w-5xl mx-auto w-full pt-1 sm:pt-2">
       <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-[#2AD5FF]/40 shadow-lg">
         <span class="text-[#FFD200] shrink-0 animate-bounce text-xs">📍</span>
-        <span class="text-xs font-extrabold text-white tracking-wider uppercase">Caja Seca, Zulia - Disponible para hoy</span>
+        <span class="text-xs font-extrabold text-white tracking-wider uppercase">Caja Seca - Zulia • Disponible hoy</span>
       </div>
 
       <div class="flex items-center gap-2">
@@ -177,7 +221,7 @@
           <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
           </svg>
-          <span>WhatsApp</span>
+          <span>Escríbeme</span>
         </a>
 
         <button
@@ -198,7 +242,7 @@
     <!-- Dropdown Navigation Menu -->
     <div id="mobile-dropdown-menu" class="hidden absolute top-16 right-4 sm:right-12 z-50 w-64 liquid-glass text-white p-4 rounded-2xl shadow-2xl border border-[#2AD5FF]/40">
       <div class="flex flex-col gap-2 text-xs font-semibold">
-        <a href="#fotos" class="text-left py-2 px-3 rounded-xl hover:bg-white/10 flex items-center gap-2"><span>1.</span> Galería de Fotos Reales</a>
+        <a href="#fotos" class="text-left py-2 px-3 rounded-xl hover:bg-white/10 flex items-center gap-2"><span>1.</span> Galería de Fotos y Videos</a>
         <a href="#historia" class="text-left py-2 px-3 rounded-xl hover:bg-white/10 flex items-center gap-2"><span>2.</span> La verdad ($200)</a>
         <a href="#checklist" class="text-left py-2 px-3 rounded-xl hover:bg-white/10 flex items-center gap-2"><span>3.</span> Lo que SÍ y NO soy</a>
         <a href="#specs" class="text-left py-2 px-3 rounded-xl hover:bg-white/10 flex items-center gap-2"><span>4.</span> Medidas, Peso y Capacidad</a>
@@ -229,10 +273,10 @@
       </div>
     </div>
 
-    <!-- Price & Guarantee Glass Box -->
+    <!-- Price & Guarantee Glass Box with Glow Effect -->
     <div class="relative z-20 max-w-5xl mx-auto w-full">
       <div class="reveal-item reveal-scale-up">
-        <div class="liquid-glass rounded-3xl p-4 sm:p-6 shadow-2xl border border-[#2AD5FF]/40 text-white backdrop-blur-xl">
+        <div class="liquid-glass glow-card rounded-3xl p-4 sm:p-6 shadow-2xl border border-[#2AD5FF]/40 text-white backdrop-blur-xl">
           <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
             
             <div class="flex-1 space-y-2">
@@ -276,7 +320,7 @@
           >
             <div class="flex items-center gap-2">
               <span class="w-5 h-5 rounded-full bg-[#2AD5FF] text-[#031728] flex items-center justify-center text-[10px] font-black">↓</span>
-              <span>¿Por qué te lo vendo tan barato?</span>
+              <span>¿Por qué tan barato?</span>
             </div>
             <span class="text-[#2AD5FF] font-extrabold underline">Leer Historia</span>
           </a>
@@ -311,10 +355,10 @@
         <div class="reveal-item reveal-scale-up">
           <div 
             onclick="openLightbox(0)"
-            class="group relative liquid-glass rounded-2xl overflow-hidden border border-white/15 cursor-pointer aspect-square bg-[#0A2540]/40 shadow-lg hover:border-[#2AD5FF]/60 transition-all"
+            class="group relative liquid-glass glow-card rounded-2xl overflow-hidden border border-white/15 cursor-pointer aspect-square bg-[#0A2540]/40 shadow-lg"
           >
             <img src="https://i.postimg.cc/qqtQqwxt/httpsi-postimg-cc-CLYc-CG785129680974823230758-121-jpg.jpg" alt="Lona tensa e impecable" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all p-3 flex flex-col justify-end pointer-events-none">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all p-3 flex flex-col justify-end pointer-events-none z-10">
               <p class="text-[11px] text-white font-medium leading-tight">Lona tensa e impecable</p>
               <span class="text-[10px] text-[#2AD5FF] font-bold flex items-center gap-1 mt-1">🔍 Ampliar</span>
             </div>
@@ -325,7 +369,7 @@
         <div class="reveal-item reveal-scale-up">
           <div 
             onclick="openLightbox(1)"
-            class="group relative liquid-glass rounded-2xl overflow-hidden border border-white/15 cursor-pointer aspect-square bg-[#0A2540]/40 shadow-lg hover:border-[#2AD5FF]/60 transition-all"
+            class="group relative liquid-glass glow-card rounded-2xl overflow-hidden border border-white/15 cursor-pointer aspect-square bg-[#0A2540]/40 shadow-lg"
           >
             <div class="relative w-full h-full bg-black">
               <video src="https://pub-48e5e21731d74cf7a344201ee4e87636.r2.dev/trampolin.mp4" autoplay loop muted playsinline class="w-full h-full object-cover pointer-events-none scale-105"></video>
@@ -333,8 +377,8 @@
                 <span>▶ VIDEO REAL</span>
               </div>
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all p-3 flex flex-col justify-end pointer-events-none">
-              <p class="text-[11px] text-white font-medium leading-tight">Video real del trampolín en acción</p>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all p-3 flex flex-col justify-end pointer-events-none z-10">
+              <p class="text-[11px] text-white font-medium leading-tight">Video real del trampolín</p>
               <span class="text-[10px] text-[#2AD5FF] font-bold flex items-center gap-1 mt-1">🔍 Ampliar</span>
             </div>
           </div>
@@ -344,11 +388,11 @@
         <div class="reveal-item reveal-scale-up">
           <div 
             onclick="openLightbox(2)"
-            class="group relative liquid-glass rounded-2xl overflow-hidden border border-white/15 cursor-pointer aspect-square bg-[#0A2540]/40 shadow-lg hover:border-[#2AD5FF]/60 transition-all"
+            class="group relative liquid-glass glow-card rounded-2xl overflow-hidden border border-white/15 cursor-pointer aspect-square bg-[#0A2540]/40 shadow-lg"
           >
             <img src="https://i.postimg.cc/dV3mn4Tg/5116228840899415367-121.jpg" alt="Red de seguridad protectora 360°" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all p-3 flex flex-col justify-end pointer-events-none">
-              <p class="text-[11px] text-white font-medium leading-tight">Red de seguridad protectora 360°</p>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all p-3 flex flex-col justify-end pointer-events-none z-10">
+              <p class="text-[11px] text-white font-medium leading-tight">Detalles</p>
               <span class="text-[10px] text-[#2AD5FF] font-bold flex items-center gap-1 mt-1">🔍 Ampliar</span>
             </div>
           </div>
@@ -358,7 +402,7 @@
         <div class="reveal-item reveal-scale-up">
           <div 
             onclick="openLightbox(3)"
-            class="group relative liquid-glass rounded-2xl overflow-hidden border border-white/15 cursor-pointer aspect-square bg-[#0A2540]/40 shadow-lg hover:border-[#2AD5FF]/60 transition-all"
+            class="group relative liquid-glass glow-card rounded-2xl overflow-hidden border border-white/15 cursor-pointer aspect-square bg-[#0A2540]/40 shadow-lg"
           >
             <div class="relative w-full h-full bg-black">
               <video src="https://pub-48e5e21731d74cf7a344201ee4e87636.r2.dev/tresd.mp4" autoplay loop muted playsinline class="w-full h-full object-cover pointer-events-none scale-105"></video>
@@ -366,7 +410,7 @@
                 <span>▶ VIDEO REAL</span>
               </div>
             </div>
-            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all p-3 flex flex-col justify-end pointer-events-none">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all p-3 flex flex-col justify-end pointer-events-none z-10">
               <p class="text-[11px] text-white font-medium leading-tight">Estructura y resortes en acción (3D)</p>
               <span class="text-[10px] text-[#2AD5FF] font-bold flex items-center gap-1 mt-1">🔍 Ampliar</span>
             </div>
@@ -385,7 +429,7 @@
     <div class="max-w-3xl mx-auto">
       
       <div class="reveal-item reveal-scale-up">
-        <div class="liquid-glass rounded-3xl p-6 sm:p-10 border border-[#2AD5FF]/30 relative overflow-hidden shadow-2xl">
+        <div class="liquid-glass glow-card rounded-3xl p-6 sm:p-10 border border-[#2AD5FF]/30 relative overflow-hidden shadow-2xl">
           <span class="inline-block px-3.5 py-1 rounded-full bg-[#FFD200]/20 border border-[#FFD200] text-[#FFD200] text-xs font-bold uppercase tracking-wider mb-4">
             Transparencia Total
           </span>
@@ -403,8 +447,8 @@
           </p>
 
           <div class="space-y-3.5 text-xs sm:text-sm text-gray-200">
-            <div class="bg-[#031728]/80 rounded-2xl p-4 border border-white/10">
-              <p class="font-bold text-[#2AD5FF] mb-1 flex items-center gap-1.5">
+            <div class="bg-[#031728]/80 rounded-2xl p-4 border border-white/10 glow-card">
+              <p class="font-bold text-lg text-[#2AD5FF] mb-1 flex items-center gap-1.5">
                 <span>💡</span> La idea:
               </p>
               <p class="text-gray-300 text-xs">
@@ -412,8 +456,8 @@
               </p>
             </div>
 
-            <div class="bg-[#031728]/80 rounded-2xl p-4 border border-white/10">
-              <p class="font-bold text-[#FFD200] mb-1 flex items-center gap-1.5">
+            <div class="bg-[#031728]/80 rounded-2xl p-4 border border-white/10 glow-card">
+              <p class="font-bold text-lg text-[#FFD200] mb-1 flex items-center gap-1.5">
                 <span>⚡</span> La realidad:
               </p>
               <p class="text-gray-300 text-xs">
@@ -421,8 +465,8 @@
               </p>
             </div>
 
-            <div class="bg-[#031728]/80 rounded-2xl p-4 border border-[#0077FF] bg-[#0077FF]/20">
-              <p class="font-bold text-white mb-1 flex items-center gap-1.5">
+            <div class="bg-[#031728]/80 rounded-2xl p-4 border border-[#0077FF] bg-[#0077FF]/20 glow-card">
+              <p class="font-bold text-lg text-white mb-1 flex items-center gap-1.5">
                 <span>🎯</span> Lo que prefiero:
               </p>
               <p class="text-gray-200 text-xs">
@@ -455,7 +499,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         
         <!-- LO QUE NO SOY -->
-        <div class="reveal-item reveal-scale-up liquid-glass rounded-2xl p-6 border border-red-500/30 bg-red-950/20">
+        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-6 border border-red-500/30 bg-red-950/20">
           <h3 class="text-lg font-bold text-red-400 mb-4 flex items-center gap-2">
             <span>❌</span> Lo que NO soy / NO vendo
           </h3>
@@ -472,7 +516,7 @@
         </div>
 
         <!-- LO QUE SÍ SOY -->
-        <div class="reveal-item reveal-scale-up liquid-glass rounded-2xl p-6 border border-[#25D366]/40 bg-[#25D366]/10">
+        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-6 border border-[#25D366]/40 bg-[#25D366]/10">
           <h3 class="text-lg font-bold text-[#25D366] mb-4 flex items-center gap-2">
             <span>✅</span> Lo que SÍ soy / SÍ garantizo
           </h3>
@@ -511,7 +555,7 @@
       <!-- Specs Grid -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
         
-        <div class="reveal-item reveal-scale-up liquid-glass rounded-2xl p-4 text-center border border-white/15">
+        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-4 text-center border border-white/15">
           <span class="text-2xl mb-1 block">📏</span>
           <span class="block text-2xl sm:text-3xl font-black text-[#FFD200]">2.44 m</span>
           <span class="text-xs font-bold text-white uppercase block mt-1">Diámetro</span>
@@ -520,7 +564,7 @@
           </p>
         </div>
 
-        <div class="reveal-item reveal-scale-up liquid-glass rounded-2xl p-4 text-center border border-white/15">
+        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-4 text-center border border-white/15">
           <span class="text-2xl mb-1 block">📐</span>
           <span class="block text-2xl sm:text-3xl font-black text-[#FFD200]">2.20 m</span>
           <span class="text-xs font-bold text-white uppercase block mt-1">Altura Total</span>
@@ -529,7 +573,7 @@
           </p>
         </div>
 
-        <div class="reveal-item reveal-scale-up liquid-glass rounded-2xl p-4 text-center border border-white/15">
+        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-4 text-center border border-white/15">
           <span class="text-2xl mb-1 block">⚖️</span>
           <span class="block text-2xl sm:text-3xl font-black text-[#FFD200]">180 kg</span>
           <span class="text-xs font-bold text-white uppercase block mt-1">Soporta</span>
@@ -538,7 +582,7 @@
           </p>
         </div>
 
-        <div class="reveal-item reveal-scale-up liquid-glass rounded-2xl p-4 text-center border border-white/15">
+        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-4 text-center border border-white/15">
           <span class="text-2xl mb-1 block">🏋️‍♂️</span>
           <span class="block text-2xl sm:text-3xl font-black text-[#FFD200]">38 kg</span>
           <span class="text-xs font-bold text-white uppercase block mt-1">Peso Neto</span>
@@ -550,7 +594,7 @@
       </div>
 
       <!-- Security Banner -->
-      <div class="reveal-item reveal-fade-up liquid-glass rounded-2xl p-5 border border-[#0077FF] mb-12 bg-[#0077FF]/20 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+      <div class="reveal-item reveal-fade-up liquid-glass glow-card rounded-2xl p-5 border border-[#0077FF] mb-12 bg-[#0077FF]/20 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
         <div class="p-3 rounded-full bg-[#2AD5FF]/20 text-[#2AD5FF] shrink-0 text-2xl">
           🛡️
         </div>
@@ -559,7 +603,7 @@
             Sistema de Seguridad Completo
           </h3>
           <p class="text-xs sm:text-sm text-gray-200">
-            Incluye 48 resortes de acero reforzado, lona de salto en polipropileno de alta densidad y red de protección de 360° con cierre de seguridad para que nadie salga volando hacia afuera.
+            Incluye 48 resortes de acero reforzado, lona de salto en polipropileno de alta densidad y red de protección de 360° con cierre de seguridad para que nadie salga volando.
           </p>
         </div>
       </div>
@@ -571,21 +615,21 @@
         </h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
           
-          <div class="reveal-item reveal-scale-up bg-[#031728]/80 rounded-2xl p-5 border border-white/10">
+          <div class="reveal-item reveal-scale-up bg-[#031728]/80 glow-card rounded-2xl p-5 border border-white/10">
             <span class="text-[#2AD5FF] font-bold text-sm block mb-1">🛡️ Red protectora alta y tupida:</span>
             <p class="text-xs sm:text-sm text-gray-300">
               Olvídate de estar con el corazón en la boca pensando que un niño va a salir volando hacia el piso o contra la pared. La red los mantiene adentro 100% seguros.
             </p>
           </div>
 
-          <div class="reveal-item reveal-scale-up bg-[#031728]/80 rounded-2xl p-5 border border-white/10">
+          <div class="reveal-item reveal-scale-up bg-[#031728]/80 glow-card rounded-2xl p-5 border border-white/10">
             <span class="text-[#FFD200] font-bold text-sm block mb-1">🦺 Tubos acolchados:</span>
             <p class="text-xs sm:text-sm text-gray-300">
               Si se tropiezan contra la estructura, no se van a dar un golpe seco contra el metal porque los tubos vienen protegidos con goma espuma gruesa.
             </p>
           </div>
 
-          <div class="reveal-item reveal-scale-up bg-[#031728]/80 rounded-2xl p-5 border border-white/10">
+          <div class="reveal-item reveal-scale-up bg-[#031728]/80 glow-card rounded-2xl p-5 border border-white/10">
             <span class="text-[#25D366] font-bold text-sm block mb-1">⚡ Resortes de acero duro:</span>
             <p class="text-xs sm:text-sm text-gray-300">
               Salta sabroso. Aguanta el peso de varios niños juntos (e incluso un adulto si se quiere montar a brincar un rato con ellos).
@@ -606,28 +650,28 @@
       
       <div class="reveal-item reveal-fade-up text-center mb-10">
         <h2 class="text-2xl sm:text-3xl font-black text-white">
-          Saca tu cuenta tú mismo
+          Diferencia entre uno nuevo y este:
         </h2>
         <p class="text-gray-300 text-xs sm:text-sm mt-1">
-          ¿Vale la pena comprarlo nuevo en internet o llevártelo hoy mismo en Caja Seca?
+          ¿Vale la pena uno nuevo?
         </p>
       </div>
 
-      <div class="reveal-item reveal-scale-up liquid-glass rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
+      <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
         <div class="grid grid-cols-2 bg-[#0077FF]/40 border-b border-white/20 p-4 text-xs sm:text-sm font-bold text-center">
           <div class="text-red-300 px-2">¿Qué implica traer uno nuevo?</div>
-          <div class="text-[#2AD5FF] border-l border-white/20 px-2">¿Qué pasa si me compras este a mí?</div>
+          <div class="text-[#2AD5FF] border-l border-white/20 px-2">¿Qué pasa si compras este?</div>
         </div>
 
         <div class="divide-y divide-white/10 text-xs sm:text-sm">
           <div class="grid grid-cols-2 p-4">
-            <div class="pr-3 text-gray-300">Pagar $250 a $350 por el trampolín en internet.</div>
-            <div class="pl-3 border-l border-white/10 text-white font-bold text-[#FFD200]">Me pagas solo $200 USD.</div>
+            <div class="pr-3 text-gray-300">Pagar $250 a $350 por un trampolín en internet.</div>
+            <div class="pl-3 border-l border-white/10 text-white font-bold text-[#FFD200]">No gastas $150 más por uno de peor marca</div>
           </div>
 
           <div class="grid grid-cols-2 p-4">
             <div class="pr-3 text-gray-300">Esperar 3 a 4 días rezando para que llegue completo.</div>
-            <div class="pl-3 border-l border-white/10 text-white font-bold text-[#2AD5FF]">Te lo llevas HOY mismo en tu carro o flete local.</div>
+            <div class="pl-3 border-l border-white/10 text-white font-bold text-[#2AD5FF]">Te lo llevas HOY mismo a tu casa.</div>
           </div>
 
           <div class="grid grid-cols-2 p-4">
@@ -651,41 +695,41 @@
           ¿Te interesa? Así de fácil lo hacemos
         </h2>
         <p class="text-[#2AD5FF] text-xs sm:text-sm mt-1 font-semibold">
-          Proceso transparente en 4 pasos sencillos
+          Proceso en 4 pasos sencillos
         </p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
         
-        <div class="reveal-item reveal-scale-up liquid-glass rounded-2xl p-5 border border-white/15 relative flex flex-col">
+        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-5 border border-white/15 relative flex flex-col">
           <span class="w-8 h-8 rounded-full bg-[#2AD5FF] text-[#031728] font-black flex items-center justify-center text-sm mb-3">1</span>
-          <h3 class="font-bold text-white text-sm mb-1">Escribes al WhatsApp</h3>
+          <h3 class="font-bold text-white text-lg mb-1">Escribes al WhatsApp</h3>
           <p class="text-xs text-gray-300 leading-snug">
             Haces clic en el botón de abajo y me dices «Hola, quiero ir a ver el trampolín».
           </p>
         </div>
 
-        <div class="reveal-item reveal-scale-up liquid-glass rounded-2xl p-5 border border-white/15 relative flex flex-col">
+        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-5 border border-white/15 relative flex flex-col">
           <span class="w-8 h-8 rounded-full bg-[#0077FF] text-white font-black flex items-center justify-center text-sm mb-3">2</span>
-          <h3 class="font-bold text-white text-sm mb-1">Dirección exacta</h3>
+          <h3 class="font-bold text-white text-lg mb-1">Dirección exacta</h3>
           <p class="text-xs text-gray-300 leading-snug">
             Te doy la dirección exacta en Caja Seca y coordinamos la hora (mañana o tarde).
           </p>
         </div>
 
-        <div class="reveal-item reveal-scale-up liquid-glass rounded-2xl p-5 border border-white/15 relative flex flex-col">
+        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-5 border border-white/15 relative flex flex-col">
           <span class="w-8 h-8 rounded-full bg-[#FFD200] text-[#031728] font-black flex items-center justify-center text-sm mb-3">3</span>
-          <h3 class="font-bold text-white text-sm mb-1">Revisas sin pena</h3>
+          <h3 class="font-bold text-white text-lg mb-1">Revisas sin pena</h3>
           <p class="text-xs text-gray-300 leading-snug">
             Miras la red, revisas la lona, cuentas los resortes en persona.
           </p>
         </div>
 
-        <div class="reveal-item reveal-scale-up liquid-glass rounded-2xl p-5 border border-white/15 relative flex flex-col">
+        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-5 border border-white/15 relative flex flex-col">
           <span class="w-8 h-8 rounded-full bg-[#25D366] text-white font-black flex items-center justify-center text-sm mb-3">4</span>
-          <h3 class="font-bold text-white text-sm mb-1">¡A saltar!</h3>
+          <h3 class="font-bold text-white text-lg mb-1">Y listo</h3>
           <p class="text-xs text-gray-300 leading-snug">
-            Y si te gusta... A saltar se ha dicho. Te lo llevas listo para armar.
+            Si te gusta... A saltar se ha dicho.
           </p>
         </div>
 
@@ -712,7 +756,7 @@
       <div class="space-y-3">
         
         <!-- FAQ Item 1 -->
-        <div class="reveal-item reveal-scale-up liquid-glass rounded-2xl border border-white/15 overflow-hidden transition-all">
+        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl border border-white/15 overflow-hidden transition-all">
           <button 
             onclick="toggleFaq(0)"
             class="w-full p-4 text-left font-bold text-xs sm:text-sm text-white flex items-center justify-between gap-4"
@@ -729,24 +773,24 @@
         </div>
 
         <!-- FAQ Item 2 -->
-        <div class="reveal-item reveal-scale-up liquid-glass rounded-2xl border border-white/15 overflow-hidden transition-all">
+        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl border border-white/15 overflow-hidden transition-all">
           <button 
             onclick="toggleFaq(1)"
             class="w-full p-4 text-left font-bold text-xs sm:text-sm text-white flex items-center justify-between gap-4"
           >
             <span class="flex items-center gap-2">
               <span class="text-[#2AD5FF]">🚚</span>
-              ¿Cómo me lo llevo en mi vehículo?
+              ¿Cómo me lo llevo?
             </span>
             <span id="faq-arrow-1" class="transition-transform duration-300 text-gray-400">▼</span>
           </button>
           <div id="faq-content-1" class="hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 border-t border-white/10 pt-3 leading-relaxed">
-            Al estar desarmado, los tubos se curvan y caben perfectamente en el asiento trasero o en la maleta de un carro o camioneta. Si no tienes vehículo, te puedo recomendar un mototaxi o flete de confianza.
+            Al estar desarmado, los tubos se curvan y caben perfectamente en el asiento trasero o en la maleta de un carro o camioneta. Si no tienes vehículo, te puedo recomendar un mototaxi.
           </div>
         </div>
 
         <!-- FAQ Item 3 -->
-        <div class="reveal-item reveal-scale-up liquid-glass rounded-2xl border border-white/15 overflow-hidden transition-all">
+        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl border border-white/15 overflow-hidden transition-all">
           <button 
             onclick="toggleFaq(2)"
             class="w-full p-4 text-left font-bold text-xs sm:text-sm text-white flex items-center justify-between gap-4"
@@ -758,7 +802,7 @@
             <span id="faq-arrow-2" class="transition-transform duration-300 text-gray-400">▼</span>
           </button>
           <div id="faq-content-2" class="hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 border-t border-white/10 pt-3 leading-relaxed">
-            El precio es $200. Ya le bajé todo lo que podía bajarle considerando que está prácticamente nuevo.
+            Es enserio? El precio es $200. Ya le bajé todo lo que podía bajarle considerando que está prácticamente nuevo.
           </div>
         </div>
 
@@ -774,7 +818,7 @@
     <div class="max-w-2xl mx-auto">
       
       <span class="inline-block px-4 py-1.5 rounded-full bg-[#FFD200]/20 border border-[#FFD200] text-[#FFD200] text-xs font-bold uppercase tracking-wider mb-4">
-        Pregúntale a tu hijo si le gustaría
+        Pregúntale a tu hijo ya mismo si le quiere
       </span>
 
       <h2 class="text-2xl sm:text-4xl font-black text-white mb-3">
@@ -894,6 +938,24 @@
       });
     });
 
+    // Dynamic Mouse Movement Spotlight Glow Effect on Cards
+    document.addEventListener('mousemove', (e) => {
+      document.querySelectorAll('.glow-card').forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (
+          e.clientX >= rect.left &&
+          e.clientX <= rect.right &&
+          e.clientY >= rect.top &&
+          e.clientY <= rect.bottom
+        ) {
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        }
+      });
+    });
+
     // Scroll Progress Bar & Floating Sticky WhatsApp CTA Handler
     window.addEventListener('scroll', () => {
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -905,12 +967,12 @@
       }
 
       const stickyBtn = document.getElementById('sticky-whatsapp-btn');
-      if (currentScroll > 400) {
+      if (currentScroll > 350) {
         stickyBtn.classList.remove('translate-y-16', 'opacity-0', 'scale-90', 'pointer-events-none');
-        stickyBtn.classList.add('translate-y-0', 'opacity-100', 'scale-100');
+        stickyBtn.classList.add('translate-y-0', 'opacity-100', 'scale-100', 'pointer-events-auto');
       } else {
         stickyBtn.classList.add('translate-y-16', 'opacity-0', 'scale-90', 'pointer-events-none');
-        stickyBtn.classList.remove('translate-y-0', 'opacity-100', 'scale-100');
+        stickyBtn.classList.remove('translate-y-0', 'opacity-100', 'scale-100', 'pointer-events-auto');
       }
     });
 
