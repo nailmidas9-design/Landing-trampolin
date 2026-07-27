@@ -33,7 +33,7 @@
       overflow-x: hidden;
     }
 
-    /* Shine Sweep Effect for WhatsApp Buttons */
+    /* Shine Sweep Effect for Buttons */
     @keyframes shineSweep {
       0% { transform: translateX(-100%) rotate(25deg); }
       35%, 100% { transform: translateX(250%) rotate(25deg); }
@@ -61,7 +61,7 @@
       pointer-events: none;
     }
 
-    /* Blue Glassmorphism Styles */
+    /* Liquid Glassmorphism Styles */
     .liquid-glass {
       background: rgba(10, 37, 64, 0.78);
       backdrop-filter: blur(16px);
@@ -113,10 +113,10 @@
       transform: translateY(-2px) scale(1.02);
     }
 
-    /* Boomerang Zoom Animation for Hero Image */
+    /* Continuous Boomerang Zoom Animation for Hero Background Image */
     @keyframes boomerangZoom {
       0% { transform: scale(1); }
-      50% { transform: scale(1.15); }
+      50% { transform: scale(1.18); }
       100% { transform: scale(1); }
     }
 
@@ -172,43 +172,42 @@
   <!-- Floating Sticky WhatsApp Button -->
   <div id="sticky-whatsapp-btn" class="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 transition-all duration-500 transform translate-y-16 opacity-0 scale-90 pointer-events-none">
     <a 
-      href="https://wa.me/584120000000?text=%C2%A1Hola!%20Vi%20la%20publicaci%C3%B3n%20del%20trampol%C3%ADn%20en%20Caja%20Seca%20por%20%24200.%20Quiero%20ver%20a%20mis%20hijos%20saltar%20de%20emoci%C3%B3n%20y%20coordinar%20para%20ir%20a%20verlo%20hoy%20mismo."
+      href="https://wa.me/584120000000?text=%C2%A1Hola!%20Vi%20la%20publicaci%C3%B3n%20del%20trampol%C3%ADn%20en%20Caja%20Seca%20por%20%24200.%20Quiero%20ir%20a%20verlo%20hoy%20mismo."
       target="_blank"
       rel="noopener noreferrer"
-      class="group relative flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-white p-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl whatsapp-btn-glow font-bold text-xs sm:text-sm animate-shine active:scale-95 transition-all"
+      class="group relative flex items-center gap-2.5 bg-[#25D366] hover:bg-[#20ba5a] text-[#031728] p-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl whatsapp-btn-glow font-bold text-xs sm:text-sm animate-shine active:scale-95 transition-all"
     >
-      <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
+      <svg class="w-5 h-5 fill-[#031728] shrink-0" viewBox="0 0 24 24">
         <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
       </svg>
-      <span class="hidden sm:inline font-extrabold ml-1">Quiero ver a mis hijos saltar de emoción</span>
-      <span class="bg-black/30 text-white text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider font-black ml-1">
+      <span class="hidden sm:inline font-black ml-1 text-[#031728]">Quiero ir a verlo</span>
+      <span class="bg-[#031728] text-[#FFD200] text-[10px] px-2 py-0.5 rounded-full uppercase tracking-wider font-black ml-1">
         $200
       </span>
     </a>
   </div>
 
   <!-- =========================================================================
-      SECTION 1: HERO SECTION - Con imagen clara y fondo animado
+      SECTION 1: HERO SECTION - Directo al grano
      ========================================================================= -->
-  <section class="relative min-h-[100dvh] md:min-h-screen flex flex-col justify-between p-4 sm:p-8 md:p-12 overflow-hidden z-10 border-b border-white/10">
+  <section class="relative min-h-[85vh] sm:min-h-[90vh] flex flex-col justify-between p-4 sm:p-8 md:p-12 overflow-hidden z-10 border-b border-white/10">
     
-    <!-- Hero Background Image -->
+    <!-- Hero Background Image with Boomerang Zoom -->
     <div class="absolute inset-0 z-0 overflow-hidden bg-[#020F1B] pointer-events-none">
       <img
         src="https://i.postimg.cc/dV0SYNRV/1785089625833.png"
         alt="Trampolín familiar en Caja Seca"
-        class="w-full h-full object-cover object-center animate-boomerang-zoom"
+        class="w-full h-full object-cover object-center animate-boomerang-zoom opacity-95"
       />
-      <!-- Soft Gradient Overlays for optimal contrast -->
-      <div class="absolute inset-0 bg-gradient-to-t from-[#031728] via-[#031728]/30 to-black/20 pointer-events-none"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-[#031728] via-[#031728]/25 to-black/20 pointer-events-none"></div>
       <div class="absolute inset-0 bg-gradient-to-r from-[#031728]/60 via-transparent to-transparent pointer-events-none"></div>
     </div>
 
     <!-- Navigation Header -->
     <nav class="relative z-30 flex items-center justify-between max-w-5xl mx-auto w-full pt-1 sm:pt-2">
-      <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-[#2AD5FF]/40 shadow-lg">
+      <div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-[#2AD5FF]/40 shadow-lg">
         <span class="text-[#FFD200] shrink-0 animate-bounce text-xs">📍</span>
-        <span class="text-xs font-extrabold text-white tracking-wider uppercase">Caja Seca - Zulia • Disponible hoy</span>
+        <span class="text-xs font-black text-white tracking-wider uppercase">Caja Seca, Zulia | Retiro Hoy Mismo</span>
       </div>
 
       <div class="flex items-center gap-2">
@@ -216,12 +215,12 @@
           href="https://wa.me/584120000000?text=%C2%A1Hola!%20Vi%20la%20publicaci%C3%B3n%20del%20trampol%C3%ADn%20en%20Caja%20Seca%20por%20%24200."
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center gap-1.5 text-xs font-bold text-white bg-[#25D366] hover:bg-[#20ba5a] px-3.5 py-1.5 rounded-full shadow-md transition-all active:scale-95 border border-white/30 animate-shine"
+          class="flex items-center gap-1.5 text-xs font-black text-[#031728] bg-[#25D366] hover:bg-[#20ba5a] px-3.5 py-1.5 rounded-full shadow-md transition-all active:scale-95 border border-white/30 animate-shine"
         >
-          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+          <svg class="w-3.5 h-3.5 fill-[#031728]" viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
           </svg>
-          <span>Escríbeme</span>
+          <span class="text-[#031728]">Escribirme</span>
         </a>
 
         <button
@@ -242,114 +241,130 @@
     <!-- Dropdown Navigation Menu -->
     <div id="mobile-dropdown-menu" class="hidden absolute top-16 right-4 sm:right-12 z-50 w-64 liquid-glass text-white p-4 rounded-2xl shadow-2xl border border-[#2AD5FF]/40">
       <div class="flex flex-col gap-2 text-xs font-semibold">
-        <a href="#fotos" class="text-left py-2 px-3 rounded-xl hover:bg-white/10 flex items-center gap-2"><span>1.</span> Galería de Fotos y Videos</a>
-        <a href="#historia" class="text-left py-2 px-3 rounded-xl hover:bg-white/10 flex items-center gap-2"><span>2.</span> La verdad ($200)</a>
-        <a href="#checklist" class="text-left py-2 px-3 rounded-xl hover:bg-white/10 flex items-center gap-2"><span>3.</span> Lo que SÍ y NO soy</a>
-        <a href="#specs" class="text-left py-2 px-3 rounded-xl hover:bg-white/10 flex items-center gap-2"><span>4.</span> Medidas, Peso y Capacidad</a>
-        <a href="#comparativa" class="text-left py-2 px-3 rounded-xl hover:bg-white/10 flex items-center gap-2"><span>5.</span> Comparación Directa</a>
-        <a href="#pasos" class="text-left py-2 px-3 rounded-xl hover:bg-white/10 flex items-center gap-2"><span>6.</span> Paso a Paso</a>
-        <a href="#faq" class="text-left py-2 px-3 rounded-xl hover:bg-white/10 flex items-center gap-2"><span>7.</span> Preguntas Frecuentes</a>
+        <a href="#garantia" class="text-left py-2 px-3 rounded-xl hover:bg-white/10 flex items-center gap-2"><span>1.</span> Garantía y Datos</a>
+        <a href="#fotos" class="text-left py-2 px-3 rounded-xl hover:bg-white/10 flex items-center gap-2"><span>2.</span> Fotos y Video Reales</a>
+        <a href="#historia" class="text-left py-2 px-3 rounded-xl hover:bg-white/10 flex items-center gap-2"><span>3.</span> ¿Por qué $200?</a>
+        <a href="#specs" class="text-left py-2 px-3 rounded-xl hover:bg-white/10 flex items-center gap-2"><span>4.</span> Especificaciones Técnicas</a>
+        <a href="#pruebas" class="text-left py-2 px-3 rounded-xl hover:bg-white/10 flex items-center gap-2"><span>5.</span> Prueba Social Real</a>
+        <a href="#faq" class="text-left py-2 px-3 rounded-xl hover:bg-white/10 flex items-center gap-2"><span>6.</span> Preguntas Frecuentes</a>
+        <a href="#condiciones" class="text-left py-2 px-3 rounded-xl hover:bg-white/10 flex items-center gap-2"><span>7.</span> Condiciones de Venta</a>
       </div>
     </div>
 
-    <!-- Hero Copy Body -->
+    <!-- Hero Headline Body -->
     <div class="relative z-20 max-w-5xl mx-auto w-full my-auto py-6">
       <div class="max-w-2xl text-left">
         
         <div class="reveal-item reveal-fade-up">
-          <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white mb-4 leading-[1.12] drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
-            ¿Quieres ver a tus hijos 
-            <span class="text-[#2AD5FF] block">saltando de emoción</span>
-            <span class="text-gray-100 font-normal italic">en tu patio?</span>
+          <div class="inline-flex items-center gap-2 bg-[#FFD200]/20 border border-[#FFD200] text-[#FFD200] px-3.5 py-1 rounded-full text-xs font-black mb-3">
+            ⭐ Estado 10/10 — Solo 3 usos
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white mb-4 leading-[1.12] drop-shadow-[0_4px_12px_rgba(0,0,0,0.85)]">
+            Trampolín Familiar 8 Pies de Diámetro (2.44 m)
           </h1>
         </div>
 
         <div class="reveal-item reveal-fade-up">
-          <p class="text-xs sm:text-sm md:text-base text-gray-100 mb-6 leading-relaxed bg-black/50 backdrop-blur-md p-3.5 rounded-2xl border border-white/20 max-w-lg shadow-xl">
-            Un trampolín familiar, en excelente condiciones para que disfrutes con tus hijos como nunca.
-          </p>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Price & Guarantee Glass Box with Glow Effect -->
-    <div class="relative z-20 max-w-5xl mx-auto w-full">
-      <div class="reveal-item reveal-scale-up">
-        <div class="liquid-glass glow-card rounded-3xl p-4 sm:p-6 shadow-2xl border border-[#2AD5FF]/40 text-white backdrop-blur-xl">
-          <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
-            
-            <div class="flex-1 space-y-2">
-              <div class="flex items-center justify-between md:justify-start gap-3">
-                <span class="inline-flex items-center gap-1.5 bg-[#2AD5FF]/20 border border-[#2AD5FF]/40 text-[#2AD5FF] px-3 py-1 rounded-xl text-xs font-black">
-                  🛡️ Garantía en Persona
-                </span>
-                <span class="text-3xl font-black text-[#FFD200] md:hidden">$200</span>
-              </div>
-
-              <p class="text-xs text-gray-200 leading-snug font-medium">
-                <strong class="text-white">Sin adelantos:</strong> Vienes a mi dirección en Caja Seca, revisas la lona, red y resortes, y solo si te convence, te lo llevas.
-              </p>
+          <div class="bg-black/60 backdrop-blur-md p-4 rounded-2xl border border-white/20 max-w-lg shadow-xl mb-4">
+            <div class="flex items-center gap-2 mb-2 text-xs sm:text-sm font-bold">
+              <span class="text-gray-300">Nuevo</span>
+              <span class="line-through text-red-400 font-extrabold text-sm sm:text-base">$350 en tienda</span>
             </div>
 
-            <div class="flex flex-col sm:flex-row items-center gap-3 shrink-0">
-              <div class="hidden md:flex flex-col items-end pr-4 border-r border-white/20">
-                <span class="text-[10px] uppercase font-bold text-gray-400">Precio Único:</span>
-                <span class="text-4xl sm:text-5xl font-black text-[#FFD200]">$200</span>
-              </div>
-
-              <a 
-                href="https://wa.me/584120000000?text=%C2%A1Hola!%20Vi%20la%20publicaci%C3%B3n%20del%20trampol%C3%ADn%20en%20Caja%20Seca%20por%20%24200."
-                target="_blank"
-                rel="noopener noreferrer"
-                class="w-full sm:w-auto font-bold text-xs sm:text-sm bg-[#25D366] hover:bg-[#20ba5a] text-white px-6 py-4 rounded-2xl flex items-center justify-center gap-2.5 whatsapp-btn-glow transition-all text-center animate-shine shadow-xl"
-              >
-                <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
-                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                </svg>
-                <span>Quiero ver a mis hijos saltar de emoción</span>
-              </a>
-            </div>
-
+            <p class="text-xs sm:text-sm text-gray-100 leading-relaxed font-medium">
+              <strong class="text-[#2AD5FF]">Un parque infantil, para que salten de emoción.</strong>
+            </p>
           </div>
-
-          <!-- Story Anchor Link -->
-          <a 
-            href="#historia"
-            class="w-full mt-3 flex items-center justify-between bg-white/10 hover:bg-white/20 px-4 py-2 rounded-xl transition-all text-xs text-white font-bold border border-white/15"
-          >
-            <div class="flex items-center gap-2">
-              <span class="w-5 h-5 rounded-full bg-[#2AD5FF] text-[#031728] flex items-center justify-center text-[10px] font-black">↓</span>
-              <span>¿Por qué tan barato?</span>
-            </div>
-            <span class="text-[#2AD5FF] font-extrabold underline">Leer Historia</span>
-          </a>
-
         </div>
+
+        <!-- Price Callout in Hero -->
+        <div class="reveal-item reveal-scale-up">
+          <div class="inline-flex items-center gap-2.5 bg-[#FFD200] text-[#031728] px-5 py-2.5 rounded-2xl shadow-2xl font-black text-lg sm:text-2xl border-2 border-white/80">
+            <span>Este por solo</span>
+            <span class="bg-[#031728] text-[#FFD200] px-3 py-1 rounded-xl shadow-md font-black">
+              $200
+            </span>
+          </div>
+        </div>
+
       </div>
     </div>
 
   </section>
 
   <!-- =========================================================================
-      REAL PHOTO & VIDEO GALLERY
+      GUARANTEE & QUICK SPECS BLOCK
+     ========================================================================= -->
+  <section id="garantia" class="relative z-20 py-10 px-4 sm:px-8 md:px-12 bg-[#061D30] border-b border-white/10">
+    <div class="max-w-5xl mx-auto">
+      <div class="reveal-item reveal-scale-up">
+        <div class="liquid-glass glow-card rounded-3xl p-5 sm:p-8 shadow-2xl border border-[#2AD5FF]/40 text-white backdrop-blur-xl">
+          
+          <div class="mb-6 pb-6 border-b border-white/15">
+            <span class="inline-flex items-center gap-1.5 bg-[#2AD5FF]/20 border border-[#2AD5FF]/40 text-[#2AD5FF] px-3.5 py-1.5 rounded-xl text-xs font-black mb-2">
+              🛡️ Trato 100% Seguro
+            </span>
+
+            <p class="text-xs sm:text-sm text-gray-200 leading-relaxed font-medium mt-2">
+              <strong class="text-white">No pagas nada por adelantado:</strong> Vienes a mi casa en Caja Seca, lo revisas completo y si te convence, te lo llevas.
+            </p>
+          </div>
+
+          <!-- Quick Specs List -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs sm:text-sm">
+            
+            <div class="flex items-center gap-3 bg-white/5 p-4 rounded-2xl border border-white/10">
+              <span class="text-2xl shrink-0">📐</span>
+              <div>
+                <strong class="text-[#2AD5FF] block mb-0.5">Diámetro:</strong>
+                <span class="text-gray-200">8 pies (2.44 metros)</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 bg-white/5 p-4 rounded-2xl border border-white/10">
+              <span class="text-2xl shrink-0">⚖️</span>
+              <div>
+                <strong class="text-[#FFD200] block mb-0.5">Soporte de peso:</strong>
+                <span class="text-gray-200">180 kg (3 a 4 niños o 1 adulto con ellos)</span>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3 bg-white/5 p-4 rounded-2xl border border-white/10">
+              <span class="text-2xl shrink-0">🚗</span>
+              <div>
+                <strong class="text-[#25D366] block mb-0.5">Transporte:</strong>
+                <span class="text-gray-200">Desarmado, cabe en el asiento trasero de cualquier carro</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+      SECTION 2: FOTOS Y VIDEO DEL TRAMPOLÍN
      ========================================================================= -->
   <section id="fotos" class="relative z-10 py-16 px-4 sm:px-8 md:px-12 bg-[#031728] border-t border-white/10">
     <div class="max-w-5xl mx-auto">
       
-      <div class="reveal-item reveal-fade-up text-center mb-10">
+      <div class="reveal-item reveal-fade-up text-center mb-8">
         <span class="inline-block px-3.5 py-1 rounded-full bg-[#0077FF]/30 border border-[#2AD5FF]/40 text-[#2AD5FF] text-xs uppercase font-extrabold tracking-widest mb-2">
-          Fotografías y Video Real
+          🖼️ Galería de Fotos y Video Real
         </span>
         <h2 class="text-2xl sm:text-4xl font-black text-white">
-          Galería de fotos y video en vivo
+          Fotos y video del trampolín
         </h2>
         <p class="text-gray-300 text-xs sm:text-sm mt-2 max-w-xl mx-auto">
-          Mostrando la lona tensa, la red impecable y los resortes sin óxido. Toca para ver en pantalla completa.
+          Te lo entrego desarmado, en su caja, tal cual salió de fábrica. Toca cualquier imagen para ampliar.
         </p>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+      <!-- Media Grid -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mb-8">
         
         <!-- Gallery Item 0 (Photo) -->
         <div class="reveal-item reveal-scale-up">
@@ -357,7 +372,7 @@
             onclick="openLightbox(0)"
             class="group relative liquid-glass glow-card rounded-2xl overflow-hidden border border-white/15 cursor-pointer aspect-square bg-[#0A2540]/40 shadow-lg"
           >
-            <img src="https://i.postimg.cc/qqtQqwxt/httpsi-postimg-cc-CLYc-CG785129680974823230758-121-jpg.jpg" alt="Lona tensa e impecable" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+            <img src="https://i.postimg.cc/XJkNnbXB/817Qi4Og61L.jpg" alt="Lona tensa e impecable" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all p-3 flex flex-col justify-end pointer-events-none z-10">
               <p class="text-[11px] text-white font-medium leading-tight">Lona tensa e impecable</p>
               <span class="text-[10px] text-[#2AD5FF] font-bold flex items-center gap-1 mt-1">🔍 Ampliar</span>
@@ -374,7 +389,7 @@
             <div class="relative w-full h-full bg-black">
               <video src="https://pub-48e5e21731d74cf7a344201ee4e87636.r2.dev/trampolin.mp4" autoplay loop muted playsinline class="w-full h-full object-cover pointer-events-none scale-105"></video>
               <div class="absolute top-2 left-2 z-10 bg-[#FFD200] text-[#031728] font-black text-[9px] px-2 py-0.5 rounded-md flex items-center gap-1 shadow-md">
-                <span>▶ VIDEO REAL</span>
+                <span>▶ VIDEO DEMO</span>
               </div>
             </div>
             <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all p-3 flex flex-col justify-end pointer-events-none z-10">
@@ -390,15 +405,15 @@
             onclick="openLightbox(2)"
             class="group relative liquid-glass glow-card rounded-2xl overflow-hidden border border-white/15 cursor-pointer aspect-square bg-[#0A2540]/40 shadow-lg"
           >
-            <img src="https://i.postimg.cc/dV3mn4Tg/5116228840899415367-121.jpg" alt="Red de seguridad protectora 360°" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+            <img src="https://i.postimg.cc/CLYcCG78/5129680974823230758-121.jpg" alt="Red de seguridad protectora 360°" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all p-3 flex flex-col justify-end pointer-events-none z-10">
-              <p class="text-[11px] text-white font-medium leading-tight">Detalles</p>
+              <p class="text-[11px] text-white font-medium leading-tight">Red protectora 360°</p>
               <span class="text-[10px] text-[#2AD5FF] font-bold flex items-center gap-1 mt-1">🔍 Ampliar</span>
             </div>
           </div>
         </div>
 
-        <!-- Gallery Item 3 (Video) -->
+        <!-- Gallery Item 3 (Video 3D) -->
         <div class="reveal-item reveal-scale-up">
           <div 
             onclick="openLightbox(3)"
@@ -407,11 +422,11 @@
             <div class="relative w-full h-full bg-black">
               <video src="https://pub-48e5e21731d74cf7a344201ee4e87636.r2.dev/tresd.mp4" autoplay loop muted playsinline class="w-full h-full object-cover pointer-events-none scale-105"></video>
               <div class="absolute top-2 left-2 z-10 bg-[#FFD200] text-[#031728] font-black text-[9px] px-2 py-0.5 rounded-md flex items-center gap-1 shadow-md">
-                <span>▶ VIDEO REAL</span>
+                <span>▶ ESTRUCTURA</span>
               </div>
             </div>
             <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all p-3 flex flex-col justify-end pointer-events-none z-10">
-              <p class="text-[11px] text-white font-medium leading-tight">Estructura y resortes en acción (3D)</p>
+              <p class="text-[11px] text-white font-medium leading-tight">Estructura y resortes</p>
               <span class="text-[10px] text-[#2AD5FF] font-bold flex items-center gap-1 mt-1">🔍 Ampliar</span>
             </div>
           </div>
@@ -419,60 +434,51 @@
 
       </div>
 
+      <!-- Action Button -->
+      <div class="reveal-item reveal-fade-up text-center">
+        <a 
+          href="https://wa.me/584120000000?text=%C2%A1Hola!%20Vi%20las%20fotos%20del%20trampol%C3%ADn%20en%20Caja%20Seca.%20Quiero%20ir%20a%20verlo%20hoy."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20ba5a] text-[#031728] font-black text-sm px-8 py-4 rounded-full whatsapp-btn-glow transition-all animate-shine shadow-xl"
+        >
+          <svg class="w-5 h-5 fill-[#031728] shrink-0" viewBox="0 0 24 24">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+          <span class="text-[#031728]">Quiero ir a verlo</span>
+        </a>
+      </div>
+
     </div>
   </section>
 
   <!-- =========================================================================
-      SECTION 2: HONESTIDAD BRUTAL (¿Por qué te lo vendo tan barato?)
+      SECTION 3: ¿POR QUÉ LO VENDO EN $200 Y NO MÁS CARO?
      ========================================================================= -->
   <section id="historia" class="relative z-10 py-16 px-4 sm:px-8 md:px-12 bg-[#0A2540]/40 border-t border-white/10 scroll-mt-20">
     <div class="max-w-3xl mx-auto">
       
       <div class="reveal-item reveal-scale-up">
         <div class="liquid-glass glow-card rounded-3xl p-6 sm:p-10 border border-[#2AD5FF]/30 relative overflow-hidden shadow-2xl">
-          <span class="inline-block px-3.5 py-1 rounded-full bg-[#FFD200]/20 border border-[#FFD200] text-[#FFD200] text-xs font-bold uppercase tracking-wider mb-4">
-            Transparencia Total
+          <span class="inline-block px-3.5 py-1 rounded-full bg-[#FFD200]/20 border border-[#FFD200] text-[#FFD200] text-xs font-black uppercase tracking-wider mb-4">
+            🔍 Transparencia Total
           </span>
 
           <h2 class="text-2xl sm:text-3xl font-black text-white mb-4 leading-snug">
-            La verdad de por qué lo vendo tan barato
+            ¿Por qué lo vendo en $200 y no más caro?
           </h2>
 
-          <blockquote class="border-l-4 border-[#2AD5FF] pl-4 py-3 my-4 italic text-gray-200 text-xs sm:text-sm bg-[#031728]/70 rounded-r-2xl border-white/10">
-            «Probablemente estarás pensando en este momento: Si este trampolín está tan bueno, ¿por qué esta tía lo vende en $200?»
-          </blockquote>
-
-          <p class="text-xs sm:text-sm text-gray-200 mb-5">
-            Te cuento exactamente lo que pasó:
+          <p class="text-xs sm:text-sm text-gray-200 mb-6 leading-relaxed">
+            Lo compré para un proyecto personal que no concreté por falta de tiempo. Se armó, se usó 3 veces y se guardó.
           </p>
 
-          <div class="space-y-3.5 text-xs sm:text-sm text-gray-200">
-            <div class="bg-[#031728]/80 rounded-2xl p-4 border border-white/10 glow-card">
-              <p class="font-bold text-lg text-[#2AD5FF] mb-1 flex items-center gap-1.5">
-                <span>💡</span> La idea:
-              </p>
-              <p class="text-gray-300 text-xs">
-                Compré este trampolín porque quería armar un negocio para niños en Caja Seca.
-              </p>
-            </div>
-
-            <div class="bg-[#031728]/80 rounded-2xl p-4 border border-white/10 glow-card">
-              <p class="font-bold text-lg text-[#FFD200] mb-1 flex items-center gap-1.5">
-                <span>⚡</span> La realidad:
-              </p>
-              <p class="text-gray-300 text-xs">
-                El negocio no se dio por varias circunstancias. El trampolín se armó, se probó como en 3 ocasiones con los chamos y quedó guardado.
-              </p>
-            </div>
-
-            <div class="bg-[#031728]/80 rounded-2xl p-4 border border-[#0077FF] bg-[#0077FF]/20 glow-card">
-              <p class="font-bold text-lg text-white mb-1 flex items-center gap-1.5">
-                <span>🎯</span> Lo que prefiero:
-              </p>
-              <p class="text-gray-200 text-xs">
-                No me interesa guardarlo para que se llene de polvo. Prefiero que te lo lleves tú, se lo pongas a tus hijos en el patio y le saquen el máximo provecho que yo no le pude sacar.
-              </p>
-            </div>
+          <div class="bg-[#031728]/80 rounded-2xl p-5 border border-[#0077FF] bg-[#0077FF]/20">
+            <p class="font-extrabold text-sm sm:text-base text-[#2AD5FF] mb-2 flex items-center gap-2">
+              <span>🎯</span> Lo que prefiero:
+            </p>
+            <p class="text-gray-200 text-xs sm:text-sm leading-relaxed">
+              Prefiero que te lo lleves tú, se lo pongas a tus hijos en el patio y le saquen el máximo provecho que yo no le pude sacar.
+            </p>
           </div>
 
         </div>
@@ -482,160 +488,69 @@
   </section>
 
   <!-- =========================================================================
-      SECTION 3: LO QUE NO SOY Y LO QUE SÍ SOY
+      SECTION 4: ESPECIFICACIONES TÉCNICAS
      ========================================================================= -->
-  <section id="checklist" class="relative z-10 py-16 px-4 sm:px-8 md:px-12 bg-[#031728] border-t border-white/10">
+  <section id="specs" class="relative z-10 py-16 px-4 sm:px-8 md:px-12 bg-[#031728] border-t border-white/10">
     <div class="max-w-4xl mx-auto">
       
       <div class="reveal-item reveal-fade-up text-center mb-10">
+        <span class="inline-block px-3.5 py-1 rounded-full bg-[#0077FF]/30 border border-[#2AD5FF]/40 text-[#2AD5FF] text-xs uppercase font-black tracking-widest mb-2">
+          🛡️ Ficha Técnica
+        </span>
         <h2 class="text-2xl sm:text-3xl font-black text-white">
-          Para que no haya malos entendidos entre tú y yo
+          Especificaciones técnicas
         </h2>
-        <p class="text-[#2AD5FF] font-bold text-xs sm:text-sm mt-2">
-          Cuentas claras conservan la confianza
-        </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
         
-        <!-- LO QUE NO SOY -->
-        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-6 border border-red-500/30 bg-red-950/20">
-          <h3 class="text-lg font-bold text-red-400 mb-4 flex items-center gap-2">
-            <span>❌</span> Lo que NO soy / NO vendo
-          </h3>
-          <ul class="space-y-3 text-xs sm:text-sm text-gray-300">
-            <li class="flex items-start gap-2">
-              <span class="text-red-400 shrink-0 font-bold">✕</span>
-              <span><strong>NO soy una tienda comercial:</strong> No te voy a dar una caja bonita con cinta, ni factura.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-red-400 shrink-0 font-bold">✕</span>
-              <span><strong>NO te estoy vendiendo una trampa:</strong> No hay resortes cedidos, no hay lona rota, no hay tubos doblados. Todo en orden.</span>
-            </li>
-          </ul>
+        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-5 border border-white/15">
+          <div class="flex items-start gap-3">
+            <span class="text-2xl">📏</span>
+            <div>
+              <h3 class="font-bold text-[#2AD5FF] text-sm mb-1">Medidas</h3>
+              <p class="text-xs text-gray-200 leading-relaxed">2.44 m de ancho x 2.20 m de alto total.</p>
+            </div>
+          </div>
         </div>
 
-        <!-- LO QUE SÍ SOY -->
-        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-6 border border-[#25D366]/40 bg-[#25D366]/10">
-          <h3 class="text-lg font-bold text-[#25D366] mb-4 flex items-center gap-2">
-            <span>✅</span> Lo que SÍ soy / SÍ garantizo
-          </h3>
-          <ul class="space-y-3 text-xs sm:text-sm text-gray-200">
-            <li class="flex items-start gap-2">
-              <span class="text-[#25D366] shrink-0 font-bold">✓</span>
-              <span><strong>SÍ te vendo una oportunidad:</strong> Un trampolín fuerte, grande y seguro por la mitad de lo que te costaría pedirlo por encomienda desde Caracas o Maracaibo.</span>
-            </li>
-            <li class="flex items-start gap-2">
-              <span class="text-[#25D366] shrink-0 font-bold">✓</span>
-              <span><strong>SÍ te garantizo transparencia:</strong> Lo ves en mi casa en Caja Seca, revisas pieza por pieza, que no le falte nada y si te gusta, te lo llevas. Te apuesto a que esa noche esos niños ni van a querer dormir de la emoción.</span>
-            </li>
-          </ul>
+        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-5 border border-white/15">
+          <div class="flex items-start gap-3">
+            <span class="text-2xl">🏗️</span>
+            <div>
+              <h3 class="font-bold text-[#FFD200] text-sm mb-1">Estructura</h3>
+              <p class="text-xs text-gray-200 leading-relaxed">Acero galvanizado resistente al agua y al sol (Peso total: 38 kg).</p>
+            </div>
+          </div>
         </div>
 
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-      SECTION 4: ESPECIFICACIONES & BENEFICIOS
-     ========================================================================= -->
-  <section id="specs" class="relative z-10 py-16 px-4 sm:px-8 md:px-12 bg-[#0A2540]/30 border-t border-white/10">
-    <div class="max-w-5xl mx-auto">
-      
-      <div class="reveal-item reveal-fade-up text-center mb-10">
-        <h2 class="text-2xl sm:text-3xl font-black text-white">
-          Todo lo que necesitas saber: Medidas, Peso y Capacidad
-        </h2>
-        <p class="text-gray-300 text-xs sm:text-sm mt-2">
-          Para que no estés adivinando si te cabe en el patio o si tu carro lo aguanta, aquí tienes los datos exactos:
-        </p>
-      </div>
-
-      <!-- Specs Grid -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
-        
-        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-4 text-center border border-white/15">
-          <span class="text-2xl mb-1 block">📏</span>
-          <span class="block text-2xl sm:text-3xl font-black text-[#FFD200]">2.44 m</span>
-          <span class="text-xs font-bold text-white uppercase block mt-1">Diámetro</span>
-          <p class="text-[11px] text-gray-300 mt-1 leading-snug">
-            El tamaño perfecto, entra cómodo en cualquier patio o garaje amplio sin comerte todo el espacio.
-          </p>
+        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-5 border border-white/15">
+          <div class="flex items-start gap-3">
+            <span class="text-2xl">🛡️</span>
+            <div>
+              <h3 class="font-bold text-[#25D366] text-sm mb-1">Seguridad</h3>
+              <p class="text-xs text-gray-200 leading-relaxed">Red protectora 360° con cierre, 48 resortes reforzados con protector acolchado, parantes forrados en goma espuma.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-4 text-center border border-white/15">
-          <span class="text-2xl mb-1 block">📐</span>
-          <span class="block text-2xl sm:text-3xl font-black text-[#FFD200]">2.20 m</span>
-          <span class="text-xs font-bold text-white uppercase block mt-1">Altura Total</span>
-          <p class="text-[11px] text-gray-300 mt-1 leading-snug">
-            Medida exacta desde el piso hasta la punta más alta de la red de seguridad.
-          </p>
-        </div>
-
-        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-4 text-center border border-white/15">
-          <span class="text-2xl mb-1 block">⚖️</span>
-          <span class="block text-2xl sm:text-3xl font-black text-[#FFD200]">180 kg</span>
-          <span class="text-xs font-bold text-white uppercase block mt-1">Soporta</span>
-          <p class="text-[11px] text-gray-300 mt-1 leading-snug">
-            Saltan 3 o 4 chamos juntos, o incluso un adulto brincando con ellos sin problema.
-          </p>
-        </div>
-
-        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-4 text-center border border-white/15">
-          <span class="text-2xl mb-1 block">🏋️‍♂️</span>
-          <span class="block text-2xl sm:text-3xl font-black text-[#FFD200]">38 kg</span>
-          <span class="text-xs font-bold text-white uppercase block mt-1">Peso Neto</span>
-          <p class="text-[11px] text-gray-300 mt-1 leading-snug">
-            Estructura de tubo galvanizado resistente al agua y al sol, no se dobla, bien macizos.
-          </p>
+        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-5 border border-white/15">
+          <div class="flex items-start gap-3">
+            <span class="text-2xl">🏋️‍♂️</span>
+            <div>
+              <h3 class="font-bold text-[#2AD5FF] text-sm mb-1">Lona de salto</h3>
+              <p class="text-xs text-gray-200 leading-relaxed">Polipropileno de alta densidad extremadamente resistente.</p>
+            </div>
+          </div>
         </div>
 
       </div>
 
-      <!-- Security Banner -->
-      <div class="reveal-item reveal-fade-up liquid-glass glow-card rounded-2xl p-5 border border-[#0077FF] mb-12 bg-[#0077FF]/20 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
-        <div class="p-3 rounded-full bg-[#2AD5FF]/20 text-[#2AD5FF] shrink-0 text-2xl">
-          🛡️
-        </div>
+      <div class="reveal-item reveal-fade-up liquid-glass glow-card rounded-2xl p-5 border border-[#0077FF] bg-[#0077FF]/20 flex items-center gap-4">
+        <span class="text-3xl shrink-0">🛠️</span>
         <div>
-          <h3 class="font-bold text-white text-base sm:text-lg mb-1">
-            Sistema de Seguridad Completo
-          </h3>
-          <p class="text-xs sm:text-sm text-gray-200">
-            Incluye 48 resortes de acero reforzado, lona de salto en polipropileno de alta densidad y red de protección de 360° con cierre de seguridad para que nadie salga volando.
-          </p>
-        </div>
-      </div>
-
-      <!-- Real Benefits -->
-      <div>
-        <h3 class="text-xl font-bold text-center text-white mb-6">
-          ¿Por qué este trampolín te va a gustar?
-        </h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-          
-          <div class="reveal-item reveal-scale-up bg-[#031728]/80 glow-card rounded-2xl p-5 border border-white/10">
-            <span class="text-[#2AD5FF] font-bold text-sm block mb-1">🛡️ Red protectora alta y tupida:</span>
-            <p class="text-xs sm:text-sm text-gray-300">
-              Olvídate de estar con el corazón en la boca pensando que un niño va a salir volando hacia el piso o contra la pared. La red los mantiene adentro 100% seguros.
-            </p>
-          </div>
-
-          <div class="reveal-item reveal-scale-up bg-[#031728]/80 glow-card rounded-2xl p-5 border border-white/10">
-            <span class="text-[#FFD200] font-bold text-sm block mb-1">🦺 Tubos acolchados:</span>
-            <p class="text-xs sm:text-sm text-gray-300">
-              Si se tropiezan contra la estructura, no se van a dar un golpe seco contra el metal porque los tubos vienen protegidos con goma espuma gruesa.
-            </p>
-          </div>
-
-          <div class="reveal-item reveal-scale-up bg-[#031728]/80 glow-card rounded-2xl p-5 border border-white/10">
-            <span class="text-[#25D366] font-bold text-sm block mb-1">⚡ Resortes de acero duro:</span>
-            <p class="text-xs sm:text-sm text-gray-300">
-              Salta sabroso. Aguanta el peso de varios niños juntos (e incluso un adulto si se quiere montar a brincar un rato con ellos).
-            </p>
-          </div>
-
+          <h3 class="font-extrabold text-white text-sm sm:text-base mb-1">Armado rápido</h3>
+          <p class="text-xs text-gray-200 leading-relaxed">Trae instructivo. Se arma entre dos personas en menos de 15 min, sin herramientas especiales.</p>
         </div>
       </div>
 
@@ -643,94 +558,53 @@
   </section>
 
   <!-- =========================================================================
-      SECTION 5: COMPARACIÓN DIRECTA
+      SECTION 5: PRUEBA SOCIAL REAL
      ========================================================================= -->
-  <section id="comparativa" class="relative z-10 py-16 px-4 sm:px-8 md:px-12 bg-[#031728] border-t border-white/10">
+  <section id="pruebas" class="relative z-10 py-16 px-4 sm:px-8 md:px-12 bg-[#0A2540]/30 border-t border-white/10">
     <div class="max-w-4xl mx-auto">
       
-      <div class="reveal-item reveal-fade-up text-center mb-10">
+      <div class="reveal-item reveal-fade-up text-center mb-8">
         <h2 class="text-2xl sm:text-3xl font-black text-white">
-          Diferencia entre uno nuevo y este:
+          La calidad de la marca está probada por miles de familias
         </h2>
-        <p class="text-gray-300 text-xs sm:text-sm mt-1">
-          ¿Vale la pena uno nuevo?
-        </p>
       </div>
 
-      <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-3xl overflow-hidden border border-white/20 shadow-2xl">
-        <div class="grid grid-cols-2 bg-[#0077FF]/40 border-b border-white/20 p-4 text-xs sm:text-sm font-bold text-center">
-          <div class="text-red-300 px-2">¿Qué implica traer uno nuevo?</div>
-          <div class="text-[#2AD5FF] border-l border-white/20 px-2">¿Qué pasa si compras este?</div>
-        </div>
-
-        <div class="divide-y divide-white/10 text-xs sm:text-sm">
-          <div class="grid grid-cols-2 p-4">
-            <div class="pr-3 text-gray-300">Pagar $250 a $350 por un trampolín en internet.</div>
-            <div class="pl-3 border-l border-white/10 text-white font-bold text-[#FFD200]">No gastas $150 más por uno de peor marca</div>
-          </div>
-
-          <div class="grid grid-cols-2 p-4">
-            <div class="pr-3 text-gray-300">Esperar 3 a 4 días rezando para que llegue completo.</div>
-            <div class="pl-3 border-l border-white/10 text-white font-bold text-[#2AD5FF]">Te lo llevas HOY mismo a tu casa.</div>
-          </div>
-
-          <div class="grid grid-cols-2 p-4">
-            <div class="pr-3 text-gray-300">Arriesgarte a que falte un resorte en la caja y no tener a quién reclamar.</div>
-            <div class="pl-3 border-l border-white/10 text-white font-bold text-[#25D366]">Cuentas y revisas cada pieza para que estés seguro de todo.</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-      SECTION 6: CÓMO HACEMOS LA NEGOCIACIÓN (Paso a Paso)
-     ========================================================================= -->
-  <section id="pasos" class="relative z-10 py-16 px-4 sm:px-8 md:px-12 bg-[#0A2540]/40 border-t border-white/10">
-    <div class="max-w-4xl mx-auto">
-      
-      <div class="reveal-item reveal-fade-up text-center mb-10">
-        <h2 class="text-2xl sm:text-3xl font-black text-white">
-          ¿Te interesa? Así de fácil lo hacemos
-        </h2>
-        <p class="text-[#2AD5FF] text-xs sm:text-sm mt-1 font-semibold">
-          Proceso en 4 pasos sencillos
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         
-        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-5 border border-white/15 relative flex flex-col">
-          <span class="w-8 h-8 rounded-full bg-[#2AD5FF] text-[#031728] font-black flex items-center justify-center text-sm mb-3">1</span>
-          <h3 class="font-bold text-white text-lg mb-1">Escribes al WhatsApp</h3>
-          <p class="text-xs text-gray-300 leading-snug">
-            Haces clic en el botón de abajo y me dices «Hola, quiero ir a ver el trampolín».
-          </p>
+        <div class="reveal-item reveal-scale-up">
+          <div 
+            onclick="openLightboxByUrl('https://i.postimg.cc/X70K2c6D/Captura-de-pantalla-2026-07-27-103715.png', 'Evidencia visual de marca')"
+            class="liquid-glass glow-card rounded-2xl overflow-hidden border border-white/15 cursor-pointer shadow-lg hover:border-[#2AD5FF]/60 transition-all p-2 bg-black/40"
+          >
+            <img src="https://i.postimg.cc/X70K2c6D/Captura-de-pantalla-2026-07-27-103715.png" alt="Evidencia visual de compradores 1" class="w-full rounded-xl object-cover hover:scale-102 transition-transform duration-300" loading="lazy" />
+          </div>
         </div>
 
-        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-5 border border-white/15 relative flex flex-col">
-          <span class="w-8 h-8 rounded-full bg-[#0077FF] text-white font-black flex items-center justify-center text-sm mb-3">2</span>
-          <h3 class="font-bold text-white text-lg mb-1">Dirección exacta</h3>
-          <p class="text-xs text-gray-300 leading-snug">
-            Te doy la dirección exacta en Caja Seca y coordinamos la hora (mañana o tarde).
-          </p>
+        <div class="reveal-item reveal-scale-up">
+          <div 
+            onclick="openLightboxByUrl('https://i.postimg.cc/dDcQmV74/Captura-de-pantalla-2026-07-27-113345.png', 'Evidencia visual de marca')"
+            class="liquid-glass glow-card rounded-2xl overflow-hidden border border-white/15 cursor-pointer shadow-lg hover:border-[#2AD5FF]/60 transition-all p-2 bg-black/40"
+          >
+            <img src="https://i.postimg.cc/dDcQmV74/Captura-de-pantalla-2026-07-27-113345.png" alt="Evidencia visual de compradores 2" class="w-full rounded-xl object-cover hover:scale-102 transition-transform duration-300" loading="lazy" />
+          </div>
         </div>
 
-        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-5 border border-white/15 relative flex flex-col">
-          <span class="w-8 h-8 rounded-full bg-[#FFD200] text-[#031728] font-black flex items-center justify-center text-sm mb-3">3</span>
-          <h3 class="font-bold text-white text-lg mb-1">Revisas sin pena</h3>
-          <p class="text-xs text-gray-300 leading-snug">
-            Miras la red, revisas la lona, cuentas los resortes en persona.
-          </p>
+        <div class="reveal-item reveal-scale-up">
+          <div 
+            onclick="openLightboxByUrl('https://i.postimg.cc/YCSwWF0R/Captura-de-pantalla-2026-07-27-105957.png', 'Evidencia visual de marca')"
+            class="liquid-glass glow-card rounded-2xl overflow-hidden border border-white/15 cursor-pointer shadow-lg hover:border-[#2AD5FF]/60 transition-all p-2 bg-black/40"
+          >
+            <img src="https://i.postimg.cc/YCSwWF0R/Captura-de-pantalla-2026-07-27-105957.png" alt="Evidencia visual de compradores 3" class="w-full rounded-xl object-cover hover:scale-102 transition-transform duration-300" loading="lazy" />
+          </div>
         </div>
 
-        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl p-5 border border-white/15 relative flex flex-col">
-          <span class="w-8 h-8 rounded-full bg-[#25D366] text-white font-black flex items-center justify-center text-sm mb-3">4</span>
-          <h3 class="font-bold text-white text-lg mb-1">Y listo</h3>
-          <p class="text-xs text-gray-300 leading-snug">
-            Si te gusta... A saltar se ha dicho.
-          </p>
+        <div class="reveal-item reveal-scale-up">
+          <div 
+            onclick="openLightboxByUrl('https://i.postimg.cc/d0pvv0q2/Captura-de-pantalla-2026-07-27-105834.png', 'Evidencia visual de marca')"
+            class="liquid-glass glow-card rounded-2xl overflow-hidden border border-white/15 cursor-pointer shadow-lg hover:border-[#2AD5FF]/60 transition-all p-2 bg-black/40"
+          >
+            <img src="https://i.postimg.cc/d0pvv0q2/Captura-de-pantalla-2026-07-27-105834.png" alt="Evidencia visual de compradores 4" class="w-full rounded-xl object-cover hover:scale-102 transition-transform duration-300" loading="lazy" />
+          </div>
         </div>
 
       </div>
@@ -739,70 +613,124 @@
   </section>
 
   <!-- =========================================================================
-      SECTION 7: PREGUNTAS FRECUENTES
+      SECTION 6: PREGUNTAS FRECUENTES (Interactive Chat-Accordion Style)
      ========================================================================= -->
   <section id="faq" class="relative z-10 py-16 px-4 sm:px-8 md:px-12 bg-[#031728] border-t border-white/10">
     <div class="max-w-3xl mx-auto">
       
       <div class="reveal-item reveal-fade-up text-center mb-10">
         <h2 class="text-2xl sm:text-3xl font-black text-white">
-          Preguntas que seguro tienes en la cabeza
+          Preguntas frecuentes
         </h2>
-        <p class="text-gray-300 text-xs sm:text-sm mt-1">
-          Respuestas rápidas y sin vueltas
+        <p class="text-gray-300 text-xs sm:text-sm mt-1 font-medium">
+          Lee esto antes de escribir
         </p>
       </div>
 
-      <div class="space-y-3">
+      <!-- FAQ Chat-Accordion Container -->
+      <div class="space-y-4">
         
-        <!-- FAQ Item 1 -->
-        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl border border-white/15 overflow-hidden transition-all">
+        <!-- FAQ Item 0 -->
+        <div class="reveal-item reveal-scale-up">
           <button 
             onclick="toggleFaq(0)"
-            class="w-full p-4 text-left font-bold text-xs sm:text-sm text-white flex items-center justify-between gap-4"
+            class="w-full flex items-center justify-between gap-3 p-4 rounded-2xl liquid-glass glow-card border border-white/15 hover:border-[#2AD5FF]/60 transition-all text-left group"
           >
-            <span class="flex items-center gap-2">
-              <span class="text-[#2AD5FF]">❓</span>
-              ¿Viene armado o desarmado?
+            <div class="flex items-center gap-3">
+              <span class="w-9 h-9 rounded-xl bg-[#2AD5FF]/20 border border-[#2AD5FF]/40 text-[#2AD5FF] flex items-center justify-center shrink-0 font-black text-sm">
+                📦
+              </span>
+              <span class="font-bold text-xs sm:text-sm text-white group-hover:text-[#2AD5FF] transition-colors">
+                ¿Está armado?
+              </span>
+            </div>
+            <span id="faq-toggle-0" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-gray-300 font-bold text-base transition-all shrink-0">
+              +
             </span>
-            <span id="faq-arrow-0" class="transition-transform duration-300 text-gray-400">▼</span>
           </button>
-          <div id="faq-content-0" class="hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 border-t border-white/10 pt-3 leading-relaxed">
-            Está desarmado en su caja. Viene con absolutamente todas sus piezas, tubos, resortes, red y tornillos listos para ensamblar.
+
+          <div id="faq-content-0" class="overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out pl-6 sm:pl-12">
+            <div class="relative inline-block max-w-xl rounded-2xl rounded-tl-sm bg-gradient-to-r from-[#0077FF]/30 to-[#0A2540] border border-[#2AD5FF]/40 p-4 text-xs sm:text-sm text-gray-100 shadow-xl leading-relaxed">
+              Está desarmado en su caja, con absolutamente todas sus piezas: tubos, resortes, red y tornillos.
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Item 1 -->
+        <div class="reveal-item reveal-scale-up">
+          <button 
+            onclick="toggleFaq(1)"
+            class="w-full flex items-center justify-between gap-3 p-4 rounded-2xl liquid-glass glow-card border border-white/15 hover:border-[#2AD5FF]/60 transition-all text-left group"
+          >
+            <div class="flex items-center gap-3">
+              <span class="w-9 h-9 rounded-xl bg-[#2AD5FF]/20 border border-[#2AD5FF]/40 text-[#2AD5FF] flex items-center justify-center shrink-0 font-black text-sm">
+                🚗
+              </span>
+              <span class="font-bold text-xs sm:text-sm text-white group-hover:text-[#2AD5FF] transition-colors">
+                ¿Necesito un camión para llevármelo?
+              </span>
+            </div>
+            <span id="faq-toggle-1" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-gray-300 font-bold text-base transition-all shrink-0">
+              +
+            </span>
+          </button>
+
+          <div id="faq-content-1" class="overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out pl-6 sm:pl-12">
+            <div class="relative inline-block max-w-xl rounded-2xl rounded-tl-sm bg-gradient-to-r from-[#0077FF]/30 to-[#0A2540] border border-[#2AD5FF]/40 p-4 text-xs sm:text-sm text-gray-100 shadow-xl leading-relaxed">
+              No. Al estar desarmado, cabe perfectamente en la maleta, asiento trasero de un carro o camioneta particular o hasta en moto.
+            </div>
           </div>
         </div>
 
         <!-- FAQ Item 2 -->
-        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl border border-white/15 overflow-hidden transition-all">
+        <div class="reveal-item reveal-scale-up">
           <button 
-            onclick="toggleFaq(1)"
-            class="w-full p-4 text-left font-bold text-xs sm:text-sm text-white flex items-center justify-between gap-4"
+            onclick="toggleFaq(2)"
+            class="w-full flex items-center justify-between gap-3 p-4 rounded-2xl liquid-glass glow-card border border-white/15 hover:border-[#2AD5FF]/60 transition-all text-left group"
           >
-            <span class="flex items-center gap-2">
-              <span class="text-[#2AD5FF]">🚚</span>
-              ¿Cómo me lo llevo?
+            <div class="flex items-center gap-3">
+              <span class="w-9 h-9 rounded-xl bg-[#FFD200]/20 border border-[#FFD200]/40 text-[#FFD200] flex items-center justify-center shrink-0 font-black text-sm">
+                💳
+              </span>
+              <span class="font-bold text-xs sm:text-sm text-white group-hover:text-[#2AD5FF] transition-colors">
+                ¿Cómo se paga?
+              </span>
+            </div>
+            <span id="faq-toggle-2" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-gray-300 font-bold text-base transition-all shrink-0">
+              +
             </span>
-            <span id="faq-arrow-1" class="transition-transform duration-300 text-gray-400">▼</span>
           </button>
-          <div id="faq-content-1" class="hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 border-t border-white/10 pt-3 leading-relaxed">
-            Al estar desarmado, los tubos se curvan y caben perfectamente en el asiento trasero o en la maleta de un carro o camioneta. Si no tienes vehículo, te puedo recomendar un mototaxi.
+
+          <div id="faq-content-2" class="overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out pl-6 sm:pl-12">
+            <div class="relative inline-block max-w-xl rounded-2xl rounded-tl-sm bg-gradient-to-r from-[#0077FF]/30 to-[#0A2540] border border-[#2AD5FF]/40 p-4 text-xs sm:text-sm text-gray-100 shadow-xl leading-relaxed">
+              A BCV a la tasa del día.
+            </div>
           </div>
         </div>
 
         <!-- FAQ Item 3 -->
-        <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-2xl border border-white/15 overflow-hidden transition-all">
+        <div class="reveal-item reveal-scale-up">
           <button 
-            onclick="toggleFaq(2)"
-            class="w-full p-4 text-left font-bold text-xs sm:text-sm text-white flex items-center justify-between gap-4"
+            onclick="toggleFaq(3)"
+            class="w-full flex items-center justify-between gap-3 p-4 rounded-2xl liquid-glass glow-card border border-white/15 hover:border-[#2AD5FF]/60 transition-all text-left group"
           >
-            <span class="flex items-center gap-2">
-              <span class="text-[#FFD200]">💵</span>
-              ¿Aceptas menos de $200?
+            <div class="flex items-center gap-3">
+              <span class="w-9 h-9 rounded-xl bg-[#FFD200]/20 border border-[#FFD200]/40 text-[#FFD200] flex items-center justify-center shrink-0 font-black text-sm">
+                💵
+              </span>
+              <span class="font-bold text-xs sm:text-sm text-white group-hover:text-[#2AD5FF] transition-colors">
+                ¿Aceptas menos de $200 o cambios?
+              </span>
+            </div>
+            <span id="faq-toggle-3" class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-gray-300 font-bold text-base transition-all shrink-0">
+              +
             </span>
-            <span id="faq-arrow-2" class="transition-transform duration-300 text-gray-400">▼</span>
           </button>
-          <div id="faq-content-2" class="hidden px-4 pb-4 text-xs sm:text-sm text-gray-300 border-t border-white/10 pt-3 leading-relaxed">
-            Es enserio? El precio es $200. Ya le bajé todo lo que podía bajarle considerando que está prácticamente nuevo.
+
+          <div id="faq-content-3" class="overflow-hidden max-h-0 opacity-0 transition-all duration-300 ease-in-out pl-6 sm:pl-12">
+            <div class="relative inline-block max-w-xl rounded-2xl rounded-tl-sm bg-gradient-to-r from-[#0077FF]/30 to-[#0A2540] border border-[#FFD200]/50 p-4 text-xs sm:text-sm text-[#FFD200] font-black shadow-xl leading-relaxed">
+              ¿Es en serio?.
+            </div>
           </div>
         </div>
 
@@ -812,34 +740,75 @@
   </section>
 
   <!-- =========================================================================
-      SECTION 8: CTA FINAL - Solo hay uno
+      SECTION 7: CONDICIONES DE VENTA
      ========================================================================= -->
-  <section class="relative z-10 py-20 px-4 sm:px-8 md:px-12 bg-gradient-to-b from-[#0A2540]/60 to-[#031728] border-t border-white/10 text-center">
-    <div class="max-w-2xl mx-auto">
+  <section id="condiciones" class="relative z-10 py-16 px-4 sm:px-8 md:px-12 bg-[#0A2540]/30 border-t border-white/10">
+    <div class="max-w-3xl mx-auto">
+      
+      <div class="reveal-item reveal-scale-up liquid-glass glow-card rounded-3xl p-6 sm:p-8 border border-red-500/40 bg-red-950/20">
+        <h2 class="text-xl sm:text-2xl font-black text-red-400 mb-4 flex items-center gap-2">
+          <span>🚨</span> Condiciones de venta
+        </h2>
+
+        <ul class="space-y-3 text-xs sm:text-sm text-gray-200">
+          <li class="flex items-start gap-3 p-2.5 rounded-xl bg-black/40 border border-white/10">
+            <span class="text-red-400 shrink-0 font-bold">📌</span>
+            <span><strong>Solo tengo UN trampolín</strong> (no soy tienda).</span>
+          </li>
+          <li class="flex items-start gap-3 p-2.5 rounded-xl bg-black/40 border border-white/10">
+            <span class="text-red-400 shrink-0 font-bold">📌</span>
+            <span><strong>No se reserva</strong> sin fecha de visita el mismo día.</span>
+          </li>
+          <li class="flex items-start gap-3 p-2.5 rounded-xl bg-black/40 border border-white/10">
+            <span class="text-red-400 shrink-0 font-bold">📌</span>
+            <span><strong>Pagas al momento</strong> de retirarlo.</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+      SECTION 8: CTA FINAL - Si quiero
+     ========================================================================= -->
+  <section class="relative z-10 py-20 px-4 sm:px-8 md:px-12 border-t border-white/10 text-center overflow-hidden">
+    
+    <!-- Background Image with Boomerang Zoom -->
+    <div class="absolute inset-0 z-0 overflow-hidden bg-[#020F1B] pointer-events-none">
+      <img
+        src="https://i.postimg.cc/dV0SYNRV/1785089625833.png"
+        alt="Trampolín familiar en Caja Seca"
+        class="w-full h-full object-cover object-center animate-boomerang-zoom opacity-50"
+      />
+      <div class="absolute inset-0 bg-gradient-to-b from-[#031728]/85 via-[#0A2540]/85 to-[#031728]/95 pointer-events-none"></div>
+    </div>
+
+    <div class="relative z-20 max-w-2xl mx-auto">
       
       <span class="inline-block px-4 py-1.5 rounded-full bg-[#FFD200]/20 border border-[#FFD200] text-[#FFD200] text-xs font-bold uppercase tracking-wider mb-4">
-        Pregúntale a tu hijo ya mismo si le quiere
+        Sorpresa Garantizada
       </span>
 
       <h2 class="text-2xl sm:text-4xl font-black text-white mb-3">
-        Si de verdad quieres sorprender a tus hijos...
+        ¿De verdad quieres sorprender a tus hijos hoy?
       </h2>
 
-      <p class="text-xs sm:text-sm text-gray-200 mb-8 max-w-lg mx-auto leading-relaxed">
-        Sacarlos del teléfono y tenerlos felices en la casa con algo seguro y de calidad, no lo pienses y ven.
+      <p class="text-xs sm:text-sm text-gray-200 mb-8 max-w-lg mx-auto leading-relaxed font-medium">
+        Sácalos del teléfono. Dales una tarde feliz y segura, sin salir de casa. No lo pienses más y ven a verlo.
       </p>
 
       <div class="flex flex-col items-center gap-4">
         <a 
-          href="https://wa.me/584120000000?text=%C2%A1Hola!%20Vi%20la%20publicaci%C3%B3n%20del%20trampol%C3%ADn%20en%20Caja%20Seca%20por%20%24200."
+          href="https://wa.me/584120000000?text=%C2%A1Hola!%20Si%20quiero%20el%20trampol%C3%ADn%20en%20Caja%20Seca%20por%20%24200."
           target="_blank"
           rel="noopener noreferrer"
-          class="w-full sm:w-auto font-bold text-sm sm:text-base bg-[#25D366] hover:bg-[#20ba5a] text-white px-8 py-5 rounded-full flex items-center justify-center gap-3 whatsapp-btn-glow transition-all text-center animate-shine shadow-2xl"
+          class="w-full sm:w-auto font-black text-sm sm:text-base bg-[#25D366] hover:bg-[#20ba5a] text-[#031728] px-10 py-5 rounded-full flex items-center justify-center gap-3 whatsapp-btn-glow transition-all text-center animate-shine shadow-2xl"
         >
-          <svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24">
+          <svg class="w-6 h-6 fill-[#031728] shrink-0" viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
           </svg>
-          <span>Quiero ver a mis hijos saltar de emoción</span>
+          <span class="text-[#031728]">Si quiero</span>
         </a>
 
         <div class="inline-flex items-center gap-1.5 text-xs text-[#2AD5FF] font-semibold mt-2">
@@ -856,13 +825,10 @@
     <p>Caja Seca, Estado Zulia • Venta directa de particular a particular</p>
   </footer>
 
-  <!-- =========================================================================
-      PHOTO & VIDEO LIGHTBOX MODAL
-     ========================================================================= -->
+  <!-- LIGHTBOX MODAL -->
   <div id="lightbox-modal" class="hidden fixed inset-0 z-50 bg-black/90 backdrop-blur-xl p-4 items-center justify-center">
     <div class="relative max-w-4xl w-full max-h-[90vh] flex flex-col items-center justify-center" onclick="event.stopPropagation()">
       
-      <!-- Close Button -->
       <button 
         onclick="closeLightbox()" 
         class="absolute -top-12 right-0 p-2 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-all"
@@ -870,7 +836,6 @@
         ✕
       </button>
 
-      <!-- Previous Arrow -->
       <button 
         onclick="prevLightboxItem()" 
         class="absolute left-2 top-1/2 -translate-y-1/2 p-3 text-white bg-black/60 hover:bg-black/90 border border-white/20 rounded-full transition-all z-10 font-bold"
@@ -878,7 +843,6 @@
         ❮
       </button>
 
-      <!-- Next Arrow -->
       <button 
         onclick="nextLightboxItem()" 
         class="absolute right-2 top-1/2 -translate-y-1/2 p-3 text-white bg-black/60 hover:bg-black/90 border border-white/20 rounded-full transition-all z-10 font-bold"
@@ -886,10 +850,8 @@
         ❯
       </button>
 
-      <!-- Media Display Container -->
       <div id="lightbox-media-container" class="w-full flex items-center justify-center"></div>
 
-      <!-- Caption & Counter -->
       <div class="mt-4 flex flex-col items-center gap-1.5">
         <p id="lightbox-caption" class="text-white text-xs font-bold bg-[#031728]/90 px-4 py-2 rounded-full border border-white/15 text-center"></p>
         <span id="lightbox-counter" class="text-[10px] text-gray-400"></span>
@@ -898,19 +860,17 @@
     </div>
   </div>
 
-  <!-- JavaScript Logic -->
   <script>
-    // Gallery Data List
     const photoList = [
-      { type: 'image', url: 'https://i.postimg.cc/qqtQqwxt/httpsi-postimg-cc-CLYc-CG785129680974823230758-121-jpg.jpg', caption: 'Lona tensa e impecable' },
+      { type: 'image', url: 'https://i.postimg.cc/XJkNnbXB/817Qi4Og61L.jpg', caption: 'Lona tensa e impecable' },
       { type: 'video', videoUrl: 'https://pub-48e5e21731d74cf7a344201ee4e87636.r2.dev/trampolin.mp4', caption: 'Video real del trampolín en acción' },
-      { type: 'image', url: 'https://i.postimg.cc/dV3mn4Tg/5116228840899415367-121.jpg', caption: 'Red de seguridad protectora 360°' },
-      { type: 'video', videoUrl: 'https://pub-48e5e21731d74cf7a344201ee4e87636.r2.dev/tresd.mp4', caption: 'Estructura y resortes en acción (3D)' }
+      { type: 'image', url: 'https://i.postimg.cc/CLYcCG78/5129680974823230758-121.jpg', caption: 'Red de seguridad protectora 360°' },
+      { type: 'video', videoUrl: 'https://pub-48e5e21731d74cf7a344201ee4e87636.r2.dev/tresd.mp4', caption: 'Estructura y resortes en acción' }
     ];
 
     let currentLightboxIndex = 0;
 
-    // Mobile Menu Toggle
+    // Mobile Menu
     const menuBtn = document.getElementById('menu-toggle-btn');
     const menuDropdown = document.getElementById('mobile-dropdown-menu');
     const iconBars = document.getElementById('menu-icon-bars');
@@ -929,7 +889,6 @@
       }
     });
 
-    // Close menu when clicking links
     document.querySelectorAll('#mobile-dropdown-menu a').forEach(link => {
       link.addEventListener('click', () => {
         menuDropdown.classList.add('hidden');
@@ -938,7 +897,7 @@
       });
     });
 
-    // Dynamic Mouse Movement Spotlight Glow Effect on Cards
+    // Mouse Spotlight Glow on Cards
     document.addEventListener('mousemove', (e) => {
       document.querySelectorAll('.glow-card').forEach(card => {
         const rect = card.getBoundingClientRect();
@@ -956,7 +915,7 @@
       });
     });
 
-    // Scroll Progress Bar & Floating Sticky WhatsApp CTA Handler
+    // Scroll Progress & Sticky CTA
     window.addEventListener('scroll', () => {
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
       const currentScroll = window.scrollY;
@@ -976,26 +935,44 @@
       }
     });
 
-    // FAQ Accordion Handler
+    // Chat-Style Interactive FAQ Accordion
     function toggleFaq(index) {
       const content = document.getElementById(`faq-content-${index}`);
-      const arrow = document.getElementById(`faq-arrow-${index}`);
+      const toggleBtn = document.getElementById(`faq-toggle-${index}`);
+      
+      const isCurrentlyOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
 
-      const isHidden = content.classList.contains('hidden');
-
-      // Close all FAQs
-      [0, 1, 2].forEach(i => {
-        document.getElementById(`faq-content-${i}`).classList.add('hidden');
-        document.getElementById(`faq-arrow-${i}`).classList.remove('rotate-180', 'text-[#2AD5FF]');
+      // Close all FAQs smoothly first
+      [0, 1, 2, 3].forEach(i => {
+        const el = document.getElementById(`faq-content-${i}`);
+        const btn = document.getElementById(`faq-toggle-${i}`);
+        if (el) {
+          el.style.maxHeight = '0px';
+          el.style.opacity = '0';
+          el.style.marginTop = '0px';
+        }
+        if (btn) {
+          btn.textContent = '+';
+          btn.classList.remove('bg-[#2AD5FF]', 'text-[#031728]', 'rotate-180');
+          btn.classList.add('bg-white/10', 'text-gray-300');
+        }
       });
 
-      if (isHidden) {
-        content.classList.remove('hidden');
-        arrow.classList.add('rotate-180', 'text-[#2AD5FF]');
+      // If clicked item was closed, expand it smoothly
+      if (!isCurrentlyOpen && content) {
+        content.style.marginTop = '10px';
+        content.style.maxHeight = content.scrollHeight + 30 + 'px';
+        content.style.opacity = '1';
+
+        if (toggleBtn) {
+          toggleBtn.textContent = '−';
+          toggleBtn.classList.remove('bg-white/10', 'text-gray-300');
+          toggleBtn.classList.add('bg-[#2AD5FF]', 'text-[#031728]', 'rotate-180');
+        }
       }
     }
 
-    // Scroll Reveal Intersection Observer
+    // Scroll Observer
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1007,7 +984,7 @@
 
     document.querySelectorAll('.reveal-item').forEach(el => observer.observe(el));
 
-    // Lightbox Modal Functions
+    // Lightbox Modal
     const modal = document.getElementById('lightbox-modal');
     const mediaContainer = document.getElementById('lightbox-media-container');
     const captionEl = document.getElementById('lightbox-caption');
@@ -1020,10 +997,20 @@
       modal.classList.add('flex');
     }
 
+    function openLightboxByUrl(url, captionText) {
+      captionEl.textContent = captionText || 'Evidencia de compradores real';
+      counterEl.textContent = '';
+      mediaContainer.innerHTML = `
+        <img src="${url}" alt="Evidencia visual" class="max-h-[80vh] max-w-full object-contain rounded-2xl border border-white/20 shadow-2xl" />
+      `;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
     function closeLightbox() {
       modal.classList.add('hidden');
       modal.classList.remove('flex');
-      mediaContainer.innerHTML = ''; // Stop any video playback
+      mediaContainer.innerHTML = '';
     }
 
     function updateLightboxContent() {
@@ -1054,14 +1041,10 @@
       updateLightboxContent();
     }
 
-    // Close Lightbox on Backdrop Click
     modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        closeLightbox();
-      }
+      if (e.target === modal) closeLightbox();
     });
 
-    // Keyboard Navigation for Lightbox
     window.addEventListener('keydown', (e) => {
       if (!modal.classList.contains('hidden')) {
         if (e.key === 'Escape') closeLightbox();
