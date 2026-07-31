@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Varela+Round&display=swap" rel="stylesheet" />
 
+  <!-- Font Awesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -226,7 +229,7 @@
       <!-- Navigation Header -->
       <nav class="flex items-center justify-between pt-2 pb-3">
         <div class="inline-flex items-center gap-2 px-4 py-1.5 animated-gradient-badge backdrop-blur-md shadow-lg">
-          <span class="text-[#FFD200] shrink-0 animate-bounce text-sm">📍</span>
+          <i class="fa-solid fa-location-dot text-[#FFD200] text-sm animate-bounce"></i>
           <span class="text-xs sm:text-sm font-black text-white tracking-wider uppercase">Caja Seca</span>
         </div>
       </nav>
@@ -235,7 +238,8 @@
       <div class="pt-2 max-w-3xl text-left">
         <div class="slide-up-item">
           <div class="inline-flex items-center gap-2 bg-[#FFD200]/20 border border-[#FFD200] text-[#FFD200] px-3.5 py-1 rounded-full text-xs sm:text-sm font-black mb-3 shadow-md backdrop-blur-sm">
-            ⭐ Estado 10/10 — Usado 3 veces
+            <i class="fa-solid fa-star text-[#FFD200] text-xs"></i>
+            <span>Estado 10/10 — Usado 3 veces</span>
           </div>
 
           <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-[1.1] drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] mb-4">
@@ -243,7 +247,7 @@
           </h1>
 
           <p class="text-lg sm:text-2xl text-[#FFD200] font-bold leading-snug drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] mb-2">
-            Un trampolín resistente ideal para que tus hijos jueguen al aire libre
+            Un trampolín resistente de 8 pies ideal para que tus hijos jueguen al aire libre
           </p>
         </div>
       </div>
@@ -284,6 +288,7 @@
           
           <div class="mb-6 pb-6 border-b border-white/15">
             <span class="inline-flex items-center gap-2 bg-[#2AD5FF]/20 border border-[#2AD5FF]/40 text-[#2AD5FF] px-4 py-1.5 rounded-xl text-xs sm:text-sm font-black mb-3">
+              <i class="fa-solid fa-shield-check text-[#2AD5FF]"></i>
               Trato en Directo y Seguro
             </span>
 
@@ -292,11 +297,13 @@
             </p>
           </div>
 
-          <!-- Quick Specs List -->
+          <!-- Quick Specs List with Font Awesome Icons -->
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm sm:text-base">
             
             <div class="slide-up-item delay-100 flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10">
-              <span class="text-3xl shrink-0">📐</span>
+              <div class="w-12 h-12 rounded-xl bg-[#2AD5FF]/15 border border-[#2AD5FF]/30 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-ruler-combined text-2xl text-[#2AD5FF]"></i>
+              </div>
               <div>
                 <strong class="text-[#2AD5FF] block mb-0.5 text-base sm:text-lg font-bold">Diámetro:</strong>
                 <span class="text-gray-200 font-medium">8 pies (2.44 metros)</span>
@@ -304,7 +311,9 @@
             </div>
 
             <div class="slide-up-item delay-200 flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10">
-              <span class="text-3xl shrink-0">⚖️</span>
+              <div class="w-12 h-12 rounded-xl bg-[#FFD200]/15 border border-[#FFD200]/30 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-scale-balanced text-2xl text-[#FFD200]"></i>
+              </div>
               <div>
                 <strong class="text-[#FFD200] block mb-0.5 text-base sm:text-lg font-bold">Soporte de peso:</strong>
                 <span class="text-gray-200 font-medium">180 kg (3 a 4 niños)</span>
@@ -312,7 +321,9 @@
             </div>
 
             <div class="slide-up-item delay-300 flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10">
-              <span class="text-3xl shrink-0">🚗</span>
+              <div class="w-12 h-12 rounded-xl bg-[#25D366]/15 border border-[#25D366]/30 flex items-center justify-center shrink-0">
+                <i class="fa-solid fa-car text-2xl text-[#25D366]"></i>
+              </div>
               <div>
                 <strong class="text-[#25D366] block mb-0.5 text-base sm:text-lg font-bold">Transporte:</strong>
                 <span class="text-gray-200 font-medium">Desarmado, cabe en cualquier carro</span>
@@ -356,7 +367,9 @@
             <img src="https://pub-48e5e21731d74cf7a344201ee4e87636.r2.dev/imag1.jpg" alt="Lona tensa e impecable" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all p-3.5 flex flex-col justify-end pointer-events-none z-10">
               <p class="text-xs sm:text-sm text-white font-bold leading-tight">Lona tensa e impecable</p>
-              <span class="text-xs text-[#2AD5FF] font-extrabold flex items-center gap-1 mt-1">🔍 Ampliar</span>
+              <span class="text-xs text-[#2AD5FF] font-extrabold flex items-center gap-1.5 mt-1">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Ampliar
+              </span>
             </div>
           </div>
         </div>
@@ -369,13 +382,16 @@
           >
             <div class="relative w-full h-full bg-black">
               <video src="https://pub-48e5e21731d74cf7a344201ee4e87636.r2.dev/trampolin.mp4" autoplay loop muted playsinline class="w-full h-full object-cover pointer-events-none scale-105"></video>
-              <div class="absolute top-2.5 left-2.5 z-10 bg-[#FFD200] text-[#031728] font-black text-xs px-2.5 py-1 rounded-md flex items-center gap-1 shadow-md">
-                <span>▶ VIDEO DEMO</span>
+              <div class="absolute top-2.5 left-2.5 z-10 bg-[#FFD200] text-[#031728] font-black text-xs px-2.5 py-1 rounded-md flex items-center gap-1.5 shadow-md">
+                <i class="fa-solid fa-circle-play text-[#031728]"></i>
+                <span>VIDEO DEMO</span>
               </div>
             </div>
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all p-3.5 flex flex-col justify-end pointer-events-none z-10">
               <p class="text-xs sm:text-sm text-white font-bold leading-tight">Video real</p>
-              <span class="text-xs text-[#2AD5FF] font-extrabold flex items-center gap-1 mt-1">🔍 Ampliar</span>
+              <span class="text-xs text-[#2AD5FF] font-extrabold flex items-center gap-1.5 mt-1">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Ampliar
+              </span>
             </div>
           </div>
         </div>
@@ -389,7 +405,9 @@
             <img src="https://pub-48e5e21731d74cf7a344201ee4e87636.r2.dev/%C3%ADmg3.jpg" alt="Red de seguridad protectora 360°" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all p-3.5 flex flex-col justify-end pointer-events-none z-10">
               <p class="text-xs sm:text-sm text-white font-bold leading-tight">No se van a querer bajar</p>
-              <span class="text-xs text-[#2AD5FF] font-extrabold flex items-center gap-1 mt-1">🔍 Ampliar</span>
+              <span class="text-xs text-[#2AD5FF] font-extrabold flex items-center gap-1.5 mt-1">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Ampliar
+              </span>
             </div>
           </div>
         </div>
@@ -402,13 +420,16 @@
           >
             <div class="relative w-full h-full bg-black">
               <video src="https://pub-48e5e21731d74cf7a344201ee4e87636.r2.dev/tresd.mp4" autoplay loop muted playsinline class="w-full h-full object-cover pointer-events-none scale-105"></video>
-              <div class="absolute top-2.5 left-2.5 z-10 bg-[#FFD200] text-[#031728] font-black text-xs px-2.5 py-1 rounded-md flex items-center gap-1 shadow-md">
-                <span>▶ ESTRUCTURA</span>
+              <div class="absolute top-2.5 left-2.5 z-10 bg-[#FFD200] text-[#031728] font-black text-xs px-2.5 py-1 rounded-md flex items-center gap-1.5 shadow-md">
+                <i class="fa-solid fa-cube text-[#031728]"></i>
+                <span>ESTRUCTURA</span>
               </div>
             </div>
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all p-3.5 flex flex-col justify-end pointer-events-none z-10">
               <p class="text-xs sm:text-sm text-white font-bold leading-tight">En 3D</p>
-              <span class="text-xs text-[#2AD5FF] font-extrabold flex items-center gap-1 mt-1">🔍 Ampliar</span>
+              <span class="text-xs text-[#2AD5FF] font-extrabold flex items-center gap-1.5 mt-1">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Ampliar
+              </span>
             </div>
           </div>
         </div>
@@ -423,9 +444,7 @@
           rel="noopener noreferrer"
           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20ba5a] text-[#031728] font-extrabold text-base sm:text-xl px-10 py-5 rounded-full whatsapp-btn-glow transition-all animate-shine shadow-2xl"
         >
-          <svg class="w-7 h-7 fill-[#031728] shrink-0" viewBox="0 0 24 24">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-          </svg>
+          <i class="fa-brands fa-whatsapp text-2xl text-[#031728]"></i>
           <span class="text-[#031728]">Quiero ir a verlo</span>
         </a>
       </div>
@@ -455,7 +474,8 @@
 
           <div class="bg-[#031728]/90 rounded-2xl p-6 sm:p-8 border border-[#0077FF] bg-[#0077FF]/20 shadow-xl">
             <p class="font-extrabold text-lg sm:text-2xl text-[#2AD5FF] mb-3 flex items-center gap-3">
-              <span>🎯</span> Lo que prefiero:
+              <i class="fa-solid fa-bullseye text-[#2AD5FF]"></i>
+              <span>Lo que prefiero:</span>
             </p>
             <p class="text-gray-100 text-base sm:text-lg leading-relaxed font-medium">
               De verdad, prefiero que te lo lleves tú, se lo pongas a tus hijos en el patio y le saquen el máximo provecho que yo no le pude sacar.
@@ -484,7 +504,9 @@
         
         <div class="slide-up-item delay-100 liquid-glass glow-card rounded-2xl p-6 border border-white/15">
           <div class="flex items-start gap-4">
-            <span class="text-3xl">📏</span>
+            <div class="w-12 h-12 rounded-xl bg-[#2AD5FF]/15 border border-[#2AD5FF]/30 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-ruler-horizontal text-2xl text-[#2AD5FF]"></i>
+            </div>
             <div>
               <h3 class="font-extrabold text-[#2AD5FF] text-base sm:text-lg mb-1">Medidas</h3>
               <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-medium">2.44 m de ancho x 2.20 m de alto total.</p>
@@ -494,7 +516,9 @@
 
         <div class="slide-up-item delay-200 liquid-glass glow-card rounded-2xl p-6 border border-white/15">
           <div class="flex items-start gap-4">
-            <span class="text-3xl">🏗️</span>
+            <div class="w-12 h-12 rounded-xl bg-[#FFD200]/15 border border-[#FFD200]/30 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-layer-group text-2xl text-[#FFD200]"></i>
+            </div>
             <div>
               <h3 class="font-extrabold text-[#FFD200] text-base sm:text-lg mb-1">Estructura</h3>
               <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-medium">Acero galvanizado resistente al agua y al sol (Peso total: 38 kg).</p>
@@ -504,7 +528,9 @@
 
         <div class="slide-up-item delay-300 liquid-glass glow-card rounded-2xl p-6 border border-white/15">
           <div class="flex items-start gap-4">
-            <span class="text-3xl">🛡️</span>
+            <div class="w-12 h-12 rounded-xl bg-[#25D366]/15 border border-[#25D366]/30 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-shield-halved text-2xl text-[#25D366]"></i>
+            </div>
             <div>
               <h3 class="font-extrabold text-[#25D366] text-base sm:text-lg mb-1">Seguridad</h3>
               <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-medium">Red protectora 360° con cierre, 48 resortes reinforced con protector acolchado, parantes forrados en goma espuma.</p>
@@ -514,7 +540,9 @@
 
         <div class="slide-up-item delay-400 liquid-glass glow-card rounded-2xl p-6 border border-white/15">
           <div class="flex items-start gap-4">
-            <span class="text-3xl">🏋️‍♂️</span>
+            <div class="w-12 h-12 rounded-xl bg-[#2AD5FF]/15 border border-[#2AD5FF]/30 flex items-center justify-center shrink-0">
+              <i class="fa-solid fa-bolt text-2xl text-[#2AD5FF]"></i>
+            </div>
             <div>
               <h3 class="font-extrabold text-[#2AD5FF] text-base sm:text-lg mb-1">Lona de salto</h3>
               <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-medium">Polipropileno de alta densidad extremadamente resistente.</p>
@@ -525,7 +553,9 @@
       </div>
 
       <div class="slide-up-item liquid-glass glow-card rounded-2xl p-6 border border-[#0077FF] bg-[#0077FF]/20 flex items-center gap-5">
-        <span class="text-4xl shrink-0">🛠️</span>
+        <div class="w-14 h-14 rounded-2xl bg-[#0077FF]/30 border border-[#2AD5FF]/40 flex items-center justify-center shrink-0">
+          <i class="fa-solid fa-screwdriver-wrench text-3xl text-[#2AD5FF]"></i>
+        </div>
         <div>
           <h3 class="font-extrabold text-white text-base sm:text-xl mb-1">Armado rápido</h3>
           <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-medium">Se arma entre dos personas en menos de 40 min, sin herramientas especiales.</p>
@@ -617,7 +647,7 @@
           >
             <div class="flex items-center gap-4">
               <span class="w-10 h-10 rounded-xl bg-[#2AD5FF]/20 border border-[#2AD5FF]/40 text-[#2AD5FF] flex items-center justify-center shrink-0 font-black text-lg">
-                📦
+                <i class="fa-solid fa-box text-[#2AD5FF]"></i>
               </span>
               <span class="font-bold text-base sm:text-lg text-white group-hover:text-[#2AD5FF] transition-colors">
                 ¿Está armado?
@@ -643,7 +673,7 @@
           >
             <div class="flex items-center gap-4">
               <span class="w-10 h-10 rounded-xl bg-[#2AD5FF]/20 border border-[#2AD5FF]/40 text-[#2AD5FF] flex items-center justify-center shrink-0 font-black text-lg">
-                🚗
+                <i class="fa-solid fa-car text-[#2AD5FF]"></i>
               </span>
               <span class="font-bold text-base sm:text-lg text-white group-hover:text-[#2AD5FF] transition-colors">
                 ¿Necesito un camión para llevármelo?
@@ -669,7 +699,7 @@
           >
             <div class="flex items-center gap-4">
               <span class="w-10 h-10 rounded-xl bg-[#FFD200]/20 border border-[#FFD200]/40 text-[#FFD200] flex items-center justify-center shrink-0 font-black text-lg">
-                💳
+                <i class="fa-solid fa-credit-card text-[#FFD200]"></i>
               </span>
               <span class="font-bold text-base sm:text-lg text-white group-hover:text-[#2AD5FF] transition-colors">
                 ¿Cómo se paga?
@@ -695,7 +725,7 @@
           >
             <div class="flex items-center gap-4">
               <span class="w-10 h-10 rounded-xl bg-[#FFD200]/20 border border-[#FFD200]/40 text-[#FFD200] flex items-center justify-center shrink-0 font-black text-lg">
-                💵
+                <i class="fa-solid fa-hand-holding-dollar text-[#FFD200]"></i>
               </span>
               <span class="font-bold text-base sm:text-lg text-white group-hover:text-[#2AD5FF] transition-colors">
                 ¿Aceptas menos de $200 o cambios?
@@ -726,20 +756,21 @@
       
       <div class="slide-up-item liquid-glass glow-card rounded-3xl p-6 sm:p-10 border border-red-500/40 bg-red-950/20">
         <h2 class="text-2xl sm:text-3xl font-extrabold text-red-400 mb-5 flex items-center gap-3">
-          <span>🚨</span> Ojo con esto
+          <i class="fa-solid fa-triangle-exclamation text-red-400"></i>
+          <span>Ojo con esto</span>
         </h2>
 
         <ul class="space-y-4 text-sm sm:text-base text-gray-200 font-medium">
           <li class="flex items-start gap-3.5 p-3 rounded-xl bg-black/40 border border-white/10">
-            <span class="text-red-400 shrink-0 font-extrabold text-lg">📌</span>
+            <i class="fa-solid fa-thumbtack text-red-400 shrink-0 text-base mt-0.5"></i>
             <span><strong>Solo tengo UN trampolín</strong> (no soy tienda comercial).</span>
           </li>
           <li class="flex items-start gap-3.5 p-3 rounded-xl bg-black/40 border border-white/10">
-            <span class="text-red-400 shrink-0 font-extrabold text-lg">📌</span>
+            <i class="fa-solid fa-thumbtack text-red-400 shrink-0 text-base mt-0.5"></i>
             <span><strong>No se reserva sin ver.</strong> Si te gusta, vienes a revisarlo.</span>
           </li>
           <li class="flex items-start gap-3.5 p-3 rounded-xl bg-black/40 border border-white/10">
-            <span class="text-red-400 shrink-0 font-extrabold text-lg">📌</span>
+            <i class="fa-solid fa-thumbtack text-red-400 shrink-0 text-base mt-0.5"></i>
             <span><strong>Pagas al momento</strong> de retirarlo satisfecho.</span>
           </li>
         </ul>
@@ -783,14 +814,12 @@
             rel="noopener noreferrer"
             class="w-full sm:w-auto font-extrabold text-base sm:text-xl bg-[#25D366] hover:bg-[#20ba5a] text-[#031728] px-10 py-5 rounded-full flex items-center justify-center gap-3 whatsapp-btn-glow transition-all text-center animate-shine shadow-2xl"
           >
-            <svg class="w-7 h-7 fill-[#031728] shrink-0" viewBox="0 0 24 24">
-              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-            </svg>
+            <i class="fa-brands fa-whatsapp text-2xl text-[#031728]"></i>
             <span class="text-[#031728]">Sí quiero</span>
           </a>
 
           <div class="inline-flex items-center gap-2 text-sm text-[#2AD5FF] font-bold mt-2">
-            <span>📍</span>
+            <i class="fa-solid fa-location-dot text-[#2AD5FF]"></i>
             <span>Sólo para 1 familia en Caja Seca</span>
           </div>
         </div>
@@ -842,23 +871,23 @@
       
       <button 
         onclick="closeLightbox()" 
-        class="absolute -top-12 right-0 p-2.5 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-all"
+        class="absolute -top-12 right-0 w-10 h-10 flex items-center justify-center text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full transition-all"
       >
-        ✕
+        <i class="fa-solid fa-xmark text-lg"></i>
       </button>
 
       <button 
         onclick="prevLightboxItem()" 
-        class="absolute left-2 top-1/2 -translate-y-1/2 p-3.5 text-white bg-black/60 hover:bg-black/90 border border-white/20 rounded-full transition-all z-10 font-bold"
+        class="absolute left-2 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center text-white bg-black/60 hover:bg-black/90 border border-white/20 rounded-full transition-all z-10 font-bold"
       >
-        ❮
+        <i class="fa-solid fa-chevron-left text-lg"></i>
       </button>
 
       <button 
         onclick="nextLightboxItem()" 
-        class="absolute right-2 top-1/2 -translate-y-1/2 p-3.5 text-white bg-black/60 hover:bg-black/90 border border-white/20 rounded-full transition-all z-10 font-bold"
+        class="absolute right-2 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center text-white bg-black/60 hover:bg-black/90 border border-white/20 rounded-full transition-all z-10 font-bold"
       >
-        ❯
+        <i class="fa-solid fa-chevron-right text-lg"></i>
       </button>
 
       <div id="lightbox-media-container" class="w-full flex items-center justify-center"></div>
