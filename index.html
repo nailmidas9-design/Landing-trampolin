@@ -16,6 +16,26 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    
+    fbq('init', '1586070713222459');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=1586070713222459&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
   <style>
     :root {
       --color-primary: #2AD5FF;
@@ -211,7 +231,7 @@
      ========================================================================= -->
   <section class="relative min-h-[520px] sm:min-h-[640px] flex flex-col justify-between p-4 sm:p-8 md:p-12 overflow-hidden z-10 border-b border-white/10">
     
-    <!-- Hero Background Image optimizada -->
+    <!-- Hero Background Image -->
     <div class="absolute inset-0 z-0 overflow-hidden bg-[#020F1B] pointer-events-none">
       <img
         src="https://pub-48e5e21731d74cf7a344201ee4e87636.r2.dev/hero.png"
@@ -436,12 +456,13 @@
 
       </div>
 
-      <!-- Action Button -->
+      <!-- Action Button with Meta Pixel Lead Event -->
       <div class="slide-up-item text-center">
         <a 
           href="https://wa.me/584142298507?text=%C2%A1Hola!%20Vi%20las%20fotos%20del%20trampol%C3%ADn%20en%20Caja%20Seca.%20Quiero%20ir%20a%20verlo%20hoy."
           target="_blank"
           rel="noopener noreferrer"
+          onclick="fbq('track', 'Lead');"
           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20ba5a] text-[#031728] font-extrabold text-base sm:text-xl px-10 py-5 rounded-full whatsapp-btn-glow transition-all animate-shine shadow-2xl"
         >
           <i class="fa-brands fa-whatsapp text-2xl text-[#031728]"></i>
@@ -784,7 +805,7 @@
      ========================================================================= -->
   <section class="relative z-10 py-20 sm:py-28 px-4 sm:px-8 md:px-12 border-t border-white/10 text-center overflow-hidden">
     
-    <!-- Background Image optimizada -->
+    <!-- Background Image -->
     <div class="absolute inset-0 z-0 overflow-hidden bg-[#020F1B] pointer-events-none">
       <img
         src="https://pub-48e5e21731d74cf7a344201ee4e87636.r2.dev/hero.png"
@@ -812,6 +833,7 @@
             href="https://wa.me/584142298507?text=Hola%2C%20quiero%20que%20coordinemos%20para%20ir%20a%20verlo."
             target="_blank"
             rel="noopener noreferrer"
+            onclick="fbq('track', 'Lead');"
             class="w-full sm:w-auto font-extrabold text-base sm:text-xl bg-[#25D366] hover:bg-[#20ba5a] text-[#031728] px-10 py-5 rounded-full flex items-center justify-center gap-3 whatsapp-btn-glow transition-all text-center animate-shine shadow-2xl"
           >
             <i class="fa-brands fa-whatsapp text-2xl text-[#031728]"></i>
