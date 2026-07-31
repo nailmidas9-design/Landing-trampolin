@@ -162,6 +162,41 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #2AD5FF;
     }
+
+    /* Animated Gradient Border Effect for Location Badge */
+    @property --gradient-angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+
+    @keyframes gradientRotate {
+      0% { --gradient-angle: 0deg; }
+      100% { --gradient-angle: 360deg; }
+    }
+
+    .animated-gradient-badge {
+      --gradient-primary: #0077FF;
+      --gradient-secondary: #2AD5FF;
+      --gradient-accent: #FFD200;
+      --bg-color: rgba(3, 23, 40, 0.85);
+
+      border: 2px solid transparent;
+      border-radius: 9999px;
+      background-image:
+        linear-gradient(var(--bg-color), var(--bg-color)),
+        conic-gradient(
+          from var(--gradient-angle, 0deg),
+          var(--gradient-primary) 0%,
+          var(--gradient-secondary) 30%,
+          var(--gradient-accent) 50%,
+          var(--gradient-secondary) 70%,
+          var(--gradient-primary) 100%
+        );
+      background-clip: padding-box, border-box;
+      background-origin: padding-box, border-box;
+      animation: gradientRotate 3.5s linear infinite;
+    }
   </style>
 </head>
 <body class="min-h-screen bg-[#031728] text-white selection:bg-[#2AD5FF] selection:text-[#031728] relative antialiased">
@@ -190,13 +225,13 @@
       
       <!-- Navigation Header -->
       <nav class="flex items-center justify-between pt-2 pb-3">
-        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-[#2AD5FF]/50 shadow-lg">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 animated-gradient-badge backdrop-blur-md shadow-lg">
           <span class="text-[#FFD200] shrink-0 animate-bounce text-sm">📍</span>
           <span class="text-xs sm:text-sm font-black text-white tracking-wider uppercase">Caja Seca</span>
         </div>
       </nav>
 
-      <!-- Hero Top Title Block (Actualizado) -->
+      <!-- Hero Top Title Block -->
       <div class="pt-2 max-w-3xl text-left">
         <div class="slide-up-item">
           <div class="inline-flex items-center gap-2 bg-[#FFD200]/20 border border-[#FFD200] text-[#FFD200] px-3.5 py-1 rounded-full text-xs sm:text-sm font-black mb-3 shadow-md backdrop-blur-sm">
@@ -493,7 +528,7 @@
         <span class="text-4xl shrink-0">🛠️</span>
         <div>
           <h3 class="font-extrabold text-white text-base sm:text-xl mb-1">Armado rápido</h3>
-          <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-medium">Se arma entre dos personas en menos de 15 min, sin herramientas especiales.</p>
+          <p class="text-sm sm:text-base text-gray-200 leading-relaxed font-medium">Se arma entre dos personas en menos de 40 min, sin herramientas especiales.</p>
         </div>
       </div>
 
@@ -508,9 +543,9 @@
       
       <div class="slide-up-item text-center mb-10">
         <h2 class="text-3xl sm:text-5xl font-extrabold text-white">
-          2,624 familias opinan
+          Calidad comprobada de la marca
         </h2>
-        <p class="text-gray-300 text-sm sm:text-base mt-2 font-medium">Reseñas y experiencia comprobada de la marca</p>
+        <p class="text-gray-300 text-sm sm:text-base mt-2 font-medium">Este modelo cuenta con más de 2,600 opiniones de familias que ya lo usan</p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
